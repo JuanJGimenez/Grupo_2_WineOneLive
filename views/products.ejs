@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>prueba</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>prueba</h1>
+    <p>productos</p>
+
+    <% for( let i = 0; i < product.length; i++ ) { %>
+      <li>
+         <%= product[i].product_id %>
+         <%= product[i].product_name %>
+         <%= product[i].product_description %>
+         <%= product[i].price %>
+         <%= product[i].image %>
+         <%= product[i].quantity_stock %>
+         <%= product[i].category_id %>
+      </li>
+      <% } %>
+
+  </body>
+</html>
