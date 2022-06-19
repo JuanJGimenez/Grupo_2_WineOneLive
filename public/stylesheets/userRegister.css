@@ -1,0 +1,125 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.bg-img {
+    /* The image used */
+    background-image: url("/images/login-backgground.jpg");
+
+    min-height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+}
+
+/* Add styles to the form container */
+.container {
+
+    position: relative;
+    right: 0;
+    margin: auto;
+    max-width: 300px;
+    padding: 16px;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    color: #f6f6f6;
+}
+
+.login-sign {
+    display: flex;
+    justify-content: start;
+
+}
+
+.ingresa {
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    border-right: 2px solid lightgray;
+}
+
+.registra {
+    font-weight: bold;
+    width: 50%;
+    text-align: center;
+
+}
+
+.registra a {
+    color: #f6f6f6;
+    text-decoration: none;
+}
+
+.ingresa a {
+    color: #f6f6f6;
+    text-decoration: none;
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.checkbox {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 3%;
+}
+
+.checkbox a {
+    color: red;
+    text-decoration: none;
+}
+
+/* Set a style for the submit button */
+.boton {
+    margin: auto;
+    text-align: center;
+}
+
+.btn {
+    background-color: tomato;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 75%;
+    opacity: 0.9;
+    font-size: 19px;
+    border-radius: 15px;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.form-error {
+    color: red;
+}

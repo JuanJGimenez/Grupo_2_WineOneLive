@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Wine One LIFE - Inicio</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0a256d9d04.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/userLogin.css'/>
+
+</head>
+
+<body>
+    <div class="bg-img">
+        <form action="/user/login" method="POST" class="container">
+            <% if (locals.registroOk) { %>
+            <div>
+                <p>El registro fue creado con exito!</p>
+            </div>
+            <% } %> 
+            <br>
+            <div class="login-sign">
+                <div class="ingresa"><a href="/users/login">Ingresá</a></div>
+                <div class="registra"> <a href="/users/register"> Registrarse</a> </div>
+            </div>
+            <br>
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Tu Email" name="email" value="<%= locals.nuevoUsuario ? nuevoUsuario.email : null %>">
+            <% if (locals.errors && errors.email) { %>
+            <div class="form-error"><%= errors.email.msg %></div>
+            <br>
+            <% } %>
+            <label for="password"><b>Contraseña</b></label>
+            <input type="password" placeholder="Contraseña" name="password">
+            <% if (locals.errors && errors.password) { %>
+            <div class="form-error"><%= errors.password.msg %></div>
+            <br>
+            <% } %>
+            <label for="remember"><b>Recordar</b></label>
+            <input type="checkbox" placeholder="Recordar usuario" name="remember">
+            <br>
+            <br>
+            <div class="boton">
+                <button type="submit" class="btn">Iniciar sesión</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

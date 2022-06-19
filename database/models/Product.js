@@ -26,6 +26,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         category_id: {
             type: dataTypes.INTEGER
+        },
+        recommended: {
+            type: dataTypes.TINYINT
         }
     };
 
@@ -34,9 +37,14 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-
-
     const Product = sequelize.define(alias, cols, config);
+/* 
+    Products.associate = function (models) {
+        Products.belongsTo(models.Categories, {
+            as: "categories",
+            foreignKey: "category_id"
+        })
+    } */
 
     return Product;
 }

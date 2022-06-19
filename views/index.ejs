@@ -1,19 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>prueba</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>prueba</h1>
-    <p>usuarios</p>
+<head>
+<%- include("partials/head.ejs") %>
+</head>
 
+<body>
 
-      <li>
-   
+  <%- include("partials/header.ejs") %>
 
-      </li>
+    <main class="">
+      <div class="container">
+        <div class="first">
+          <img src="/images/cat-wine.jpg" alt="imagen copa de vino" class="img-vino">
+          <div class="wine">
+            <form class="bot-cat" method="POST" action="/products/categoria">
+              <button type="submit" name="category" value="vinos" class="texto">VINOS</button>
+            </form>
+          </div>
+        </div>
+        <div class="second">
+          <img src="/images/cat-beer.jpg" alt="imagen botella cerveza" class="">
+          <div class="beer">
+            <form class="" method="POST" action="/products/categoria">
+              <button type="submit" name="category" value="cervezas" class="texto">CERVEZAS</button>
+            </form>
+          </div>
+        </div>
+        <div class="tercero">
+          <img src="/images/cat-whisky.jpg" alt="botella de whisky" class="">
+          <div class="wiskey">
+            <form class="" method="POST" action="/products/categoria">
+              <button type="submit" name="category" value="whisky" class="texto">WHISKY</button>
+            </form>
+          </div>
+        </div>
+        <div class="cuatro">
+          <img src="/images/cat-champ.jpg" alt="botellas de espumantes" class="">
+          <div class="champain">
+            <form class="" method="POST" action="/products/categoria">
+              <button type="submit" name="category" value="espumantes" class="texto">ESPUMANTES</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+    </main>
 
+    <h2>Nuestras recomendaciones</h2>
 
-  </body>
+    <% for( let i=0; i < product.length; i++ ) { %>
+      <section id="productos" class="productos">
+        <article class="articulos">
+          <div>
+            <p>Categoria - <%= product[i].category_id %>
+            </p>
+          </div>
+          <div><img class="img-producto" src="/images/<%= product[i].image %>" alt="Imagen botella producto"></div>
+          <div>
+            <p class="">
+              <%= product[i].product_name %>
+            </p>
+          </div>
+          <div class="">
+            <%= product[i].price %>
+          </div>
+          <div> <i class="fas fa-cart-arrow-down"></i></div>
+        </article>
+      </section>
+      <% } %>
+
+        <%- include("partials/footer.ejs") %>
+</body>
+
 </html>

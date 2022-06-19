@@ -3,7 +3,14 @@ let db = require("../database/models");
 let mainControllers = {
 
     home: function (req, res) {
-        res.render("index")
+        db.Products.findAll({
+            where: {
+                recommended: 1
+            }
+        })
+            .then(function (product) {
+                res.render("index", { product })
+            })
     },
 
     users: function (req, res) {

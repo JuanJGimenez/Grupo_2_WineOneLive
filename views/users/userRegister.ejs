@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Wine One LIFE - Inicio</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0a256d9d04.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/userRegister.css'/>
+
+</head>
+
+<body>
+    <div class="bg-img">
+        <form class="container" method="POST" action="/users/register">
+            <div class="login-sign">
+                <div class="ingresa"><a href="/users/login">Ingresá</a></div>
+                <div class="registra"> <a href="/users/register">Registrarse</a> </div>
+            </div><br>
+            <label for="image">Imagen de perfil:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <br>
+            <br>
+            <label for="user_first_name"><b>Nombre:</b></label>
+            <input type="text" name="user_first_name" id="user_first_name" value="" placeholder="Nombre" />
+
+            <label for="user_last_name"><b>Apellido:</b></label>
+            <input type="text" name="user_last_name" id="user_last_name" value="" placeholder="Apellido" />
+
+
+            <label for="user_email"><b>Correo Electrónico</b></label>
+            <input type="user_email" placeholder="Tu Email" name="user_email" id="user_email" value="">
+    
+
+            <label for="user_password"><b>Contraseña</b></label>
+            <input type="user_password" placeholder="Constraseña" name="user_password" id="user_password" value="">
+
+            <div class="boton">
+                <button type="submit" class="btn">Crear usuario</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- include("../partials/head.ejs") %>
+</head>
+<body>
+
+  <%- include("../partials/header.ejs") %>
+
+  <% for( let i=0; i < product.length; i++ ) { %>
+    <section id="productos" class="productos">
+      <article class="articulos">
+        <div>
+          <p>Categoria - <%= product[i].category_id %>
+          </p>
+        </div>
+        <div><img class="img-producto" src="/images/<%= product[i].image %>" alt="Imagen botella producto"></div>
+        <div>
+          <p class="">
+            <%= product[i].product_name %>
+          </p>
+        </div>
+        <div class="">
+          <%= product[i].price %>
+        </div>
+        <div> <i class="fas fa-cart-arrow-down"></i></div>
+      </article>
+    </section>
+    <% } %>
+
+  <%- include("../partials/footer.ejs") %>
+
+</body>
+
+</html>

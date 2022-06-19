@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<%- include("../partials/head.ejs") %>
+
+    <body>
+
+        <%- include("../partials/header.ejs") %>
+
+            <main class="main-sections">
+                <h2>Categoria <%=categorias[0].category%>
+                </h2>
+                <% categorias.forEach((producto, i, categorias)=> {%>
+                    <section id="productos" class="productos">
+                        <article class="articulos">
+                            <div><a href="/products/product-detail/<%=categorias[i].id%>"><img class="img-producto"
+                                        src="/img/<%= categorias[i].image %>"></a></div>
+                            <div>
+                                <p class="">
+                                    <%=categorias[i].name%>
+                                </p>
+                            </div>
+                            <!--  <div class="">
+                            <%=categorias[i].description%>
+                        </div> -->
+                            <div class="">
+                                <%=categorias[i].price%>
+                            </div>
+                            <div> <i class="fas fa-cart-arrow-down"></i></div>
+                        </article>
+                    </section>
+                    <%})%>
+            </main>
+
+            <%- include("../partials/footer.ejs") %>
+
+    </body>
+</html>
