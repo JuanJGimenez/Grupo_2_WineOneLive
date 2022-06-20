@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/fav-logo.png"> <!-- Coloco imagen en pestaña del navegador -->
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/product-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/e638c2695f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+   
+    
+
+
+    <title>Wine ONE LIFE - Detalle Porducto</title>  
+   
+    
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %> 
+    <main>
+        <section class="detalle">
+            <article class="imagen">
+
+                <img class="botella-vino" src="/images/<%=Product.image %>">
+                
+
+            </article>
+
+            <article class="descripcion">
+
+                
+
+                <div class="nombre-producto">
+                    <%=Product.product_name%>
+                </div>
+
+                <div class="descripcion-producto">
+                    <%=Product.product_description%>
+                </div>
+
+                <div class="precio-producto">
+                    $<%=Product.price%>
+                </div>
+
+                <div class="cantidad-producto">
+
+                    <label for="quantity" class="cantidad">Cantidad</label><br> <br>
+                    <div class="caja-cantidades">
+                        <div class="boton-resta"><i class="fa-solid fa-minus"></i></div>
+                        <input class="valor-cantidad" type="number" name="quantity" value="1" />
+                        <div class="boton-suma"><i class="fa-solid fa-plus"></i></div>
+
+                    </div>
+                </div>
+
+                <div class="iconoyagrega">
+
+                    <i class="fa-solid fa-cart-plus carrito-mas"></i>
+
+                    <div class="agregar-producto">
+
+                        añadir al carro
+                    </div>
+
+                </div>
+
+            </article>
+        </section>
+        <br>
+        <br>
+
+        <hr>
+        <div class="puede-interesar">
+            <h2>También puede interesarte</h2>
+        </div>
+        <br>
+
+
+    
+
+        <%- include("../partials/recommended-products.ejs") %>
+
+       
+
+        <br>
+
+            <hr>
+
+    </main>
+    
+        <%- include("../partials/footer.ejs") %>
+    
+</body>
+
+</html>
+

@@ -24,6 +24,7 @@ router.get('/login', usersControllers.login);
 router.get('/register', usersControllers.registerView);
 router.post('/register', fileUpload.single("image"), usersControllers.register);
 router.get('/list', usersControllers.list);
+router.get("/detail/:id", usersControllers.userDetail);
 
 module.exports = router;
 

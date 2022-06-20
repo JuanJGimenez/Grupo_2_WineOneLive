@@ -1,0 +1,20 @@
+<% for( let i=0; i < recommended.length; i++ ) { %>
+    <section id="productos" class="productos">
+      <article class="articulos">
+        <div>
+          <p>Categoria - <%= recommended[i].category_id %>
+          </p>
+        </div>
+        <div><a href="/products/product-detail/<%=recommended[i].product_id%>"><img class="img-producto" src="/images/<%= recommended[i].image %>" alt="Imagen botella producto"></a></div>
+        <div>
+          <p class="">
+            <%= recommended[i].product_name %>
+          </p>
+        </div>
+        <div class="">
+          <%= recommended[i].price %>
+        </div>
+        <div> <i class="fas fa-cart-arrow-down"></i></div>
+      </article>
+    </section>
+    <% } %>

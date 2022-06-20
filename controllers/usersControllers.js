@@ -14,6 +14,15 @@ let usersControllers = {
         db.Users.create(req.body)
         .then(res.redirect('/users/login'));            
     },
+    userDetail: function (req, res) {
+        db.Users.findByPk(req.params.id)
+            .then(User => {
+                res.render("./users/user-detail", {User});
+            });
+               
+        
+        
+    },
     list: function (req, res) {
         db.Users.findAll()
             .then(function (user) {
