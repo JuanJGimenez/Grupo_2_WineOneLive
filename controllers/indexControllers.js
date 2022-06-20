@@ -8,8 +8,8 @@ let mainControllers = {
                 recommended: 1
             }
         })
-            .then(function (product) {
-                res.render("index", { product })
+            .then(function (recommended) {
+                res.render("index", { recommended })
             })
     },
 
