@@ -429,7 +429,7 @@ h2 {
 .wine {
   position: absolute;
   display: flex;
-  width: 40%;
+  width: 20vw;
   justify-content: center;
   align-items: center;
   color: aliceblue;
@@ -443,6 +443,7 @@ h2 {
 .beer {
   position: absolute;
   display: flex;
+  width: 20vw;
 
   justify-content: center;
   align-items: center;
@@ -460,7 +461,7 @@ h2 {
 .wiskey {
   position: absolute;
   display: flex;
-  width: 60%;
+  width: 20vw;
   justify-content: center;
   align-items: center;
   color: aliceblue;
@@ -477,7 +478,7 @@ h2 {
 .champain {
   position: absolute;
   display: flex;
-  width: 55%;
+  width: 35vw;
   justify-content: center;
   align-items: center;
   color: aliceblue;
