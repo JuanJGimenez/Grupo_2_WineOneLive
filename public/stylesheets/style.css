@@ -14,7 +14,7 @@ html {
 }
 
 main {
-  background-color: #000000;
+  background-color: #F6F6F6;
 }
 
 .main-header {
@@ -270,7 +270,7 @@ a {
 h2 {
   text-align: center;
   color: #2f2f2f;
-  font-size: 50px;
+  font-size: 18px;
   padding: 20px;
 }
 
@@ -292,8 +292,8 @@ h2 {
 
 
 .img-producto {
-  max-height: 30rem;
-  filter: drop-shadow(2px 4px 20px black);
+  max-height: 12rem;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .main-sections {
@@ -409,7 +409,6 @@ h2 {
   background-color: transparent;
   color: whitesmoke;
   border: none;
-  font-size: 50px;
 }
 
 .tercero {
@@ -573,15 +572,11 @@ legend {
   width: 20% !important;
 }
 
-.texto-producto {
-  font-size: 50px;
-}
 
 @media (min-width: 479) {
   /* .banner-image {
       background-size: contain;
   } */
-
 
 }
 
