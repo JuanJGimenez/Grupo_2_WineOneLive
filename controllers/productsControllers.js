@@ -36,7 +36,33 @@ let productsControllers = {
 
 
     },
+<<<<<<< HEAD
     
+=======
+    detalleProducto: function (req, res) {
+
+        let recomendado = []
+
+        db.Products.findAll({
+            where: {
+                recommended: 1
+            }
+        })
+            .then(function (product) {
+                recomendado = product
+            })
+
+
+        db.Products.findByPk(req.params.id)
+            .then(Product => {
+                console.log(recomendado)
+                res.render("./products/product-detail", { Product: Product, recommended: recomendado });
+            });
+
+
+
+    },
+>>>>>>> 2aec0499b519b53aa15ed0791a1c1c16dbdb74e3
     vinos: function (req, res) {
 
 
