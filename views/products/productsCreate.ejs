@@ -3,33 +3,32 @@
 
 <head>
     <%- include("../partials/head.ejs") %>
-        <link rel="stylesheet" href="/stylesheets/product-styles.css">
+        <link rel="stylesheet" href="/stylesheets/create.css">
 </head>
 
 <body>
-
-    <%- include("../partials/header.ejs") %>
-
-    <div class="contenedor-formulario">
-        <form action="/products/create" method="POST" enctype="multipart/form-data" class="container">
+    <br>
+    <div>
+        <form action="/products/create" method="POST" enctype="multipart/form-data" class="contenedor-formulario">
             <div>
                 <label for="product_name"><b>Nombre:</b></label>
                 <input type="text" name="product_name" id="product_name" placeholder="Nombre del producto">
             </div>
+            <br>
             <div>
                 <label for="product_description"><b>Descripcion del producto:</b></label>
             </div>
             <div>
                 <textarea id="product_description" name="product_description"></textarea>
             </div>
-
+            <br>
             <div>
                 <label for="price"><b>Precio</b></label>
                 <input type="number" placeholder="precio" name="price">
             </div>
+            <br>
             <div>
                 <label for="category"><b>Seleccionar categoría</b></label>
-         
                 <select name="category_id">
                     <label for="category_id">- Seleccione la categoria - </label>
                     <% categoria.forEach(category => { %>
@@ -37,6 +36,7 @@
                     <% }); %>
                 </select>
             </div>
+            <br>
             <div>
                 <p>¿Producto recomendado?</p>
                 <label for="recommended">si</label>
@@ -46,8 +46,9 @@
             </div>
             <div>
                 <label for="image"><b>Subir imagen del producto</b></label>
-                <input type="file" name="image" required>
+                <input type="file" name="image">
             </div>
+            <br>
             <div>
                 <button type="submit" class="boton">Crear producto</button>
             </div>

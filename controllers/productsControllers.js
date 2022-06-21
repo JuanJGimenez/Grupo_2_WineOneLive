@@ -46,10 +46,12 @@ let productsControllers = {
     },
 
     create: function (req, res) {
-        let nuevoProducto = req.body
-        console.log(nuevoProducto)
+        let nuevoProducto = req.body;
+        if (req.file) {
+            if (req.file.filename) {
+                 nuevoProducto.image = req.file.filename
+            }}
         db.Products.create(nuevoProducto)
-       
         .then(res.redirect('./list'));
     }
 

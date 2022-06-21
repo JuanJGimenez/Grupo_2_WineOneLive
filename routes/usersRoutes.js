@@ -4,6 +4,7 @@ const multer = require ('multer');
 const path = require ('path');
 
 const usersControllers = require('../controllers/usersControllers.js');
+// const userLoginMiddleware = require('../middleware/userLoginMiddleware.js')
 
 // Configuracion multer
 const storage = multer.diskStorage({
@@ -26,6 +27,7 @@ router.get('/list', usersControllers.list);
 router.get("/detail/:id", usersControllers.userDetail);
 
 /* POST users listing. */
+
 router.post('/register', fileUpload.single('image'), usersControllers.register);
 
 module.exports = router;
