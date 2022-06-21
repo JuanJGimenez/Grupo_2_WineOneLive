@@ -24,10 +24,14 @@ router.get('/list', productsControllers.list);
 router.get('/product-detail/:id', productsControllers.detail);
 router.get('/create', productsControllers.add);
 router.get('/list/', productsControllers.list);
+router.get("/edit/:id", productsControllers.edit);
 
 /* POST products listing. */
 router.post('/categories', productsControllers.categories);
 router.post('/create', fileUpload.single('image'), productsControllers.create);
+router.post('/edit/:id', productsControllers.delete);
+
+
 
 
 module.exports = router;

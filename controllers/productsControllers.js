@@ -26,7 +26,6 @@ let productsControllers = {
     },
 
     categories: (req, res) => {
-        console.log(req.body.category)
         db.Products.findAll({
             include: ['categories'],
             where: {
@@ -42,18 +41,33 @@ let productsControllers = {
     add: function (req, res) {
         db.Categories.findAll()
             .then(categoria => {
-                res.render('products/productsCreate', {categoria})});
+                res.render('products/productsCreate', { categoria })
+            });
     },
 
     create: function (req, res) {
         let nuevoProducto = req.body;
         if (req.file) {
             if (req.file.filename) {
-                 nuevoProducto.image = req.file.filename
-            }}
+                nuevoProducto.image = req.file.filename
+            }
+        }
         db.Products.create(nuevoProducto)
-        .then(res.redirect('./list'));
-    }
+            .then(res.redirect('./list'));
+    },
+
+    edit: function (req, res) {
+        db.Products.findByPk(req.params.id)
+        .then(product => {res.render('products/product-edit', { product })});
+    },
+
+    delete: function (req,res) {
+        let productId = req.params.id;
+        db.Products
+        .destroy({where: {product_id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        .then(()=>{
+            return res.redirect('/products/list')});
+    },
 
 }
 

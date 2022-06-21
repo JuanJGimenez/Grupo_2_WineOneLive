@@ -199,10 +199,21 @@ input {
   outline: none;
 }
 
-/* button {
-border: none;
-background-color: #f6f6f6;
-} */
+.boton-delete {
+    font-size: 30px;
+    color: red;
+    border-color: red;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.boton-save {
+  font-size: 30px;
+  color: green;
+  border-color: green;
+  padding: 10px;
+  border-radius: 10px;
+}
 
 form {
   display: flex;
