@@ -10,6 +10,7 @@ let usersControllers = {
         res.render('users/userRegister');
     },
     register: function (req, res) {
+        console.log(req.file)
         db.Users.create(req.body)
             .then(res.redirect('/users/login'));
     },

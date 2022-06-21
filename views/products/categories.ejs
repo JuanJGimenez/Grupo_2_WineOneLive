@@ -8,8 +8,10 @@
         <%- include("../partials/header.ejs") %>
 
             <main class="main-sections">
-                <h2>Categoria <!-- aca va el nombre de la categoria  --> </h2>
+            
+                <h2>Categoria <%=product[1].categories%> </h2>
                 <% for( let i=0; i < product.length; i++ ) { %>
+                
                     <br>
                     <section id="productos" class="productos">
                         <article class="articulos">
