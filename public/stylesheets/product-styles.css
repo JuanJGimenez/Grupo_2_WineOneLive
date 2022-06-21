@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+main {
+  background-color: white;
+}
+
 header {
   display: flex;
   flex-wrap: wrap;

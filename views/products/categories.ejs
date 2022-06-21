@@ -8,28 +8,26 @@
         <%- include("../partials/header.ejs") %>
 
             <main class="main-sections">
-                <h2>Categoria <%=categorias[0].category%>
-                </h2>
-                <% categorias.forEach((producto, i, categorias)=> {%>
+                <h2>Categoria <!-- aca va el nombre de la categoria  --> </h2>
+                <% for( let i=0; i < product.length; i++ ) { %>
+                    <br>
                     <section id="productos" class="productos">
                         <article class="articulos">
-                            <div><a href="/products/product-detail/<%=categorias[i].id%>"><img class="img-producto"
-                                        src="/img/<%= categorias[i].image %>"></a></div>
+                            <div><a href="/products/product-detail/<%=product[i].product_id%>"><img class="img-producto"
+                                        src="/images/<%= product[i].image %>"></a></div>
                             <div>
-                                <p class="">
-                                    <%=categorias[i].name%>
+                                <p class="texto-producto">
+                                    <%=product[i].product_name%>
                                 </p>
                             </div>
-                            <!--  <div class="">
-                            <%=categorias[i].description%>
-                        </div> -->
-                            <div class="">
-                                <%=categorias[i].price%>
+                            <div class="texto-producto">
+                               <p>Precio: <%=product[i].price%></p> 
                             </div>
-                            <div> <i class="fas fa-cart-arrow-down"></i></div>
+                            <div class="texto-producto"> <i class="fas fa-cart-arrow-down"></i></div>
                         </article>
                     </section>
-                    <%})%>
+                    <%}%>
+                    <br>
             </main>
 
             <%- include("../partials/footer.ejs") %>

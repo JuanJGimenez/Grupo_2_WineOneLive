@@ -2,34 +2,30 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/img/logottt.png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/create.css">
-
-    <script src="https://kit.fontawesome.com/0a256d9d04.js" crossorigin="anonymous"></script>
-    <title>Wine ONE LIFE - Inicio</title>
+    <%- include("../partials/head.ejs") %>
+        <link rel="stylesheet" href="/stylesheets/product-styles.css">
 </head>
 
 <body>
+
+    <%- include("../partials/header.ejs") %>
+
     <div class="contenedor-formulario">
         <form action="/products/create" method="post" enctype="multipart/form-data" class="container">
             <div>
-                <label for="name"><b>Nombre:</b></label>
-                <input type="text" name="name" id="name" placeholder="Nombre" required />
+                <label for="product_name"><b>Nombre:</b></label>
+                <input type="text" name="product_name" id="product_name" placeholder="Nombre del producto" required />
             </div>
             <div>
-                <label for="description"><b>Descripcion del producto:</b></label>
+                <label for="product_description"><b>Descripcion del producto:</b></label>
             </div>
             <div>
-                <textarea id="description" name="description"></textarea>
+                <textarea id="product_description" name="product_description"></textarea>
             </div>
 
             <div>
-                <label for="price"><b>Precio</b></label>
-                <input type="number" placeholder="precio" name="price" required>
+                <label for="product.price"><b>Precio</b></label>
+                <input type="number" placeholder="precio" name="product.price" required>
             </div>
             <div>
                 <label for="category"><b>Seleccionar categoría</b></label>
@@ -40,6 +36,15 @@
                     <option value="espumantes">otros</option>
 
                 </select>
+                <select name="category_id" id="category_id" required>
+                    <option value="" disabled selected>- Seleccione la categoria - </option>
+                    <% categorie.forEach(category => { %>
+                    <option value="<%= category_id %>"><%= categorie.category_name %></option>
+                    <% }); %>
+                </select>
+
+
+
             </div>
             <div>
                 <p>¿Producto recomendado?</p>

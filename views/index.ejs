@@ -14,32 +14,32 @@
         <div class="first">
           <img src="/images/cat-wine.jpg" alt="imagen copa de vino" class="img-vino">
           <div class="wine">
-            <form class="bot-cat" method="POST" action="/products/categoria">
-              <button type="submit" name="category" value="vinos" class="texto">VINOS</button>
+            <form class="bot-cat" method="POST" action="/products/categories">
+              <button type="submit" name="category" id="category" value="1" class="texto">VINOS</button>
             </form>
           </div>
         </div>
         <div class="second">
           <img src="/images/cat-beer.jpg" alt="imagen botella cerveza" class="">
           <div class="beer">
-            <form class="" method="POST" action="/products/categoria">
-              <button type="submit" name="category" value="cervezas" class="texto">CERVEZAS</button>
+            <form class="" method="POST" action="/products/categories">
+              <button type="submit" name="category" value="2" class="texto">CERVEZAS</button>
             </form>
           </div>
         </div>
         <div class="tercero">
           <img src="/images/cat-whisky.jpg" alt="botella de whisky" class="">
           <div class="wiskey">
-            <form class="" method="POST" action="/products/categoria">
-              <button type="submit" name="category" value="whisky" class="texto">WHISKY</button>
+            <form class="" method="POST" action="/products/categories">
+              <button type="submit" name="category" value="3" class="texto">WHISKY</button>
             </form>
           </div>
         </div>
         <div class="cuatro">
           <img src="/images/cat-champ.jpg" alt="botellas de espumantes" class="">
           <div class="champain">
-            <form class="" method="POST" action="/products/categoria">
-              <button type="submit" name="category" value="espumantes" class="texto">ESPUMANTES</button>
+            <form class="" method="POST" action="/products/categories">
+              <button type="submit" name="category" value="4" class="texto">ESPUMANTES</button>
             </form>
           </div>
         </div>
@@ -50,7 +50,7 @@
 
     <h2>Nuestras recomendaciones</h2>
 
-    <%- include("partials/recommended-products.ejs") %>
+    <%- include("products/recommended-products.ejs") %>
 
         <%- include("partials/footer.ejs") %>
 </body>

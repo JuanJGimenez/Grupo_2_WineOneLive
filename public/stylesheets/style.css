@@ -44,8 +44,7 @@ main {
 }
 
 .topnav {
-  display: flex;
-  overflow: hidden;
+  overflow: none;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -576,6 +575,10 @@ legend {
   font-size: 50px;
 }
 
+/* .main-container {
+  display: block;
+} */
+
 @media (min-width: 479) {
   /* .banner-image {
       background-size: contain;
@@ -590,6 +593,10 @@ legend {
       background-size: cover;
   } */
 
+/*   .main-container {
+    display: none;
+  }
+ */
   .article-detail {
       display: flex;
       flex-direction: row;
