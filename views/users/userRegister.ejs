@@ -23,23 +23,65 @@
             </div><br>
             <label for="image">Imagen de perfil:</label>
             <input type="file" id="image" name="image">
+            <% if (locals.errors && errors.image) { %>
+                <div class="text-danger">
+                    <%= errors.image.msg %>
+                </div>
+            <% } %>
             <br>
             <br>
             <label for="user_first_name"><b>Nombre:</b></label>
-            <input type="text" name="user_first_name" id="user_first_name" value="" placeholder="Nombre" />
+            <input type="text" name="user_first_name" id="user_first_name" value="<%= locals.oldData ? oldData.user_first_name : null %>" placeholder="Nombre" />
+            <% if (locals.errors && errors.user_first_name) { %>
+                <div class="text-danger">
+                    <%= errors.user_first_name.msg %> 
+                </div>
+            <% } %>
 
             <label for="user_last_name"><b>Apellido:</b></label>
-            <input type="text" name="user_last_name" id="user_last_name" value="" placeholder="Apellido" />
+            <input type="text" name="user_last_name" id="user_last_name" value="<%= locals.oldData ? oldData.user_last_name : null %>" placeholder="Apellido" />
+            <% if (locals.errors && errors.user_last_name) { %>
+                <div class="text-danger">
+                    <%= errors.user_last_name.msg %> 
+                </div>
+            <% } %>
 
 
             <label for="user_email"><b>Correo Electrónico</b></label>
-            <input type="email" placeholder="Tu Email" name="user_email" id="user_email" value="">
+            <br>
+            <input type="email" placeholder="Tu Email" name="user_email" id="user_email" value="<%= locals.oldData ? oldData.user_email : null %>">
+            <br>
+            <% if (locals.errors && errors.user_email) { %>
+                <div class="text-danger">
+                    <%= errors.user_email.msg %>
+                </div>
+            <% } %>
+            <br>
+            <label for="password"><b>Contraseña</b></label>
+            <br>
+            <input type="password" placeholder="Constraseña" name="user_password" id="user_password" value="">
+            <% if (locals.errors && errors.user_password) { %>
+                <div class="text-danger">
+                    <%= errors.user_password.msg %>
+                </div>
+            <% } %>
+            <br>
+            <label for="password_confirm"><b>Confirmar contraseña</b></label>
+            <br>
+            <input type="password" placeholder="Confirmar contraseña" name="password_confirm">
+            <% if (locals.errors && errors.password_confirm) { %>
+                <div class="text-danger">
+                    <%= errors.password_confirm.msg %>
+                </div>
+            <% } %>
+            <br>
+            <br>
+            <br>
     
 
-            <label for="user_password"><b>Contraseña</b></label>
-            <input type="password" placeholder="Constraseña" name="user_password" id="user_password" value="">
 
             <div class="boton">
+                <br>
                 <button type="submit" class="btn">Crear usuario</button>
             </div>
 
