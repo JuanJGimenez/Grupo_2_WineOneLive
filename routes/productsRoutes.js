@@ -31,6 +31,8 @@ router.post('/categories', productsControllers.categories);
 router.post('/create', fileUpload.single('image'), productsControllers.create);
 router.post('/edit/:id', productsControllers.delete);
 
+router.patch('/edit/:id', productsControllers.delete);
+
 
 
 

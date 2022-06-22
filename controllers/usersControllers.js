@@ -1,5 +1,9 @@
+var express = require('express');
 let db = require('../database/models');
 const bcrypt = require('bcryptjs');
+const path = require("path")
+const multer = require("multer")
+const { validationResult } = require("express-validator");
 
 let usersControllers = {
 
@@ -10,9 +14,19 @@ let usersControllers = {
         res.render('users/userRegister');
     },
     register: function (req, res) {
-        console.log(req.file)
-        db.Users.create(req.body)
-            .then(res.redirect('/users/login'));
+
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+			return res.render('users/userRegister', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+            let nuevoUsuario = (req.body);
+            nuevoUsuario.image = req.file.filename;
+            db.Users.create(nuevoUsuario)
+            .then(res.render('users/userLogin', {nuevoUsuario}));
     },
     userDetail: function (req, res) {
         db.Users.findByPk(req.params.id)

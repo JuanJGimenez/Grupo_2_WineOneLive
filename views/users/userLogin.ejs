@@ -11,7 +11,7 @@
 
     <div class="bg-img">
         <form action="/users/login" method="POST" class="container">
-            <% if (locals.registroOk) { %>
+            <% if (locals.nuevoUsuario) { %>
             <div>
                 <p>El registro fue creado con exito!</p>
             </div>
@@ -23,7 +23,7 @@
             </div>
             <br>
             <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Tu Email" name="email" value="<%= locals.nuevoUsuario ? nuevoUsuario.email : null %>">
+            <input type="email" placeholder="Tu Email" name="email" value="<%= locals.nuevoUsuario ? nuevoUsuario.user_email : null %>">
             <% if (locals.errors && errors.email) { %>
             <div class="form-error"><%= errors.email.msg %></div>
             <br>
