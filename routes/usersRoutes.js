@@ -54,7 +54,9 @@ const validations = [
 router.get('/login', usersControllers.login);
 // Formulario de registro
 router.get('/register', usersControllers.registerView);
+// Listado de usuarios
 router.get('/list', usersControllers.list);
+// Detalle de usuarios
 router.get("/detail/:id", usersControllers.userDetail);
 
 /* POST users listing. */

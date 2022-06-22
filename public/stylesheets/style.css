@@ -200,11 +200,11 @@ input {
 }
 
 .boton-delete {
-    font-size: 30px;
-    color: red;
-    border-color: red;
-    padding: 10px;
-    border-radius: 10px;
+  font-size: 30px;
+  color: red;
+  border-color: red;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .boton-save {
@@ -296,7 +296,7 @@ h2 {
 .articulos {
   border-radius: 10px;
   box-shadow: 20px 20px 60px #bebebe,
-      -20px -20px 60px #ffffff;
+    -20px -20px 60px #ffffff;
   padding: 10px;
   width: 50%;
 }
@@ -305,6 +305,15 @@ h2 {
 .img-producto {
   max-height: 30rem;
   filter: drop-shadow(2px 4px 20px black);
+}
+
+.img-user {
+  max-width: 10%;
+}
+
+.text-user {
+  font-size: 40px;
+  word-break:break-all;
 }
 
 .main-sections {
@@ -605,95 +614,95 @@ legend {
       background-size: cover;
   } */
 
-/*   .main-container {
+  /*   .main-container {
     display: none;
   }
  */
   .article-detail {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .article-separator {
-      display: none;
+    display: none;
   }
 
   .imagen {
-      width: 14%;
+    width: 14%;
 
   }
 
   .content-footer {
-      flex-direction: row;
+    flex-direction: row;
   }
 }
 
 @media screen and (max-width: 600px) {
 
   .topnav a {
-      display: none;
+    display: none;
   }
 
   .topnav a.icon {
-      float: right;
-      display: block;
+    float: right;
+    display: block;
   }
 }
 
 @media screen and (max-width: 600px) {
 
   .topnav.responsive {
-      position: relative;
+    position: relative;
   }
 
   .topnav.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
   .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
+    float: none;
+    display: block;
+    text-align: left;
   }
 }
 
 @media (min-width: 1200px) {
 
   .main-header-logo {
-      width: 20%;
+    width: 20%;
   }
 
   .topnav {
-      width: 30%;
+    width: 30%;
   }
 
   .topnav-right {
-      width: 20%;
+    width: 20%;
   }
 
   .section-article {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .section-detail {
-      width: 70%;
-      padding: 15px 15px 15px 30px;
+    width: 70%;
+    padding: 15px 15px 15px 30px;
   }
 
   .section-total {
-      width: 30%;
-      padding: 15px 30px 15px 15px;
+    width: 30%;
+    padding: 15px 30px 15px 15px;
   }
 
   .imagen {
-      width: 10%;
+    width: 10%;
   }
 
 }

@@ -25,6 +25,7 @@ let usersControllers = {
 		}
             let nuevoUsuario = (req.body);
             nuevoUsuario.image = req.file.filename;
+            nuevoUsuario.user_password = bcrypt.hashSync(req.body.user_password, 10);
             db.Users.create(nuevoUsuario)
             .then(res.render('users/userLogin', {nuevoUsuario}));
     },

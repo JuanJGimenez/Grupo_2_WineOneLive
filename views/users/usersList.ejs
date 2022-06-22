@@ -10,21 +10,22 @@
     <%- include("../partials/header.ejs") %>
 
         <% for( let i=0; i < user.length; i++ ) { %>
+            <br>
             <section id="productos" class="productos">
                 <article class="articulos">
                     <div>
-                        <p>Usuario ID - <%= user[i].user_id %>
+                        <p class="text-user">Usuario ID - <%= user[i].user_id %>
                         </p>
                     </div>
-                    <div><img class="img-producto" src="/images/<%= user[i].image %>" alt="Imagen usuario">
+                    <div><img class="img-user" src="/images/<%= user[i].image %>" alt="Imagen usuario">
                     </div>
                     <div>
-                        <p class="">
-                            <%= user[i].user_first_name %>
-                            <%= user[i].user_last_name %>
-                            <%= user[i].user_password %>
-                            <%= user[i].user_email %> 
-                        </p>
+                        <div class="text-user">
+                         <div>Nombre: <%= user[i].user_first_name %></div>
+                         <div>Apelido: <%= user[i].user_last_name %></div>
+                         <div>Contraseña: <%= user[i].user_password %></div>
+                         <div>Email: <%= user[i].user_email %></div>
+                        </div>
                     </div>
                 </article>
             </section>
