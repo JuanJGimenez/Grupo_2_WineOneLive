@@ -23,11 +23,14 @@ const fileUpload = multer({ storage });
 
 // deberia exportarse desde  un archivo en carpeta middleware
 const validations = [
-	body('user_first_name').notEmpty().withMessage('Tienes que escribir un nombre'),
-  body('user_last_name').notEmpty().withMessage('Tienes que escribir un apellido'),
+	body('user_first_name').notEmpty().withMessage('Tienes que escribir un nombre')
+	.isLength({min:2}).withMessage('Debe tener al menos 2 caracteres'),
+  body('user_last_name').notEmpty().withMessage('Tienes que escribir un apellido')
+  .isLength({min:2}).withMessage('Debe tener al menos 2 caracteres'),
 	body('user_email').notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 	.isEmail().withMessage('Debes escribir un formato de correo válido'),
-	body('user_password').notEmpty().withMessage('Tienes que escribir una contraseña'),
+	body('user_password').notEmpty().withMessage('Tienes que escribir una contraseña').isLength({min:4, max:12})
+	.withMessage('Debe tener al menos entre 4 y 12 caracteres'),
   body('password_confirm').trim().notEmpty().custom((value, {req}) => {
     if(value !== req.body.user_password){
       throw new Error('La contraseña debe coincidir')
@@ -63,7 +66,7 @@ router.get("/detail/:id", usersControllers.userDetail);
 // Procesar el registro
 router.post('/register', fileUpload.single('image'), validations, usersControllers.register);
 // Procesar el login
-router.post('/login', usersControllers.processLogin);
+router.post('/login', validations, usersControllers.processLogin);
 
 module.exports = router;
 

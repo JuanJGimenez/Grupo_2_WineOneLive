@@ -107,3 +107,7 @@ input[type=email]:focus {
 .btn:hover {
     opacity: 1;
 }
+
+.form-error {
+    color: red;
+}

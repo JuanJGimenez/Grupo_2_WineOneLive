@@ -12,9 +12,19 @@ let usersControllers = {
         res.render('users/userLogin');
     },
     processLogin: (req, res) => {
+
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render('users/userLogin', {
+                errors: resultValidation.mapped(),
+            });
+        }
+
+
         // Buscar usuario por email
-        let { email, password, remember } = req.body;
-        console.log(remember + " aca");
+        let { email, password } = req.body;
+        console.log(req.body.remember + " aca");
 
         db.Users.findOne({
             where: {
@@ -27,12 +37,13 @@ let usersControllers = {
                 } else {
                     if (bcrypt.compareSync(password, user.user_password)) {
                         // Setear en session el ID del usuario
-                        req.session.userId = user.user_id;
+                        req.session.user = user;
                         res.redirect("/");
                         // Setear la cookie
-                        if (remember == "on") {
-                            res.cookie('userCookie', user.user_id, { maxAge: 60000 * 60 });
+                        if (req.body.remember) {
+                            res.cookie('email', user.user_email, {maxAge: 1000 * 60 * 60 * 24});
                         }
+                        res.send("ok")
                     } else {
                         res.send("pass invalido")
                     }
