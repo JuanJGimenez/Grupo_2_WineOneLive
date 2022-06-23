@@ -1,9 +1,11 @@
+// ************ Require's ************
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
 var logger = require('morgan');
+const userCookieMiddleware = require('./middleware/userCookieMiddleware');
 
 // const cookieAuthMiddleware = require('./middleware/cookieAuthMiddleware');
 
@@ -22,8 +24,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Configuración sesión
+app.use(session({
+  secret:'secret',
+  resave: true,
+  saveUninitialized: true}));
 app.use(cookieParser());
-// app.use(session({secret:"secret"}))
+app.use(userCookieMiddleware);
+
 // app.use(cookieAuthMiddleware);
 
 // Configuración de recursos estáticos

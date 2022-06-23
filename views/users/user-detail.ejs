@@ -18,53 +18,40 @@
 </head>
 
 <body>
-    <%- include("../partials/header.ejs") %> 
-    <main>
-        <section class="detalle">
-            <article class="imagen">
+    <%- include("../partials/header.ejs") %>
+        <main>
+            <section class="detalle">
+                <article class="imagen">
 
-                <img class="botella-vino" src="/images/<%=User.image%>">
-                
+                    <img class="botella-vino" src="/images/<%=User.image%>">
 
-            </article>
+                </article>
 
-            <article class="descripcion">
+                <article class="descripcion">
 
-                
+                    <div class="nombre-producto">
+                        <p>Nombre: <%=User.user_first_name%></p>
+                        
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Apellido: <%=User.user_last_name%></p>
+                        
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Email: <%=User.user_email%></p>
+                        
+                    </div>
+                    <div class="nombre-producto">
+                        <p>Contraseña: <%=User.user_password%></p>
+                        
+                    </div>
+                </article>
+            </section>
+            <br>
+        </main>
 
-                <div class="nombre-producto">
-                    <p>Nombre:</p>
-                    <%=User.user_first_name%>
-                </div>
+        <%- include("../partials/footer.ejs") %>
 
-                <div class="nombre-producto">
-                    <p>Apellido:</p>
-                    <%=User.user_last_name%>
-                </div>
-
-                <div class="nombre-producto">
-                    <p>Email:</p>
-                    $<%=User.user_email%>
-                </div>
-
-                
-
-            </article>
-        </section>
-        <br>
-        <br>
-
-     
-       
-
-        <br>
-
-            <hr>
-
-    </main>
-    
-    <%- include("../partials/footer.ejs") %>
-    
 </body>
 
 </html>

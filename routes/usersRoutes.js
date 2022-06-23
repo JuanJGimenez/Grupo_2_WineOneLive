@@ -62,6 +62,8 @@ router.get("/detail/:id", usersControllers.userDetail);
 /* POST users listing. */
 // Procesar el registro
 router.post('/register', fileUpload.single('image'), validations, usersControllers.register);
+// Procesar el login
+router.post('/login', usersControllers.processLogin);
 
 module.exports = router;
 

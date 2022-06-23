@@ -395,6 +395,7 @@ h2 {
     font-weight: bold;
     padding: 0px;
     padding-bottom: 7%;
+    word-break: break-all;
   }
 
   .descripcion-producto {
