@@ -29,11 +29,14 @@ let usersControllers = {
                     return res.render('users/userLogin', { errors: { user_email: { msg: "El mail no se encuentra registrado" } } });
                 } else {
                     if (bcrypt.compareSync(password, user.user_password)) {
-                        // Setear en session el ID del usuario
+                        // Setear session
                         delete user.user_password;
                         req.session.userLogged = user;
+                        // Set cookie user
+                           if(req.body.remember_user){
+                            res.cookie('user_email', req.body.user_email, {maxAge: 1000});
+                           }
                         res.redirect("/");
-                        // Setear la cookie
                     } else {
                         // Pasamos el error a la vista
                         return res.render('users/userLogin', { errors: { user_password: { msg: "La contraseña no es correcta" } } });
@@ -62,14 +65,26 @@ let usersControllers = {
     },
     userDetail: function (req, res) {
         db.Users.findByPk(req.params.id)
-            .then(User => {
-                res.render("./users/user-detail", { User });
+            .then(user => {
+                res.render('./users/user-detail', { user });
             });
+    },
+    userEdit: function(req, res) {
+        db.Users.findByPk(req.params.id)
+        .then(user => {
+            res.render('./users/user-edit', { user });
+        });
+    },
+    delete: function (req,res) {
+        db.Users
+        .destroy({where: {user_id: req.params.id}, force: true}) // force: true es para asegurar que se ejecute la acción
+        .then(res.redirect('/users/list'));
+            
     },
     list: function (req, res) {
         db.Users.findAll()
             .then(function (user) {
-                res.render('users/usersList', { user })
+                res.render('./users/usersList', { user })
             });
     },
     logout: (req, res) => {

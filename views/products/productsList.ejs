@@ -13,6 +13,10 @@
       <article class="articulos">
         <div>
           <p class="texto-producto">Categoria - <%= product[i].category_id %>
+            <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
+            <div class="icono-editar-producto"><a href="/products/edit/<%=product[i].product_id%>"><i class="fas fa-edit"></i></a>
+            </div>
+            <%}%>
           </p>
         </div>
         <div><a href="/products/product-detail/<%=product[i].product_id%>"><img class="img-producto" src="/images/<%= product[i].image %>" alt="Imagen botella producto"></a></div>

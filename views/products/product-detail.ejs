@@ -12,6 +12,10 @@
 
         <main>
             <section class="detalle">
+                <% if (locals.userLogged.admin == 1) { %>
+                    <div class="texto-producto"><i class="fas fa-edit"></i>
+                    </div>
+                    <%}%>
                 <article class="imagen">
 
                     <img class="botella-vino" src="/images/<%=product.image%>">

@@ -35,7 +35,7 @@ main {
 }
 
 .main-header-logo {
-  width: 100%;
+ 
   text-align: center;
 }
 
@@ -84,7 +84,8 @@ main {
 }
 
 .fa-solid {
-  font-size: 70px;;
+  font-size: 70px;
+  ;
 }
 
 .topnav a:hover {
@@ -105,6 +106,18 @@ main {
 
 .topnav .icon {
   display: none;
+}
+
+.img-userNavBar {
+  max-width: 20%;
+  filter: invert(1);
+  border-radius: 50px;
+}
+
+.user-navBar {
+  display: grid;
+  text-align: center;
+  font-size: 30px;
 }
 
 .badge {
@@ -322,7 +335,7 @@ h2 {
 
 .text-user {
   font-size: 40px;
-  word-break:break-all;
+  word-break: break-all;
 }
 
 .main-sections {
@@ -403,6 +416,11 @@ h2 {
 
 .copy {
   text-align: center;
+}
+
+
+.main-container {
+  display: block;
 }
 
 .container {
@@ -605,19 +623,30 @@ legend {
   font-size: 50px;
 }
 
-/* .main-container {
-  display: block;
-} */
-
-@media (min-width: 479) {
-
-.topnav {
-  display: flex;
-  border: #FFCB74;
+.fas {
+  color: #000000;
+  font-size: 70px;
 }
 
 
+@media (min-width: 479) {
 
+  .topnav {
+    display: flex;
+    border: #FFCB74;
+  }
+
+  .main-container {
+    display: none;
+}
+
+.container {
+  display: none;
+}
+
+.topnav-right {
+  display: none;
+}
 
 }
 
@@ -627,10 +656,6 @@ legend {
       background-size: cover;
   } */
 
-  /*   .main-container {
-    display: none;
-  }
- */
   .article-detail {
     display: flex;
     flex-direction: row;

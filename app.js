@@ -2,7 +2,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+var cookies = require('cookie-parser');
 const session = require('express-session');
 var logger = require('morgan');
 const userLoggedMiddleware = require('./middleware/userLoggedMiddleware.js');
@@ -23,16 +23,14 @@ app.use(express.urlencoded({ extended: false }));
 
 // Configuración sesión
 app.use(session({
-  secret:'secret',
+  secret: 'secret',
   resave: false,
-  saveUninitialized: false,}));
+  saveUninitialized: false,
+}));
 
-  app.use(userLoggedMiddleware);
+app.use(cookies());
 
-app.use(cookieParser());
-
-
-
+app.use(userLoggedMiddleware);
 
 // Configuración de recursos estáticos
 app.use(express.static(path.join(__dirname, 'public')));

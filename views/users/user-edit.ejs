@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/fav-logo.png"> <!-- Coloco imagen en pestaña del navegador -->
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/product-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/e638c2695f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+    <title>Wine ONE LIFE - Usuario</title>
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+        <main>
+            <div class="detalle">
+                <article class="imagen">
+                    <img class="botella-vino" src="/images/<%=user.image%>">
+            </div>
+            <form class="formulario" method="POST" action="/users/edit/:id?_method=PATCH">
+
+                <div class="">
+                    <label for="user_first_name">Nombre:</label>
+                    <input type="text" name="user_first_name" value="<%=user.user_first_name%>">
+                </div>
+
+                <div class="">
+                    <label for="user_last_name">Apellido:</label>
+                    <input type="text" name="user_last_name" value="<%=user.user_last_name%>">
+                </div>
+
+                <div class="">
+                    <label for="user_email"><b>Email:</b></label>
+                    <input type="email" name="user_email" value="<%=user.user_email%>">
+
+                </div>
+                <div class="">
+                    <label for="user_password"><b>Contraseña:</b></label>
+                    <div>
+                        <input type="password" placeholder="Nueva constraseña" name="user_password" value="">
+                    </div>
+
+                    <br>
+                    <div class="botones-form">
+                        <button class="boton-save" type="submit">Guardar</button>
+                    </div>
+            </form>
+            <form class="formulario" method="POST" action="/users/edit/delete/<%=user.user_id%>?_method=DELETE"
+                enctype="multipart/form-data">
+                <button class="boton-delete" type="submit">Borrar <i class="fas fa-trash-alt"></i></button>
+                <div class="boton-delete">
+
+                </div>
+            </form>
+
+            <br>
+        </main>
+
+</body>
+
+</html>

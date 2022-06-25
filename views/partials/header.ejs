@@ -15,7 +15,10 @@
         <i class="fa-solid fa-bars"></i>
         <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge">3</span>
         <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-        <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+        <div class="user-navBar">
+             <a href="#"><img class="img-userNavBar" src="/images/<%= locals.userLogged.image %>"></a>
+            <%= locals.userLogged.user_first_name %> <%= locals.userLogged.user_last_name %>
+        </div>
     </div>
     <% } else { %>
         <div class="topnav-right">

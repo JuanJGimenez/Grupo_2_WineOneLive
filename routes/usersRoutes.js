@@ -62,12 +62,17 @@ router.get('/register', guestMiddleware, usersControllers.registerView);
 router.get('/list', usersControllers.list);
 // Detalle de usuarios
 router.get("/detail/:id", authMiddleware, usersControllers.userDetail);
+// Edicion de usuarios
+router.get("/edit/:id", authMiddleware, usersControllers.userEdit);
 
 /* POST users listing. */
 // Procesar el registro
 router.post('/register', fileUpload.single('image'), validations, usersControllers.register);
 // Procesar el login
 router.post('/login', usersControllers.processLogin);
+// Procesar edicion de usuarios
+router.post("/edit", usersControllers.userEdit);
+router.post("/edit/delete/:id", usersControllers.delete);
 // Logout
 router.get('/logout', usersControllers.logout);
 

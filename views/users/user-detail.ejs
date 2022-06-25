@@ -22,27 +22,30 @@
         <main>
             <section class="detalle">
                 <article class="imagen">
-
-                    <img class="botella-vino" src="/images/<%=User.image%>">
+                    <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
+                        <div class="icono-editar-producto"><a href="/users/edit/<%=user.user_id%>"><i class="fas fa-edit"></i></a>
+                        </div>
+                        <%}%>
+                    <img class="botella-vino" src="/images/<%=user.image%>">
 
                 </article>
 
                 <article class="descripcion">
 
                     <div class="nombre-producto">
-                        <p>Nombre: <%=User.user_first_name%></p>
+                        <p>Nombre: <%=user.user_first_name%></p>
                         
                     </div>
                     <div class="nombre-producto">
-                        <p>Apellido: <%=User.user_last_name%></p>
+                        <p>Apellido: <%=user.user_last_name%></p>
                         
                     </div>
                     <div class="nombre-producto">
-                        <p>Email: <%=User.user_email%></p>
+                        <p>Email: <%=user.user_email%></p>
                         
                     </div>
                     <div class="nombre-producto">
-                        <p>Contraseña: <%=User.user_password%></p>
+                        <p>Contraseña: <%=user.user_password%></p>
                         
                     </div>
                 </article>
