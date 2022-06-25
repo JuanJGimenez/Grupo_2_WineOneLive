@@ -3,6 +3,7 @@ let db = require("../database/models");
 let mainControllers = {
 
     home: function (req, res) {
+        console.log(req.session)
         db.Products.findAll({
             where: {
                 recommended: 1

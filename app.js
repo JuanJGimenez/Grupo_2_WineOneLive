@@ -5,9 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
 var logger = require('morgan');
-const userCookieMiddleware = require('./middleware/userCookieMiddleware');
-
-// const cookieAuthMiddleware = require('./middleware/cookieAuthMiddleware');
+const userLoggedMiddleware = require('./middleware/userLoggedMiddleware.js');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/usersRoutes');
@@ -26,16 +24,17 @@ app.use(express.urlencoded({ extended: false }));
 // Configuración sesión
 app.use(session({
   secret:'secret',
-  resave: true,
-  saveUninitialized: true}));
-app.use(cookieParser());
-app.use(userCookieMiddleware);
+  resave: false,
+  saveUninitialized: false,}));
 
-// app.use(cookieAuthMiddleware);
+  app.use(userLoggedMiddleware);
+
+app.use(cookieParser());
+
+
+
 
 // Configuración de recursos estáticos
-// const publicPath = path.resolve(__dirname, './public');
-// app.use(express.static(publicPath));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

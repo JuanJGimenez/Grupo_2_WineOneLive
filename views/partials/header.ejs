@@ -1,19 +1,31 @@
 <header class="main-header">
     <a class="main-header-logo" href="/">
         <img class="logo" src="/images/logo-header-blanco.svg" alt="WineOneLIFE">
+        <br>
+        <br>
     </a>
-    <div class="topnav" id="myTopnav">
+    <div class="topnav">
         <a href="/" class="active">Inicio</a>
         <a href="#">Nosotros</a>
         <a href="/products/list">Catálogo</a>
         <a href="#">Contáctanos</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
     </div>
+    <% if (locals.isLogged) { %>
     <div class="topnav-right">
+        <i class="fa-solid fa-bars"></i>
         <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge">3</span>
-        </a><a href="/users/login"><i class="fa-solid fa-user"></i></a>
         <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="/users/login"><i class="fa-solid fa-user"></i></a>
     </div>
+    <% } else { %>
+        <div class="topnav-right">
+            <i class="fa-solid fa-bars"></i>
+            <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge">3</span></a>
+            <div>
+            <a href="/users/login"><p  class="texto-navBar">Ingresar</p></a>-<a href="/users/register"><p  class="texto-navBar">Registrarme</p></a>
+            </div>
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+         
+        </div>
+        <% } %>
 </header>

@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const path = require("path")
 const multer = require("multer")
 const { validationResult } = require("express-validator");
+const session = require('express-session');
 // const { where } = require('sequelize/types');
 
 let usersControllers = {
@@ -13,18 +14,9 @@ let usersControllers = {
     },
     processLogin: (req, res) => {
 
-        const resultValidation = validationResult(req);
-
-        if (resultValidation.errors.length > 0) {
-            return res.render('users/userLogin', {
-                errors: resultValidation.mapped(),
-            });
-        }
-
-
         // Buscar usuario por email
-        let { email, password } = req.body;
-        console.log(req.body.remember + " aca");
+        let email = req.body.user_email;
+        let password = req.body.user_password;
 
         db.Users.findOne({
             where: {
@@ -33,19 +25,18 @@ let usersControllers = {
         })
             .then(user => {
                 if (!user) {
-                    res.redirect('./register');
+                    // Pasamos el error a la vista
+                    return res.render('users/userLogin', { errors: { user_email: { msg: "El mail no se encuentra registrado" } } });
                 } else {
                     if (bcrypt.compareSync(password, user.user_password)) {
                         // Setear en session el ID del usuario
-                        req.session.user = user;
+                        delete user.user_password;
+                        req.session.userLogged = user;
                         res.redirect("/");
                         // Setear la cookie
-                        if (req.body.remember) {
-                            res.cookie('email', user.user_email, {maxAge: 1000 * 60 * 60 * 24});
-                        }
-                        res.send("ok")
                     } else {
-                        res.send("pass invalido")
+                        // Pasamos el error a la vista
+                        return res.render('users/userLogin', { errors: { user_password: { msg: "La contraseña no es correcta" } } });
                     }
                 }
             });
@@ -66,10 +57,6 @@ let usersControllers = {
         let nuevoUsuario = (req.body);
         nuevoUsuario.image = req.file.filename;
         nuevoUsuario.user_password = bcrypt.hashSync(req.body.user_password, 10);
-        // Setear en session el ID del usuario nuevo para auto loguearlo
-		req.session.userId = req.body.user_id;
-		// Setear la cookie para mantener al usuario logueado
-		res.cookie('userCookie', req.body.user_id, { maxAge: 60000 * 60 });
         db.Users.create(nuevoUsuario)
             .then(res.render('users/userLogin', { nuevoUsuario }));
     },
@@ -84,6 +71,10 @@ let usersControllers = {
             .then(function (user) {
                 res.render('users/usersList', { user })
             });
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
     }
 }
 

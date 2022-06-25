@@ -40,11 +40,11 @@ main {
 }
 
 .logo {
-  width: 240px;
+  width: 90%;
 }
 
 .topnav {
-  display: flex;
+  display: none;
   overflow: hidden;
   align-items: center;
   justify-content: space-evenly;
@@ -55,7 +55,8 @@ main {
   overflow: hidden;
   color: #f2f2f2;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .topnav a {
@@ -76,6 +77,14 @@ main {
   padding: 20px;
   text-decoration: none;
   font-size: 14px;
+}
+
+.texto-navBar {
+  font-size: 35px;
+}
+
+.fa-solid {
+  font-size: 70px;;
 }
 
 .topnav a:hover {
@@ -398,13 +407,13 @@ h2 {
 
 .container {
   position: relative;
-  display: grid;
+  display: inline-grid;
   grid-template-columns: 1fr 1fr 1.5fr;
   grid-template-rows: 0fr 1fr 0fr;
 }
 
 .container img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .first {
@@ -601,9 +610,13 @@ legend {
 } */
 
 @media (min-width: 479) {
-  /* .banner-image {
-      background-size: contain;
-  } */
+
+.topnav {
+  display: flex;
+  border: #FFCB74;
+}
+
+
 
 
 }
