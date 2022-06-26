@@ -32,23 +32,24 @@
                 </article>
             </div>
             <div class="cont-form">
-                <form class="formulario" method="POST" action="/products/edit/:id?_method=PATCH"
+                <form class="formulario" method="POST" action="/products/update/<%=product.product_id%>"
                     enctype="multipart/form-data">
                     <fieldset>
-                        <legend>Editar producto - <i class="fas fa-edit"></i></legend>
+                        <legend>Editar producto - <i class="far fa-edit"></i> </legend>
                         <div class="campo-form">
-                            <label for="id">ID producto:</label>
-                            <input type="number" name="id" id="id" value="<%=product.product_id%>" readonly>
+                            <label for="product_id">ID producto:</label>
+                            <input type="number" name="product_id" value="<%=product.product_id%>" readonly>
                         </div>
+                        <br>
                         <div class="campo-form">
-                            <label for="nombre">Nombre del producto:</label>
-                            <input type="text" name="nombre" id="nombre" value="<%=product.product_name%>">
+                            <label for="product_name">Nombre del producto:</label>
+                            <input type="text" name="product_name" value="<%=product.product_name%>">
                         </div>
                         <br>
                         <div class="campo-form">
                             <p><%=product.category_id%></p>
-                            <label for="categoria">Categoria:</label>
-                            <select name="categoria" id="categoria">
+                            <label for="category_id">Categoria:</label>
+                            <select name="category_id">
                                 <option value="1">Vinos</option>
                                 <option value="2">Cervezas</option>
                                 <option value="3">Whisky</option>
@@ -57,33 +58,33 @@
                         </div>
                         <br>
                         <div class="campo-form">
-                            <label for="precio">Precio:</label>
-                            <input type="number" name="precio" id="precio" value="<%=product.price%>">
+                            <label for="price">Precio:</label>
+                            <input type="number" name="price" value="<%=product.price%>">
                         </div>
                         <br>
                         <div class="campo-form">
-                            <label for="descripcion">Descripcion</label><br>
-                            <textarea id="descripcion" name="descripcion" rows="5" cols="50"
+                            <label for="product_description">Descripcion</label><br>
+                            <textarea name="product_description" rows="5" cols="50"
                                 placeholder="desc"><%=product.product_description%></textarea>
                         </div>
                         <br>
                         <div class="campo-form">
                             <label for="image">Imagen de producto:</label>
-                            <input type="file" id="image" name="image" accept="image/*">
+                            <input type="file" name="image" accept="image/*">
                         </div>
                         <br>
                         <p>Producto recomendado:</p>
-                        <label for="recomendado">Si</label>
-                        <input type="radio" name=recomendado value=1>
-                        <label for="recomendado">No</label>
-                        <input type="radio" name="recomendado" value=0>
+                        <label for="recommended">Si</label>
+                        <input type="radio" name=recommended value=1>
+                        <label for="recommended">No</label>
+                        <input type="radio" name="recommended" value=0>
                         <br>
                         <div class="botones-form">
                             <button class="boton-save" type="submit">Guardar</button>
                         </div>
                     </fieldset>
                 </form>
-                <form class="formulario" method="POST" action="/products/edit/<%=product.product_id%>?_method=DELETE"
+                <form class="formulario" method="POST" action="/products/delete/<%=product.product_id%>?_method=DELETE"
                     enctype="multipart/form-data">
                     <button class="boton-delete" type="submit">Borrar   <i class="fas fa-trash-alt"></i></button>
                     <div class="boton-delete">

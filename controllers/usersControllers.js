@@ -34,7 +34,7 @@ let usersControllers = {
                         req.session.userLogged = user;
                         // Set cookie user
                            if(req.body.remember_user){
-                            res.cookie('user_email', req.body.user_email, {maxAge: 1000});
+                            res.cookie('user_email', req.body.user_email, {maxAge: 300000});
                            }
                         res.redirect("/");
                     } else {

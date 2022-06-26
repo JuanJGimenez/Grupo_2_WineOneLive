@@ -33,7 +33,6 @@ let productsControllers = {
             }
         })
             .then(product => {
-                console.log(product[1].categories[0])
                 res.render('./products/categories.ejs', { product })
             });
     },
@@ -58,15 +57,31 @@ let productsControllers = {
 
     edit: function (req, res) {
         db.Products.findByPk(req.params.id)
-        .then(product => {res.render('products/product-edit', { product })});
+            .then(product => { res.render('products/product-edit', { product }) });
+    },
+    update: function (req, res) {
+        let updateProduct = req.body;
+        if (req.file) {
+            if (req.file.filename) {
+                updateProduct.image = req.file.filename;
+            }
+        }
+        db.Products.update(updateProduct,
+            {
+                where: { product_id: updateProduct.product_id }
+            })
+            .then(res.redirect('/'))
+                
+
     },
 
-    delete: function (req,res) {
+    delete: function (req, res) {
         let productId = req.params.id;
         db.Products
-        .destroy({where: {product_id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
-        .then(()=>{
-            return res.redirect('/products/list')});
+            .destroy({ where: { product_id: productId }, force: true }) // force: true es para asegurar que se ejecute la acción
+            .then(() => {
+                return res.redirect('/products/list')
+            });
     },
 
 }

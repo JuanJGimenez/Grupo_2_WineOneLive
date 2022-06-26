@@ -29,9 +29,9 @@ router.get("/edit/:id", productsControllers.edit);
 /* POST products listing. */
 router.post('/categories', productsControllers.categories);
 router.post('/create', fileUpload.single('image'), productsControllers.create);
-router.post('/edit/:id', productsControllers.delete);
+router.post('/delete/:id', productsControllers.delete);
 
-router.patch('/edit/:id', productsControllers.delete);
+router.post('/update/:id', fileUpload.single('image'), productsControllers.update);
 
 
 
