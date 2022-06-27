@@ -17,108 +17,9 @@ main {
   background-color: #000000;
 }
 
-.main-header {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
-  top: 0px;
-  z-index: 2;
-  width: 100%;
-  background-color: #000000;
-  /* width: 96%;
-  background-color: rgba(47, 47, 47, 0.5); */
-  /* margin: 10px 2%; */
-  /* border-radius: 15px; */
-}
 
-.main-header-logo {
- 
-  text-align: center;
-}
 
-.logo {
-  width: 90%;
-}
 
-.topnav {
-  display: none;
-  overflow: hidden;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.topnav-right {
-  display: flex;
-  overflow: hidden;
-  color: #f2f2f2;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.topnav a {
-  float: center;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 20px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.topnav-right a {
-  float: center;
-  position: relative;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 20px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.texto-navBar {
-  font-size: 35px;
-}
-
-.fa-solid {
-  font-size: 70px;
-  ;
-}
-
-.topnav a:hover {
-  color: #FFCB74;
-}
-
-.topnav-right a:hover {
-  color: #FFCB74;
-}
-
-.topnav a.active {
-  color: #FFCB74;
-}
-
-.topnav-right a.active {
-  color: #FFCB74;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-.img-userNavBar {
-  max-width: 20%;
-  filter: invert(1);
-  border-radius: 50px;
-}
-
-.user-navBar {
-  display: grid;
-  text-align: center;
-  font-size: 30px;
-}
 
 .badge {
   position: absolute;
@@ -307,27 +208,8 @@ h2 {
   padding: 20px;
 }
 
-.productos {
-  display: flex;
-  text-align: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.articulos {
-  border-radius: 10px;
-  box-shadow: 20px 20px 60px #bebebe,
-    -20px -20px 60px #ffffff;
-  padding: 10px;
-  width: 50%;
-}
 
 
-.img-producto {
-  max-height: 30rem;
-  filter: drop-shadow(2px 4px 20px black);
-}
 
 .img-user {
   max-width: 10%;
@@ -619,9 +501,6 @@ legend {
   width: 20% !important;
 }
 
-.texto-producto {
-  font-size: 50px;
-}
 
 .fas {
   color: #000000;

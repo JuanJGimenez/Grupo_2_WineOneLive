@@ -1,22 +1,87 @@
-<% for( let i=0; i < recommended.length; i++ ) { %>
-    <section id="productos" class="productos">
-      <article class="articulos">
-        <div>
-          <p class="texto-producto">Categoria - <%= recommended[i].category_id %>
-          </p>
-        </div>
-        <div><a href="/products/product-detail/<%=recommended[i].product_id%>"><img class="img-producto" src="/images/<%= recommended[i].image %>" alt="Imagen botella producto"></a></div>
-        <div>
-          <p class="texto-producto">
-            <%= recommended[i].product_name %>
-          </p>
-        </div>
-        <div>
-          <p class="texto-producto">
-          Precio: <%= recommended[i].price %>
-        </p>
-        </div>
-        <div class="texto-producto"><i class="fas fa-cart-arrow-down"></i></div>
-      </article>
-    </section>
-    <% } %>
+
+<div class="padre">
+
+  <article class="articulos one">
+    <div>
+      <p class="texto-producto">Categoria - <%= recommended[0].category_id %>
+      </p>
+    </div>
+    <div><a href="/products/product-detail/<%=recommended[0].product_id%>"><img class="img-producto"
+          src="/images/<%= recommended[0].image %>" alt="Imagen botella producto"></a></div>
+    <div>
+      <b class="texto-producto">
+        <%= recommended[0].product_name %>
+      </b>
+    </div>
+    <div>
+      <p class="texto-producto">
+        Precio: $<%= recommended[0].price %>
+      </p>
+    </div>
+    <div class="carro"><i class="fas fa-cart-arrow-down"></i></div>
+  </article>
+
+
+
+  <article class="articulos two">
+    <div>
+      <p class="texto-producto">Categoria - <%= recommended[1].category_id %>
+      </p>
+    </div>
+    <div><a href="/products/product-detail/<%=recommended[1].product_id%>"><img class="img-producto"
+          src="/images/<%= recommended[1].image %>" alt="Imagen botella producto"></a></div>
+    <div>
+      <b class="texto-producto">
+        <%= recommended[1].product_name %>
+      </b>
+    </div>
+    <div>
+      <p class="texto-producto">
+        Precio: $<%= recommended[1].price %>
+      </p>
+    </div>
+    <div class="carro"><i class="fas fa-cart-arrow-down"></i></div>
+  </article>
+
+
+
+  <article class="articulos three">
+    <div>
+      <p class="texto-producto">Categoria - <%= recommended[2].category_id %>
+      </p>
+    </div>
+    <div><a href="/products/product-detail/<%=recommended[2].product_id%>"><img class="img-producto"
+          src="/images/<%= recommended[2].image %>" alt="Imagen botella producto"></a></div>
+    <div>
+      <b class="texto-producto">
+        <%= recommended[2].product_name %>
+      </b>
+    </div>
+    <div>
+      <p class="texto-producto">
+        Precio: $<%= recommended[2].price %>
+      </p>
+    </div>
+    <div class="texto-producto"><i class="fas fa-cart-arrow-down"></i></div>
+  </article>
+
+  <article class="articulos four">
+    <div>
+      <p class="texto-producto">Categoria - <%= recommended[3].category_id %>
+      </p>
+    </div>
+    <div><a href="/products/product-detail/<%=recommended[3].product_id%>"><img class="img-producto"
+          src="/images/<%= recommended[3].image %>" alt="Imagen botella producto"></a></div>
+    <div>
+      <b class="texto-producto">
+        <%= recommended[3].product_name %>
+      </b>
+    </div>
+    <div>
+      <p class="texto-producto">
+        Precio: $<%= recommended[3].price %>
+      </p>
+    </div>
+    <div class="texto-producto"><i class="fas fa-cart-arrow-down"></i></div>
+  </article>
+</div>
