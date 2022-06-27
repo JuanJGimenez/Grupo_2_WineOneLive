@@ -15,11 +15,8 @@ html {
 
 main {
   background-color: #000000;
+  display: block;
 }
-
-
-
-
 
 .badge {
   position: absolute;
@@ -60,7 +57,6 @@ main {
   color: #f6f6f6;
 }
 
-
 .banner-page-text {
   position: absolute;
   padding: 10px;
@@ -72,7 +68,6 @@ main {
 .banner-page-text h1 {
   color: #f6f6f6;
 }
-
 
 .burguer-menu {
   color: #f6f6f6;
@@ -208,9 +203,6 @@ h2 {
   padding: 20px;
 }
 
-
-
-
 .img-user {
   max-width: 10%;
 }
@@ -302,7 +294,7 @@ h2 {
 
 
 .main-container {
-  display: block;
+  display: flex;
 }
 
 .container {
@@ -467,7 +459,6 @@ h2 {
   font-size: 50px;
 }
 
-
 .formulario {
   display: flex;
   justify-content: center;
@@ -480,14 +471,10 @@ h2 {
 
 fieldset {
 
-
   padding: 15px;
-
   margin: 20px auto;
-
   position: relative;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-
   border-radius: 10px;
   background: #e0e0e0;
 }
@@ -501,31 +488,26 @@ legend {
   width: 20% !important;
 }
 
-
 .fas {
-  color: #000000;
-  font-size: 70px;
+  color: red;
+  font-size: 30px;
 }
 
 
-@media (min-width: 479) {
+@media (min-width: 479px) {
+
+  .prueba {
+
+  }
 
   .topnav {
     display: flex;
     border: #FFCB74;
   }
 
-  .main-container {
+  .topnav-right {
     display: none;
-}
-
-.container {
-  display: none;
-}
-
-.topnav-right {
-  display: none;
-}
+  }
 
 }
 
@@ -566,9 +548,6 @@ legend {
     float: right;
     display: block;
   }
-}
-
-@media screen and (max-width: 600px) {
 
   .topnav.responsive {
     position: relative;

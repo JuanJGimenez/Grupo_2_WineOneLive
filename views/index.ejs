@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<%- include("partials/head.ejs") %>
+  <%- include("partials/head.ejs") %>
 
 </head>
 
 <body>
 
-
- <%- include("partials/header.ejs") %> 
+  <%- include("partials/header.ejs") %>
 
     <main>
+      <div class="prueba">
       <div class="main-container">
-      <div class="container">
-        <div class="first">
-          <img src="/images/cat-wine.jpg" alt="imagen copa de vino" class="img-vino">
-          <div class="wine">
-            <form class="bot-cat" method="POST" action="/products/categories">
-              <button type="submit" name="category" id="category" value="1" class="texto">VINOS</button>
-            </form>
+        <div class="container">
+          <div class="first">
+            <img src="/images/cat-wine.jpg" alt="imagen copa de vino" class="img-vino">
+            <div class="wine">
+              <form class="bot-cat" method="POST" action="/products/categories">
+                <button type="submit" name="category" id="category" value="1" class="texto">VINOS</button>
+              </form>
+            </div>
+          </div>
+          <div class="second">
+            <img src="/images/cat-beer.jpg" alt="imagen botella cerveza" class="">
+            <div class="beer">
+              <form class="" method="POST" action="/products/categories">
+                <button type="submit" name="category" value="2" class="texto">CERVEZAS</button>
+              </form>
+            </div>
+          </div>
+          <div class="tercero">
+            <img src="/images/cat-whisky.jpg" alt="botella de whisky" class="">
+            <div class="wiskey">
+              <form class="" method="POST" action="/products/categories">
+                <button type="submit" name="category" value="3" class="texto">WHISKY</button>
+              </form>
+            </div>
+          </div>
+          <div class="cuatro">
+            <img src="/images/cat-champ.jpg" alt="botellas de espumantes" class="">
+            <div class="champain">
+              <form class="" method="POST" action="/products/categories">
+                <button type="submit" name="category" value="4" class="texto">ESPUMANTES</button>
+              </form>
+            </div>
           </div>
         </div>
-        <div class="second">
-          <img src="/images/cat-beer.jpg" alt="imagen botella cerveza" class="">
-          <div class="beer">
-            <form class="" method="POST" action="/products/categories">
-              <button type="submit" name="category" value="2" class="texto">CERVEZAS</button>
-            </form>
-          </div>
-        </div>
-        <div class="tercero">
-          <img src="/images/cat-whisky.jpg" alt="botella de whisky" class="">
-          <div class="wiskey">
-            <form class="" method="POST" action="/products/categories">
-              <button type="submit" name="category" value="3" class="texto">WHISKY</button>
-            </form>
-          </div>
-        </div>
-        <div class="cuatro">
-          <img src="/images/cat-champ.jpg" alt="botellas de espumantes" class="">
-          <div class="champain">
-            <form class="" method="POST" action="/products/categories">
-              <button type="submit" name="category" value="4" class="texto">ESPUMANTES</button>
-            </form>
-          </div>
-        </div>
+        <br>
       </div>
-      <br>
-    </div>
+      </div>
     </main>
 
     <h2>Nuestras recomendaciones</h2>
 
     <%- include("products/recommended-products.ejs") %>
 
-        <%- include("partials/footer.ejs") %>
+      <%- include("partials/footer.ejs") %>
 </body>
 
 </html>
-

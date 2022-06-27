@@ -6,6 +6,9 @@
 </head>
 
 <body>
+
+    <%- include("../partials/header.ejs") %>
+
     <main class="main-sections">
         <section class="section-article">
             <div class="section-detail">
@@ -87,9 +90,6 @@
                 <form class="formulario" method="POST" action="/products/delete/<%=product.product_id%>?_method=DELETE"
                     enctype="multipart/form-data">
                     <button class="boton-delete" type="submit">Borrar   <i class="fas fa-trash-alt"></i></button>
-                    <div class="boton-delete">
-                        
-                    </div>
                 </form>
             </div>
         </section>
