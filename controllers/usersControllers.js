@@ -75,6 +75,20 @@ let usersControllers = {
             res.render('./users/user-edit', { user });
         });
     },
+    userUpdate: function (req, res) {
+        let updateUser = req.body;
+        if (req.file) {
+            if (req.file.filename) {
+                updateUser.image = req.file.filename;
+            }
+        }
+        db.Users.update(updateUser,
+            {
+                where: { user_id: updateUser.user_id }
+            })
+            .then(res.redirect('/'));
+    },
+
     delete: function (req,res) {
         db.Users
         .destroy({where: {user_id: req.params.id}, force: true}) // force: true es para asegurar que se ejecute la acción

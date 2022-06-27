@@ -8,7 +8,6 @@ let productsControllers = {
                 res.render('products/productsList', { product })
             });
     },
-
     detail: function (req, res) {
         let recommended = [];
         db.Products.findAll({
@@ -24,7 +23,6 @@ let productsControllers = {
                 res.render('./products/product-detail', { product, recommended });
             });
     },
-
     categories: (req, res) => {
         db.Products.findAll({
             include: ['categories'],
@@ -36,14 +34,12 @@ let productsControllers = {
                 res.render('./products/categories.ejs', { product })
             });
     },
-
     add: function (req, res) {
         db.Categories.findAll()
             .then(categoria => {
                 res.render('products/productsCreate', { categoria })
             });
     },
-
     create: function (req, res) {
         let nuevoProducto = req.body;
         if (req.file) {
@@ -54,7 +50,6 @@ let productsControllers = {
         db.Products.create(nuevoProducto)
             .then(res.redirect('./list'));
     },
-
     edit: function (req, res) {
         db.Products.findByPk(req.params.id)
             .then(product => { res.render('products/product-edit', { product }) });
@@ -70,11 +65,8 @@ let productsControllers = {
             {
                 where: { product_id: updateProduct.product_id }
             })
-            .then(res.redirect('/'))
-                
-
+            .then(res.redirect('/'));
     },
-
     delete: function (req, res) {
         let productId = req.params.id;
         db.Products
@@ -83,7 +75,6 @@ let productsControllers = {
                 return res.redirect('/products/list')
             });
     },
-
 }
 
 module.exports = productsControllers;

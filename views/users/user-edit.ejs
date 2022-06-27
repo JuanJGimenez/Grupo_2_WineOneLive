@@ -24,7 +24,18 @@
                 <article class="imagen">
                     <img class="botella-vino" src="/images/<%=user.image%>">
             </div>
-            <form class="formulario" method="POST" action="/users/edit/:id?_method=PATCH">
+            
+            <form class="formulario" method="POST" action="/users/edit/<%=user.user_id%>" enctype="multipart/form-data">
+
+                <div class="campo-form">
+                    <label for="user_id">ID producto:</label>
+                    <input type="number" name="user_id" value="<%=user.user_id%>" readonly>
+                </div>
+
+                <div class="campo-form">
+                    <label for="image">Imagen de usuario:</label>
+                    <input type="file" name="image" accept="image/*">
+                </div>
 
                 <div class="">
                     <label for="user_first_name">Nombre:</label>
@@ -46,11 +57,19 @@
                     <div>
                         <input type="password" placeholder="Nueva constraseña" name="user_password" value="">
                     </div>
-
                     <br>
-                    <div class="botones-form">
-                        <button class="boton-save" type="submit">Guardar</button>
-                    </div>
+                    <% if (locals.userLogged && locals.userLogged.admin==1) { %>
+                        <p>Usuario admin:</p>
+                        <label for="admin">Si</label>
+                        <input type="radio" name=admin value=1>
+                        <label for="admin">No</label>
+                        <input type="radio" name="admin" value=0>
+                        <%}%>
+                            <br>
+                            <br>
+                            <div class="botones-form">
+                                <button class="boton-save" type="submit">Guardar</button>
+                            </div>
             </form>
             <form class="formulario" method="POST" action="/users/edit/delete/<%=user.user_id%>?_method=DELETE"
                 enctype="multipart/form-data">

@@ -71,7 +71,7 @@ router.post('/register', fileUpload.single('image'), validations, usersControlle
 // Procesar el login
 router.post('/login', usersControllers.processLogin);
 // Procesar edicion de usuarios
-router.post("/edit", usersControllers.userEdit);
+router.post("/edit/:id", fileUpload.single('image'), usersControllers.userUpdate);
 router.post("/edit/delete/:id", usersControllers.delete);
 // Logout
 router.get('/logout', usersControllers.logout);
