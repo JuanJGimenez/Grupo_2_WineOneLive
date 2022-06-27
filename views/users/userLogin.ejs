@@ -10,7 +10,7 @@
 <body>
 
     <div class="bg-img">
-        <form action="/users/login" method="POST" class="container">
+        <form action="/users/login" method="POST" class="container" id="formulario">
             <% if (locals.nuevoUsuario) { %>
             <div>
                 <p>El registro fue creado con exito!</p>
@@ -22,15 +22,15 @@
                 <div class="registra"> <a href="/users/register"> Registrarse</a> </div>
             </div>
             <br>
-            <label for="user_email"><b>Email</b></label>
-            <input type="email" placeholder="Tu Email" name="user_email" value="<%= locals.nuevoUsuario ? nuevoUsuario.user_email : null %>">
-           
+            <label for="user_email">Email:</label>
+            <input type="email" placeholder="Tu Email" name="user_email" id="user_email" value="<%= locals.nuevoUsuario ? nuevoUsuario.user_email : null %>">
             <% if (locals.errors && errors.user_email) { %>
             <div class="form-error"><%= errors.user_email.msg %></div>
             <br>
             <% } %>
-            <label for="user_password"><b>Contraseña</b></label>
-            <input type="password" placeholder="Contraseña" name="user_password">
+
+            <label for="user_password">Contraseña:</label>
+            <input type="password" placeholder="Contraseña" name="user_password" id="">
             <% if (locals.errors && errors.user_password) { %>
             <div class="form-error"><%= errors.user_password.msg %></div>
             <br>
@@ -44,6 +44,7 @@
             </div>
         </form>
     </div>
+ 
 </body>
 
 </html>

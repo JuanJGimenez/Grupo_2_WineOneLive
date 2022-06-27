@@ -68,7 +68,7 @@
             <br>
             <label for="password_confirm"><b>Confirmar contraseña</b></label>
             <br>
-            <input type="password" placeholder="Confirmar contraseña" name="password_confirm">
+            <input type="password" placeholder="Confirmar contraseña" name="password_confirm" id="password_confirm" value="">
             <% if (locals.errors && errors.password_confirm) { %>
                 <div class="text-danger">
                     <%= errors.password_confirm.msg %>

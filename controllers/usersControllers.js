@@ -77,6 +77,7 @@ let usersControllers = {
     },
     userUpdate: function (req, res) {
         let updateUser = req.body;
+        updateUser.user_password = bcrypt.hashSync(req.body.user_password, 10);
         if (req.file) {
             if (req.file.filename) {
                 updateUser.image = req.file.filename;

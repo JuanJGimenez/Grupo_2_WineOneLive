@@ -1,13 +1,9 @@
 window.onload = function(){
 
-
-
-
     // inputs capturados
     let inputName = document.getElementById('product_name');
     let inputPrice = document.getElementById('price');
     let inputDescription = document.getElementById('product_description');
-   
 
     // form capturado
     let form = document.querySelector('.form');

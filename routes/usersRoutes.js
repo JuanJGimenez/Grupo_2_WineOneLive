@@ -6,7 +6,8 @@ const { body } = require('express-validator');
 
 const usersControllers = require('../controllers/usersControllers.js');
 const guestMiddleware = require('../middleware/guestMiddleware.js');
-const authMiddleware = require('../middleware/authMiddleware.js')
+const authMiddleware = require('../middleware/authMiddleware.js');
+
 
 // Configuracion multer
 const storage = multer.diskStorage({
@@ -23,7 +24,7 @@ const storage = multer.diskStorage({
 const fileUpload = multer({ storage });
 
 // deberia exportarse desde  un archivo en carpeta middleware
-const validations = [
+const formRegisterValidation = [
 	body('user_first_name').notEmpty().withMessage('Tienes que escribir un nombre')
 		.isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres'),
 	body('user_last_name').notEmpty().withMessage('Tienes que escribir un apellido')
@@ -54,6 +55,7 @@ const validations = [
 	})
 ];
 
+
 /* GET users listing. */
 router.get('/login', guestMiddleware, usersControllers.login);
 // Formulario de registro
@@ -67,7 +69,7 @@ router.get("/edit/:id", authMiddleware, usersControllers.userEdit);
 
 /* POST users listing. */
 // Procesar el registro
-router.post('/register', fileUpload.single('image'), validations, usersControllers.register);
+router.post('/register', fileUpload.single('image'), formRegisterValidation, usersControllers.register);
 // Procesar el login
 router.post('/login', usersControllers.processLogin);
 // Procesar edicion de usuarios

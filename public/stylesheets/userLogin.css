@@ -77,7 +77,7 @@ input[type=email] {
     background: #f1f1f1;
 }
 
-input[type=text]:focus,
+
 input[type=password]:focus,
 input[type=email]:focus {
     background-color: #ddd;

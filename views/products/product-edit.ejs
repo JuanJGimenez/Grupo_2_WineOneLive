@@ -38,18 +38,18 @@
                         <legend>Editar producto - <i class="far fa-edit"></i> </legend>
                         <div class="campo-form">
                             <label for="product_id">ID producto:</label>
-                            <input type="number" name="product_id" value="<%=product.product_id%>" readonly>
+                            <input type="number" name="product_id" id="product_id" value="<%=product.product_id%>" readonly>
                         </div>
                         <br>
                         <div class="campo-form">
                             <label for="product_name">Nombre del producto:</label>
-                            <input type="text" name="product_name" value="<%=product.product_name%>">
+                            <input type="text" name="product_name" id="product_name" value="<%=product.product_name%>">
                         </div>
                         <br>
                         <div class="campo-form">
                             <p><%=product.category_id%></p>
                             <label for="category_id">Categoria:</label>
-                            <select name="category_id">
+                            <select name="category_id" id="category_id">
                                 <option value="1">Vinos</option>
                                 <option value="2">Cervezas</option>
                                 <option value="3">Whisky</option>
@@ -59,7 +59,7 @@
                         <br>
                         <div class="campo-form">
                             <label for="price">Precio:</label>
-                            <input type="number" name="price" value="<%=product.price%>">
+                            <input type="number" name="price" id="price" value="<%=product.price%>">
                         </div>
                         <br>
                         <div class="campo-form">
@@ -70,14 +70,14 @@
                         <br>
                         <div class="campo-form">
                             <label for="image">Imagen de producto:</label>
-                            <input type="file" name="image" accept="image/*">
+                            <input type="file" name="image" id="image" accept="image/*">
                         </div>
                         <br>
                         <p>Producto recomendado:</p>
                         <label for="recommended">Si</label>
-                        <input type="radio" name=recommended value=1>
+                        <input type="radio" name=recommended id="recommended" value=1>
                         <label for="recommended">No</label>
-                        <input type="radio" name="recommended" value=0>
+                        <input type="radio" name="recommended" id="recommended" value=0>
                         <br>
                         <div class="botones-form">
                             <button class="boton-save" type="submit">Guardar</button>
