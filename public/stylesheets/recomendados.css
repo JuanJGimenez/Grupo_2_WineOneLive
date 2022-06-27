@@ -1,15 +1,9 @@
 .padre {
-  display: grid;
+
   margin: 0 auto;
-  width: 85%;
+  width: 55%;
   text-align: center;
-  grid-template-columns: 50% 50%;
-  justify-content: space-between;
-  grid-template-rows: auto;
-
-
-
-
+  
 }
 
 .texto-producto {
@@ -33,12 +27,38 @@
 
 }
 
+.padre-lista {
+  
+  margin: 0 auto;
+  width: 35%;
+  text-align: center;
+  grid-template-columns: 50% 50%;
+  justify-content: space-between;
+  grid-template-rows: auto;
 
+
+
+
+}
 
 @media (min-width: 479px) {}
 
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .padre {
+    display: grid;
+    margin: 0 auto;
+    width: 85%;
+    text-align: center;
+    grid-template-columns: 45% 45% ;
+    justify-content: space-between;
+    grid-template-rows: auto;
+  
+  
+  
+  
+  }
+}
 
 
 
