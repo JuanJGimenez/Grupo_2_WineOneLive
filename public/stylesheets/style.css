@@ -506,7 +506,9 @@ legend {
   color: #000000;
   font-size: 70px;
 }
-
+.tablet-pc{
+  display: none;
+}
 
 @media (min-width: 479) {
 
@@ -531,9 +533,30 @@ legend {
 
 @media (min-width: 768px) {
   /* vista tablet
+  se oculta el banner de mobile
   /* .banner-image {
       background-size: cover;
+      
   } */
+  .main-container {
+    display: none;
+}
+
+.container {
+  display: none;
+}
+
+.topnav-right {
+  display: none;
+}
+.tablet-pc{
+  display: block;
+}
+
+.banner-categorias {
+  width: 98vw;
+  
+}
 
   .article-detail {
     display: flex;
