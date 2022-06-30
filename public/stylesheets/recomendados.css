@@ -6,16 +6,18 @@
 }
 
 .texto-producto {
-  font-size: 23px;
+  font-size: 30px;
 }
 
 .articulos {
   border-radius: 10px;
-  box-shadow: 20px 20px 60px #bebebe,
-    -20px -20px 60px #ffffff;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   padding: 10px;
   text-align: center;
-
+  width: 70%;
+  color: white;
+  margin: auto;
+  background: linear-gradient(1deg, black, transparent);
 }
 
 .img-producto {

@@ -1,0 +1,42 @@
+main {
+    background-color: white;
+}
+
+.user-avatar {
+    width: 20%;
+}
+
+.div-avatar {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.formulario {
+    display: grid;
+}
+
+input {
+    border: solid black;
+}
+
+.boton {
+    text-align: center;
+}
+
+.boton-guardar {
+    font-size: 40px;
+}
+
+.form-delete {
+    color: red;
+    font-size: 40px;
+    justify-content: center;
+}
+
+.dele {
+    text-align: center;
+}
+
+.far {
+    color: green;
+}

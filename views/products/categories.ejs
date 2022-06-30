@@ -9,7 +9,17 @@
 
             <main class="main-sections">
             
-                <h2>Categoria <%=product[1].category_id%> </h2>
+                <h2>Categoría <% if(product[1].category_id ==2){ %>
+                    <b>Cervezas</b>
+                  <% } else if (product[1].category_id ==1) { %>  
+                    <b>Vinos</b>
+                 <% } else if (product[1].category_id ==3) { %>
+                    <b>Whisky</b>
+                    <% } else { %>
+                    <b>Espumantes</b> <% } %></h2>
+
+
+
                 <% for( let i=0; i < product.length; i++ ) { %>
                 
                     <br>
@@ -24,7 +34,7 @@
                             </div>
                             <div class="texto-producto">
                                <p>Precio: <%=product[i].price%></p> 
-                            </div>
+                            </div><br>
                             <div class="texto-producto"> <i class="fas fa-cart-arrow-down"></i></div>
                         </article>
                     </section>

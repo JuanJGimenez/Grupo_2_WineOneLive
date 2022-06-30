@@ -1,13 +1,19 @@
 var express = require('express');
 var router = express.Router();
-const multer = require('multer');
 const path = require('path');
+
+//Requiero Multer, ya que voy a permitir que el usuario que se registre suba su avatar
+const multer = require('multer');
+
+//Requiero el paquete expres-validator
 const { body } = require('express-validator');
 
+//Requerir el modulo de los controladores
 const usersControllers = require('../controllers/usersControllers.js');
+
+//Requerir los middleware
 const guestMiddleware = require('../middleware/guestMiddleware.js');
 const authMiddleware = require('../middleware/authMiddleware.js');
-
 
 // Configuracion multer
 const storage = multer.diskStorage({
@@ -23,7 +29,7 @@ const storage = multer.diskStorage({
 
 const fileUpload = multer({ storage });
 
-// deberia exportarse desde  un archivo en carpeta middleware
+// Deberia exportarse a la carpeta middleware y ser requerido como tal
 const formRegisterValidation = [
 	body('user_first_name').notEmpty().withMessage('Tienes que escribir un nombre')
 		.isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres'),
@@ -57,8 +63,9 @@ const formRegisterValidation = [
 
 
 /* GET users listing. */
+// Vista formulario de reistro de usurios
 router.get('/login', guestMiddleware, usersControllers.login);
-// Formulario de registro
+// Formulario de registro de usuarios
 router.get('/register', guestMiddleware, usersControllers.registerView);
 // Listado de usuarios
 router.get('/list', usersControllers.list);
@@ -68,14 +75,15 @@ router.get("/detail/:id", authMiddleware, usersControllers.userDetail);
 router.get("/edit/:id", authMiddleware, usersControllers.userEdit);
 
 /* POST users listing. */
-// Procesar el registro
+// Procesar el registro de usuarios
 router.post('/register', fileUpload.single('image'), formRegisterValidation, usersControllers.register);
-// Procesar el login
+// Procesar el login de usuarios
 router.post('/login', usersControllers.processLogin);
 // Procesar edicion de usuarios
 router.post("/edit/:id", fileUpload.single('image'), usersControllers.userUpdate);
+// Procesar eliminacion de usuarios
 router.post("/edit/delete/:id", usersControllers.delete);
-// Logout
+// Logout - ruta que se activa al momento que el usuario desea salir de la página
 router.get('/logout', usersControllers.logout);
 
 module.exports = router;

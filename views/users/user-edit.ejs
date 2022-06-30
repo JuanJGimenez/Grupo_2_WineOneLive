@@ -2,84 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/img/fav-logo.png"> <!-- Coloco imagen en pestaña del navegador -->
-    <link rel="stylesheet" href="/stylesheets/normalize.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/product-styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/e638c2695f.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-
-    <title>Wine ONE LIFE - Usuario</title>
+    <%- include("../partials/head.ejs") %>
+        <link rel='stylesheet' href='/stylesheets/user-edit.css' />
 </head>
 
 <body>
+
     <%- include("../partials/header.ejs") %>
+
+
         <main>
-            <div class="detalle">
-                <article class="imagen">
-                    <img class="botella-vino" src="/images/<%=user.image%>">
-            </div>
-            
+            <div class="div-avatar">
+                <img class="user-avatar" src="/images/<%=user.image%>">
+            </div><br>
+
             <form class="formulario" method="POST" action="/users/edit/<%=user.user_id%>" enctype="multipart/form-data">
-
-                <div class="campo-form">
-                    <label for="user_id">ID producto:</label>
-                    <input type="number" name="user_id" value="<%=user.user_id%>" readonly>
-                </div>
-
-                <div class="campo-form">
-                    <label for="image">Imagen de usuario:</label>
-                    <input type="file" name="image" accept="image/*">
-                </div>
-
                 <div class="">
-                    <label for="user_first_name">Nombre:</label>
-                    <input type="text" name="user_first_name" value="<%=user.user_first_name%>">
-                </div>
-
+                    <label class="texto-edit" for="user_id">ID usuario:</label>
+                    <input class="texto-edit" type="number" name="user_id" value="<%=user.user_id%>" readonly>
+                </div><br>
                 <div class="">
-                    <label for="user_last_name">Apellido:</label>
-                    <input type="text" name="user_last_name" value="<%=user.user_last_name%>">
-                </div>
-
+                    <label class="texto-edit" for="image">Imagen de usuario:</label>
+                    <input class="texto-edit" type="file" name="image" accept="image/*">
+                </div><br>
                 <div class="">
-                    <label for="user_email"><b>Email:</b></label>
-                    <input type="email" name="user_email" value="<%=user.user_email%>">
-
-                </div>
+                    <label class="texto-edit" for="user_first_name">Nombre:</label>
+                    <input class="texto-edit" type="text" name="user_first_name" value="<%=user.user_first_name%>">
+                </div><br>
                 <div class="">
-                    <label for="user_password"><b>Contraseña:</b></label>
+                    <label class="texto-edit" for="user_last_name">Apellido:</label>
+                    <input class="texto-edit" type="text" name="user_last_name" value="<%=user.user_last_name%>">
+                </div><br>
+                <div class="">
+                    <label class="texto-edit" for="user_email">Email:</label>
+                    <input class="texto-edit" type="email" name="user_email" value="<%=user.user_email%>">
+                </div><br>
+                <div class="">
+                    <label class="texto-edit" for="user_password">Contraseña:</label>
+                    <input class="texto-edit" type="password" placeholder="Nueva constraseña" name="user_password"
+                        value="">
+                </div><br>
+
+                <% if (locals.userLogged && locals.userLogged.admin==1) { %>
                     <div>
-                        <input type="password" placeholder="Nueva constraseña" name="user_password" value="">
-                    </div>
-                    <br>
-                    <% if (locals.userLogged && locals.userLogged.admin==1) { %>
-                        <p>Usuario admin:</p>
-                        <label for="admin">Si</label>
-                        <input type="radio" name=admin value=1>
-                        <label for="admin">No</label>
-                        <input type="radio" name="admin" value=0>
-                        <%}%>
-                            <br>
-                            <br>
-                            <div class="botones-form">
-                                <button class="boton-save" type="submit">Guardar</button>
-                            </div>
-            </form>
-            <form class="formulario" method="POST" action="/users/edit/delete/<%=user.user_id%>?_method=DELETE"
+                        <p class="texto-edit">Usuario admin:</p>
+                        <label class="texto-edit" for="admin">SI</label>
+                        <input class="" type="radio" name=admin value=1>
+                        <label class="texto-edit" for="admin">NO</label>
+                        <input class="" type="radio" name="admin" value=0>
+                    </div><br>
+                    <%}%>
+                        <div class="boton">
+                            <button class="boton-guardar" type="submit">Guardar <i class="far fa-save"></i></button>
+                        </div>
+            </form><br>
+
+            <form class="form-delete" method="POST" action="/users/edit/delete/<%=user.user_id%>?_method=DELETE"
                 enctype="multipart/form-data">
-                <button class="boton-delete" type="submit">Borrar <i class="fas fa-trash-alt"></i></button>
-                <div class="boton-delete">
-
-                </div>
+                <button class="delete" type="submit">Borrar <i class="fas fa-trash-alt"></i></button>
             </form>
-
-            <br>
         </main>
 
 </body>

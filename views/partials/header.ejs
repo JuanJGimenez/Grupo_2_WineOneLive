@@ -18,6 +18,7 @@
         <div class="user-navBar">
              <a href="/users/detail/<%=locals.userLogged.user_id%>"><img class="img-userNavBar" src="/images/<%= locals.userLogged.image %>"></a>
             <%= locals.userLogged.user_first_name %> <%= locals.userLogged.user_last_name %>
+            <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </div>
     <% } else { %>

@@ -95,7 +95,7 @@
   }
   
   .user-navBar {
-    display: grid;
+    display: contents;
     text-align: center;
     font-size: 30px;
   }
