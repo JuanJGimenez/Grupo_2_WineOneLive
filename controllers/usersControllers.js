@@ -1,11 +1,12 @@
-var express = require('express');
+//Aquí requiero la Base  de Datos.
 let db = require('../database/models');
+
 const bcrypt = require('bcryptjs');
 const path = require("path")
 const multer = require("multer")
 const { validationResult } = require("express-validator");
 const session = require('express-session');
-// const { where } = require('sequelize/types');
+
 
 let usersControllers = {
 
@@ -13,7 +14,6 @@ let usersControllers = {
         res.render('users/userLogin');
     },
     processLogin: (req, res) => {
-
         // Buscar usuario por email
         let email = req.body.user_email;
         let password = req.body.user_password;
@@ -33,9 +33,9 @@ let usersControllers = {
                         delete user.user_password;
                         req.session.userLogged = user;
                         // Set cookie user
-                           if(req.body.remember_user){
-                            res.cookie('user_email', req.body.user_email, {maxAge: 300000});
-                           }
+                        if (req.body.remember_user) {
+                            res.cookie('user_email', req.body.user_email, { maxAge: 300000 });
+                        }
                         res.redirect("/");
                     } else {
                         // Pasamos el error a la vista
@@ -69,11 +69,11 @@ let usersControllers = {
                 res.render('./users/user-detail', { user });
             });
     },
-    userEdit: function(req, res) {
+    userEdit: function (req, res) {
         db.Users.findByPk(req.params.id)
-        .then(user => {
-            res.render('./users/user-edit', { user });
-        });
+            .then(user => {
+                res.render('./users/user-edit', { user });
+            });
     },
     userUpdate: function (req, res) {
         let updateUser = req.body;
@@ -90,11 +90,11 @@ let usersControllers = {
             .then(res.redirect('/'));
     },
 
-    delete: function (req,res) {
+    delete: function (req, res) {
         db.Users
-        .destroy({where: {user_id: req.params.id}, force: true}) // force: true es para asegurar que se ejecute la acción
-        .then(res.redirect('/users/list'));
-            
+            .destroy({ where: { user_id: req.params.id }, force: true }) // force: true es para asegurar que se ejecute la acción
+            .then(res.redirect('/users/list'));
+
     },
     list: function (req, res) {
         db.Users.findAll()
