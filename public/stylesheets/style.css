@@ -519,12 +519,7 @@ legend {
 }
 
 @media (min-width: 768px) {
-  /* vista tablet
-  se oculta el banner de mobile
-  /* .banner-image {
-      background-size: cover;
-      
-  } */
+  
   .main-container {
     display: none;
 }
