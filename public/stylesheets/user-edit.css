@@ -12,7 +12,7 @@ main {
 }
 
 .formulario {
-    display: grid;
+    display: flow-root;
 }
 
 input {
@@ -39,4 +39,9 @@ input {
 
 .far {
     color: green;
+}
+
+.form-cont {
+    padding: 50px;
+    
 }

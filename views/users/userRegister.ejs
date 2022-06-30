@@ -9,14 +9,16 @@
     <script src="https://kit.fontawesome.com/0a256d9d04.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='/stylesheets/userRegister.css'/>
     <script src="/js/userValidation.js"></script>
+    <script src="/javascripts/formulario.js"></script>
 
 </head>
 
 <body>
-    
+
+    container form
     <div class="bg-img">
         <ul class="errores"></ul>
-        <form class="container form" method="POST" action="/users/register" enctype="multipart/form-data">
+        <form class="formulario" id="formulario" method="POST" action="/users/register" enctype="multipart/form-data">
             <div class="login-sign">
                 <div class="ingresa"><a href="/users/login">Ingresá</a></div>
                 <div class="registra"> <a href="/users/register">Registrarse</a> </div>
@@ -38,13 +40,15 @@
                 </div>
             <% } %>
 
-            <label for="user_last_name"><b>Apellido:</b></label>
-            <input type="text" name="user_last_name" id="user_last_name" value="<%= locals.oldData ? oldData.user_last_name : null %>" placeholder="Apellido" />
+      
+                <label for="user_last_name"><b>Apellido:</b></label>
+                <input type="text" name="user_last_name" id="user_last_name" value="<%= locals.oldData ? oldData.user_last_name : null %>" placeholder="Apellido" />
             <% if (locals.errors && errors.user_last_name) { %>
                 <div class="text-danger">
                     <%= errors.user_last_name.msg %> 
                 </div>
             <% } %>
+            
 
 
             <label for="user_email"><b>Correo Electrónico</b></label>

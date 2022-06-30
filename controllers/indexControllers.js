@@ -27,6 +27,10 @@ let mainControllers = {
                 res.render("products", { product })
             });
     },
+    prueba: function (req, res) {
+   
+                res.render("prueba")
+            }
 }
 
 module.exports = mainControllers;

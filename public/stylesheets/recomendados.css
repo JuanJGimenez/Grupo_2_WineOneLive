@@ -34,6 +34,10 @@
   grid-template-rows: auto;
 }
 
+.img-user {
+  width: 20%;
+}
+
 @media (min-width: 479px) {}
 
 

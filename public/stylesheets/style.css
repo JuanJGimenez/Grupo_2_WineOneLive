@@ -209,7 +209,7 @@ h2 {
 
 
 .text-user {
-  font-size: 40px;
+  font-size: 20px;
   word-break: break-all;
 }
 
@@ -333,7 +333,7 @@ h2 {
   background-color: transparent;
   color: whitesmoke;
   border: none;
-  font-size: 50px;
+  font-size: 20px;
 }
 
 .tercero {
@@ -424,6 +424,7 @@ h2 {
 .img-foot {
   max-width: 100%;
 }
+
 
 .cont-redes {
   display: flex;

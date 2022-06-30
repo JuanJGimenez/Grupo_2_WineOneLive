@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Wine One LIFE - Inicio</title>
     <link rel="icon" type="image/png" href="/images/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0a256d9d04.js" crossorigin="anonymous"></script>
-<link rel='stylesheet' href='/stylesheets/userLogin.css'/>
+    <link rel='stylesheet' href='/stylesheets/userLogin.css' />
+    <script src="/javascripts/userLoginValidation.js"></script>
 </head>
+
 <body>
 
     <div class="bg-img">
-        <form action="/users/login" method="POST" class="container" id="formulario">
+        <form action="/users/login" method="POST" class="formulario" id="formulario">
             <% if (locals.nuevoUsuario) { %>
-            <div>
-                <p>El registro fue creado con exito!</p>
-            </div>
-            <% } %> 
-            <br>
-            <div class="login-sign">
-                <div class="ingresa"><a href="/users/login">Ingresá</a></div>
-                <div class="registra"> <a href="/users/register"> Registrarse</a> </div>
-            </div>
-            <br>
-            <label for="user_email">Email:</label>
-            <input type="email" placeholder="Tu Email" name="user_email" id="user_email" value="<%= locals.nuevoUsuario ? nuevoUsuario.user_email : null %>">
-            <% if (locals.errors && errors.user_email) { %>
-            <div class="form-error"><%= errors.user_email.msg %></div>
-            <br>
-            <% } %>
+                <div>
+                    <p>El registro fue creado con exito!</p>
+                </div>
+                <% } %>
+                    <br>
+                    <div class="login-sign">
+                        <div class="ingresa"><a href="/users/login">Ingresá</a></div>
+                        <div class="registra"> <a href="/users/register"> Registrarse</a> </div>
+                    </div>
+                    <br>
+                    <label for="user_email">Email:</label>
+                    <input type="email" placeholder="Tu Email" name="user_email" id="user_email"
+                        value="<%= locals.nuevoUsuario ? nuevoUsuario.user_email : null %>">
+                    <% if (locals.errors && errors.user_email) { %>
+                        <div class="form-error">
+                            <%= errors.user_email.msg %>
+                        </div>
+                        <br>
+                        <% } %>
 
-            <label for="user_password">Contraseña:</label>
-            <input type="password" placeholder="Contraseña" name="user_password" id="">
-            <% if (locals.errors && errors.user_password) { %>
-            <div class="form-error"><%= errors.user_password.msg %></div>
-            <br>
-            <% } %>
-            <label for="remember_user"><b>Recordar</b></label>
-            <input type="checkbox" placeholder="Recordar usuario" name="remember_user">
-            <br>
-            <br>
-            <div class="boton">
-                <button type="submit" class="btn">Iniciar sesión</button>
-            </div>
+                            <label for="user_password">Contraseña:</label>
+                            <input type="password" placeholder="Contraseña" name="user_password" id="">
+                            <% if (locals.errors && errors.user_password) { %>
+                                <div class="form-error">
+                                    <%= errors.user_password.msg %>
+                                </div>
+                                <br>
+                                <% } %>
+                                    <label for="remember_user"><b>Recordar</b></label>
+                                    <input type="checkbox" placeholder="Recordar usuario" name="remember_user">
+                                    <br>
+                                    <br>
+                                    <div class="boton">
+                                        <button type="submit" class="btn">Iniciar sesión</button>
+                                    </div>
         </form>
     </div>
- 
+
 </body>
 
 </html>

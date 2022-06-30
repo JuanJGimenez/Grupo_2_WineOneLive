@@ -11,7 +11,7 @@ window.onload = function(){
    
 
     // form capturado
-    let form = document.querySelector('.form');
+    let form = document.querySelector('.formulario');
 
     let ulErrores = document.querySelector('.errores');
 
