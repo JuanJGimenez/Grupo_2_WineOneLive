@@ -1,26 +1,13 @@
-.main-header {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0px;
-    z-index: 2;
-    width: 100%;
-    background-color: #000000;
-    /* width: 96%;
-    background-color: rgba(47, 47, 47, 0.5); */
-    /* margin: 10px 2%; */
-    /* border-radius: 15px; */
-  }
 
+.usuario{
+  color: green;
+}
   .main-header-logo {
  
     text-align: center;
   }
   .logo {
-    width: 90%;
+    width: 30vw;
   }
   
   .topnav {
@@ -37,6 +24,20 @@
     align-items: center;
     justify-content: space-around;
     width: 100%;
+
+
+    
+    flex-wrap: wrap;
+    padding: 10px;
+    
+    
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    
+    background-color: #000000;
+
+
   }
   
   .topnav a {
@@ -54,7 +55,7 @@
     position: relative;
     color: #f2f2f2;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
     text-decoration: none;
     font-size: 14px;
   }
@@ -65,7 +66,7 @@
   
   .fa-solid {
     font-size: 70px;
-    ;
+    
   }
   
   .topnav a:hover {
@@ -99,3 +100,114 @@
     text-align: center;
     font-size: 30px;
   }
+
+  .iconos {
+   font-size: 25px;
+  }
+
+
+
+  #menu {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: rgba(37, 37, 37, 0.88);
+    left: -200px;
+    top: 0px;
+    z-index: 1;
+  }
+  
+  #menu ul {
+    display: flex;
+    flex-direction: column;
+  
+
+  }
+
+  #menu ul li a{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    list-style: none;
+    text-align: left;
+    padding: 15px 5px;
+    border-bottom: 1px solid rgb(100, 100, 100, .88);
+  }
+  
+  #menu.mostrar {
+    left: 0
+  }
+  
+  .cierra{
+    position: relative;
+    left: 175px;
+    top: 32px;
+    font-size: 20px;
+  
+  }
+
+  .busqueda {
+    width: 75%;
+  }
+  .search-form { 
+    padding-top: 10px;
+
+  }
+
+  #myBtn{
+    display: none;
+  }
+
+
+
+  @media (min-width: 479px) {
+
+
+    .contenedor-pc{
+
+      display: none;
+
+    }
+
+  
+  }
+  
+  
+    @media (min-width: 768px) {
+
+      .mobile {
+        display: none;
+      }
+
+      .contenedor-pc{
+
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 10px;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+        width: 100%;
+        background-color: #000000;
+     
+
+
+      }
+
+      .lupa {
+        font-size: 35px;
+      }
+
+      .busqueda {
+        width: 20vw;
+      }
+
+      .topnav-right{
+        padding: 0px;
+      }
+
+
+    
+    }
