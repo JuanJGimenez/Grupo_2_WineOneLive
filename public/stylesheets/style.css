@@ -15,8 +15,11 @@ html {
 
 main {
   background-color: #000000;
-  display: block;
 }
+
+
+
+
 
 .badge {
   position: absolute;
@@ -57,6 +60,7 @@ main {
   color: #f6f6f6;
 }
 
+
 .banner-page-text {
   position: absolute;
   padding: 10px;
@@ -68,6 +72,7 @@ main {
 .banner-page-text h1 {
   color: #f6f6f6;
 }
+
 
 .burguer-menu {
   color: #f6f6f6;
@@ -203,10 +208,12 @@ h2 {
   padding: 20px;
 }
 
-.user-img {
+
+
+
+.img-user {
   max-width: 10%;
 }
-
 
 .text-user {
   font-size: 40px;
@@ -214,9 +221,7 @@ h2 {
 }
 
 .main-sections {
-  background-color: white;
-  background-image: url(/images/fondo-cat-vinos.jpg);
-  background-size: cover;
+  background-color: #F6F6F6;
 }
 
 .section-article {
@@ -233,7 +238,7 @@ h2 {
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   text-align: center;
   border-radius: 10px;
-  background: whitesmoke;
+  background: #e0e0e0;
 }
 
 .article-detail div {
@@ -297,7 +302,7 @@ h2 {
 
 
 .main-container {
-  display: flex;
+  display: block;
 }
 
 .container {
@@ -462,6 +467,7 @@ h2 {
   font-size: 50px;
 }
 
+
 .formulario {
   display: flex;
   justify-content: center;
@@ -474,17 +480,16 @@ h2 {
 
 fieldset {
 
+
   padding: 15px;
+
   margin: 20px auto;
+
   position: relative;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-  border-radius: 10px;
-  background: whitesmoke;
-}
 
-.texto-edit {
-  font-size: 30px;
-  text-align: left;
+  border-radius: 10px;
+  background: #e0e0e0;
 }
 
 legend {
@@ -496,25 +501,33 @@ legend {
   width: 20% !important;
 }
 
+
 .fas {
-  color: red;
-  font-size: 30px;
+  color: #000000;
+  font-size: 70px;
 }
 .tablet-pc{
   display: none;
 }
 
-@media (min-width: 479px) {
-
+@media (min-width: 479) {
 
   .topnav {
     display: flex;
     border: #FFCB74;
   }
 
-  .topnav-right {
+  .main-container {
     display: none;
-  }
+}
+
+.container {
+  display: none;
+}
+
+.topnav-right {
+  display: none;
+}
 
 }
 
@@ -571,6 +584,9 @@ legend {
     float: right;
     display: block;
   }
+}
+
+@media screen and (max-width: 600px) {
 
   .topnav.responsive {
     position: relative;
