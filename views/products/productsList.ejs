@@ -13,7 +13,7 @@
     <section id="productos" class="productos">
       <article class="articulos">
         <div>
-          <p class="texto-producto">Categoria - <%= product[i].category_id %>
+          <p class="texto-producto">Categoria - <%= product[i].categories.category_name %>
             <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
             <div class="icono-editar-producto"><a href="/products/edit/<%=product[i].product_id%>"><i class="fas fa-edit"></i></a>
             </div>

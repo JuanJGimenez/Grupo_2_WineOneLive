@@ -2,7 +2,7 @@
   margin: 0 auto;
   width: 55%;
   text-align: center;
-
+  gap: 10px;
 }
 
 .texto-producto {
@@ -18,6 +18,8 @@
   color: white;
   margin: auto;
   background: linear-gradient(1deg, black, transparent);
+  background-color: slategrey;
+
 }
 
 .img-producto {
@@ -73,7 +75,7 @@
     box-shadow: 20px 20px 60px #bebebe,
       -20px -20px 60px #ffffff;
     padding: 10px;
- 
+
   }
 
   .img-producto {

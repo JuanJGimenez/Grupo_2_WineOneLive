@@ -61,7 +61,6 @@ const formRegisterValidation = [
 	})
 ];
 
-
 /* GET users listing. */
 // Vista formulario de reistro de usurios
 router.get('/login', guestMiddleware, usersControllers.login);

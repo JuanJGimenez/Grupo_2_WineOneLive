@@ -2,15 +2,12 @@
 let db = require('../database/models');
 
 const bcrypt = require('bcryptjs');
-const path = require("path")
-const multer = require("multer")
-const { validationResult } = require("express-validator");
-const session = require('express-session');
-
+const path = require('path')
+const { validationResult } = require('express-validator');
 
 let usersControllers = {
 
-    login: function (req, res) {
+    login: (req, res) => {
         res.render('users/userLogin');
     },
     processLogin: (req, res) => {
@@ -36,7 +33,7 @@ let usersControllers = {
                         if (req.body.remember_user) {
                             res.cookie('user_email', req.body.user_email, { maxAge: 300000 });
                         }
-                        res.redirect("/");
+                        res.redirect('/');
                     } else {
                         // Pasamos el error a la vista
                         return res.render('users/userLogin', { errors: { user_password: { msg: "La contraseña no es correcta" } } });
@@ -44,13 +41,12 @@ let usersControllers = {
                 }
             });
     },
-    registerView: function (req, res) {
+    registerView: (req, res) => {
         res.render('users/userRegister');
     },
-    register: function (req, res) {
-
+    register: (req, res) => {
         const resultValidation = validationResult(req);
-
+        
         if (resultValidation.errors.length > 0) {
             return res.render('users/userRegister', {
                 errors: resultValidation.mapped(),
@@ -63,19 +59,23 @@ let usersControllers = {
         db.Users.create(nuevoUsuario)
             .then(res.render('users/userLogin', { nuevoUsuario }));
     },
-    userDetail: function (req, res) {
+    userDetail: (req, res) => {
         db.Users.findByPk(req.params.id)
             .then(user => {
                 res.render('./users/user-detail', { user });
             });
     },
-    userEdit: function (req, res) {
+    userEdit: (req, res) => {
         db.Users.findByPk(req.params.id)
             .then(user => {
+                if (user) {
                 res.render('./users/user-edit', { user });
+                } else{
+                    res.redirect('/users/list');
+                }
             });
     },
-    userUpdate: function (req, res) {
+    userUpdate: (req, res) => {
         let updateUser = req.body;
         if (req.body.user_password) {
             updateUser.user_password = bcrypt.hashSync(req.body.user_password, 10);
@@ -91,21 +91,18 @@ let usersControllers = {
             })
             .then(res.redirect('/'));
     },
-
-    delete: function (req, res) {
+    delete: (req, res) => {
         db.Users
             .destroy({ where: { user_id: req.params.id }, force: true }) // force: true es para asegurar que se ejecute la acción
             .then(res.redirect('/users/list'));
-
     },
-    list: function (req, res) {
+    list: (req, res) => {
         db.Users.findAll()
             .then(function (user) {
                 res.render('./users/usersList', { user })
             });
     },
     logout: (req, res) => {
-   
         req.session.destroy();
         res.clearCookie('user_email');
         return res.redirect('/');
