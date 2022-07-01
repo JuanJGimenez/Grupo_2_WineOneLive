@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <%- include("../partials/head.ejs") %>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+    <%- include("../partials/header.ejs") %>
+
+        <main>
+            <main class="main-sections">
+
+            <% if(search){ %>
+                <% for( let i=0; i < search.length; i++ ) { %>
+                    <br>
+                    <section id="productos" class="productos">
+                        <article class="articulos">
+                            <div><a href="/products/product-detail/<%=search[i].product_id%>"><img class="img-producto"
+                                        src="/images/<%= search[i].image %>"></a></div>
+                            <div>
+                                <p class="texto-producto">
+                                    <%=search[i].product_name%>
+                                </p>
+                            </div>
+                            <div class="texto-producto">
+                                <p>Precio: <%=search[i].price%>
+                                </p>
+                            </div><br>
+                            <div class="texto-producto"> <i class="fas fa-cart-arrow-down"></i></div>
+                        </article>
+                    </section>
+                    <%}%>
+            <% } %>
+                        <br>
+
+            </main>
+
+
+
+
+
+            <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

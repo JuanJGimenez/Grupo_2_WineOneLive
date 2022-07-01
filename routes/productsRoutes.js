@@ -33,7 +33,8 @@ router.get('/product-detail/:id', productsControllers.detail);
 // Registro de productos
 router.get('/create', adminMiddleware, productsControllers.add);
 // Edicion de productos
-router.get("/edit/:id", adminMiddleware, productsControllers.edit);
+router.get('/edit/:id', adminMiddleware, productsControllers.edit);
+
 
 /* POST products listing. */
 // Renderizar por categorias
@@ -44,6 +45,8 @@ router.post('/create', fileUpload.single('image'), adminMiddleware, productsCont
 router.post('/delete/:id', adminMiddleware, productsControllers.delete);
 // Procesar actualizacion de productos
 router.post('/update/:id', fileUpload.single('image'), adminMiddleware, productsControllers.update);
+// Busqueda de producto
+router.post('/search/', productsControllers.search);
 
 
 module.exports = router;

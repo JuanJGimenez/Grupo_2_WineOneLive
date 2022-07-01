@@ -1,4 +1,7 @@
+// Requiero los modelos
 let db = require('../database/models');
+
+const { Op } = require("sequelize");
 
 let productsControllers = {
 
@@ -73,6 +76,22 @@ let productsControllers = {
             .destroy({ where: { product_id: productId }, force: true }) // force: true es para asegurar que se ejecute la acción
             .then(() => {
                 return res.redirect('/products/list')
+            });
+    },
+    search : function (req, res) {
+        console.log(req.body.search)
+
+        let product_search = req.body.search;
+        
+        db.Products.findAll({
+            where: {
+                product_name:  { 
+                    [Op.like]: '%' + product_search + '%' 
+                }
+            }
+        })
+            .then(function (search) {
+                res.render("products/product-search", { search })
             });
     },
 }
