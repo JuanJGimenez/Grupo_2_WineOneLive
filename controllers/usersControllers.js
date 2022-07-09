@@ -44,7 +44,17 @@ let usersControllers = {
     registerView: (req, res) => {
         res.render('users/userRegister');
     },
-    register: (req, res) => {
+    register: async (req, res) => {
+
+			const usuario = await db.Users.findOne({
+				where: {
+					user_email: req.body.user_email
+				}
+			})
+					if (usuario) {
+                        return res.render('users/userRegister', { errors: { user_email: { msg: "El email ya se encuentra registrado" } } });
+					}
+
         const resultValidation = validationResult(req);
         
         if (resultValidation.errors.length > 0) {
@@ -53,9 +63,11 @@ let usersControllers = {
                 oldData: req.body
             });
         }
-        let nuevoUsuario = (req.body);
-        nuevoUsuario.image = req.file.filename;
-        nuevoUsuario.user_password = bcrypt.hashSync(req.body.user_password, 10);
+        const nuevoUsuario = {
+            ...req.body,
+            user_password: bcrypt.hashSync(req.body.user_password, 10),
+            image: req.file.filename
+        }
         db.Users.create(nuevoUsuario)
             .then(res.render('users/userLogin', { nuevoUsuario }));
     },

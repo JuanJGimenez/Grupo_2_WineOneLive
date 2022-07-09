@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const path = require('path');
+let db = require('../database/models');
 
 //Requiero Multer, ya que voy a permitir que el usuario que se registre suba su avatar
 const multer = require('multer');
