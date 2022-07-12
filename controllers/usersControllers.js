@@ -11,24 +11,37 @@ let usersControllers = {
         res.render('users/userLogin');
     },
     processLogin: (req, res) => {
-        // Buscar usuario por email
-        let email = req.body.user_email;
-        let password = req.body.user_password;
 
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('users/userLogin', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+        // Buscar usuario por email
         db.Users.findOne({
             where: {
-                user_email: email
+                user_email: req.body.user_email
             }
         })
             .then(user => {
                 if (!user) {
                     // Pasamos el error a la vista
-                    return res.render('users/userLogin', { errors: { user_email: { msg: "El mail no se encuentra registrado" } } });
+                    return res.render('users/userLogin', {
+                        errors:
+                        {
+                            user_email:
+                                { msg: "El mail no se encuentra registrado" }
+                        }
+                    });
                 } else {
-                    if (bcrypt.compareSync(password, user.user_password)) {
+                    if (bcrypt.compareSync(req.body.user_password, user.user_password)) {
                         // Setear session
-                        delete user.user_password;
+                        // Por seguridad seteamos null el password en la session del userLogged
+                        user.user_password = null;
                         req.session.userLogged = user;
+                        console.log(req.session)
                         // Set cookie user
                         if (req.body.remember_user) {
                             res.cookie('user_email', req.body.user_email, { maxAge: 300000 });
@@ -36,7 +49,13 @@ let usersControllers = {
                         res.redirect('/');
                     } else {
                         // Pasamos el error a la vista
-                        return res.render('users/userLogin', { errors: { user_password: { msg: "La contraseña no es correcta" } } });
+                        return res.render('users/userLogin', {
+                            errors:
+                            {
+                                user_password:
+                                    { msg: "La contraseña no es correcta" }
+                            }
+                        });
                     }
                 }
             });
@@ -46,17 +65,23 @@ let usersControllers = {
     },
     register: async (req, res) => {
 
-			const usuario = await db.Users.findOne({
-				where: {
-					user_email: req.body.user_email
-				}
-			})
-					if (usuario) {
-                        return res.render('users/userRegister', { errors: { user_email: { msg: "El email ya se encuentra registrado" } } });
-					}
+        const usuario = await db.Users.findOne({
+            where: {
+                user_email: req.body.user_email
+            }
+        })
+        if (usuario) {
+            return res.render('users/userRegister', {
+                errors:
+                {
+                    user_email:
+                        { msg: "El email ya se encuentra registrado" }
+                }
+            });
+        }
 
         const resultValidation = validationResult(req);
-        
+
         if (resultValidation.errors.length > 0) {
             return res.render('users/userRegister', {
                 errors: resultValidation.mapped(),
@@ -66,8 +91,11 @@ let usersControllers = {
         const nuevoUsuario = {
             ...req.body,
             user_password: bcrypt.hashSync(req.body.user_password, 10),
-            image: req.file.filename
+            image: req.file ? req.file.filename : 'userImgDefault.png'
         }
+        console.log(nuevoUsuario)
+
+
         db.Users.create(nuevoUsuario)
             .then(res.render('users/userLogin', { nuevoUsuario }));
     },
@@ -81,8 +109,8 @@ let usersControllers = {
         db.Users.findByPk(req.params.id)
             .then(user => {
                 if (user) {
-                res.render('./users/user-edit', { user });
-                } else{
+                    res.render('./users/user-edit', { user });
+                } else {
                     res.redirect('/users/list');
                 }
             });

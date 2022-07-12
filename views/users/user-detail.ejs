@@ -12,8 +12,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/e638c2695f.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-
     <title>Wine ONE LIFE - Usuario</title>
 </head>
 
@@ -22,29 +20,33 @@
         <main>
             <section class="detalle">
                 <article class="imagen">
-                    <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
-                        <div class="icono-editar-producto"><a href="/users/edit/<%=user.user_id%>"><i class="fas fa-edit"></i></a>
+                    <% if (locals.userLogged && locals.userLogged.admin==1) { %>
+                        <div class="icono-editar-producto"><a href="/users/edit/<%=user.user_id%>"><i
+                                    class="fas fa-edit"></i></a>
                         </div>
                         <%}%>
-                    <img class="botella-vino" src="/images/<%=user.image%>">
+                            <img class="botella-vino" src="/images/<%=user.image%>">
 
                 </article>
 
                 <article class="descripcion">
 
                     <div class="nombre-producto">
-                        <p>Nombre: <%=user.user_first_name%></p>
-                        
+                        <p>Nombre: <%=user.user_first_name%>
+                        </p>
+
                     </div>
                     <div class="nombre-producto">
-                        <p>Apellido: <%=user.user_last_name%></p>
-                        
+                        <p>Apellido: <%=user.user_last_name%>
+                        </p>
+
                     </div>
                     <div class="nombre-producto">
-                        <p>Email: <%=user.user_email%></p>
-                        
+                        <p>Email: <%=user.user_email%>
+                        </p>
+
                     </div>
-    
+
                 </article>
             </section>
             <br>

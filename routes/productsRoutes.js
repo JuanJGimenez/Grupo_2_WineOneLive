@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const path = require('path');
 
-//Requiero Multer, ya que voy a permitir que el usuario que se registre suba su avatar
+//Requiero Multer
 const multer = require('multer');
 
 //Requerir el modulo de los controladores
@@ -10,6 +10,7 @@ const productsControllers = require('../controllers/productsControllers.js');
 
 //Requerir los middleware
 const adminMiddleware = require('../middleware/adminMiddleware.js');
+const validatorMiddleware = require('../middleware/validatorMiddleware.js');
 
 // Configuracion multer
 const storage = multer.diskStorage({
@@ -40,7 +41,7 @@ router.get('/edit/:id', adminMiddleware, productsControllers.edit);
 // Renderizar por categorias
 router.post('/categories', productsControllers.categories);
 // Procesar el registro de productos
-router.post('/create', fileUpload.single('image'), adminMiddleware, productsControllers.create);
+router.post('/create', fileUpload.single('image'), adminMiddleware, validatorMiddleware.productCreate,  productsControllers.create);
 // Procesar eliminacion de productos
 router.post('/delete/:id', adminMiddleware, productsControllers.delete);
 // Procesar actualizacion de productos

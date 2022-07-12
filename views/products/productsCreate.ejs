@@ -4,7 +4,7 @@
 <head>
     <%- include("../partials/head.ejs") %>
         <link rel="stylesheet" href="/stylesheets/create.css">
-        <script src="/js/formValidation.js"></script>
+        <!-- <script src="/js/formValidation.js"></script> -->
 </head>
 
 <body>
@@ -14,31 +14,52 @@
         <form action="/products/create" method="POST" enctype="multipart/form-data" class="contenedor-formulario form">
             <div>
                 <label for="product_name"><b>Nombre:</b></label>
-                <input type="text" name="product_name" id="product_name" placeholder="Nombre del producto">
+                <input type="text" name="product_name" id="product_name" value="<%= locals.oldData ? oldData.product_name : null %>" placeholder="Nombre del producto">
             </div>
+                    <% if (locals.errors && errors.product_name) { %>
+                        <div class="is-invalid">
+                            <%= errors.product_name.msg %>
+                        </div>
+                        <% } %>
             <br>
             <div>
                 <label for="product_description"><b>Descripcion del producto:</b></label>
             </div>
             <div>
-                <textarea id="product_description" name="product_description"></textarea>
+                <textarea id="product_description" name="product_description"><%= locals.oldData ? oldData.product_description : null %></textarea>
             </div>
+            <% if (locals.errors && errors.product_description) { %>
+                <div class="is-invalid">
+                    <%= errors.product_description.msg %>
+                </div>
+                <% } %>
             <br>
             <div>
                 <label for="price"><b>Precio</b></label>
-                <input id="price" type="number" placeholder="precio" name="price">
+                <input id="price" type="number" placeholder="precio" name="price" value="<%= locals.oldData ? oldData.price : null %>">
             </div>
+            <% if (locals.errors && errors.price) { %>
+                <div class="is-invalid">
+                    <%= errors.price.msg %>
+                </div>
+                <% } %>
             <br>
             <div>
                 <!-- imprime categoria con forEach -->
                 <label for="category"><b>Seleccionar categoría</b></label>
                 <select name="category_id">
                     <label for="category_id">- Seleccione la categoria - </label>
+                    <option value="" selected disabled hidden>Categoría?</option>
                     <% categoria.forEach(category => { %>
                     <option name="category_id" value="<%= category.category_id %>"><%= category.category_name %></option>
                     <% }); %>
                 </select>
             </div>
+            <% if (locals.errors && errors.category_id) { %>
+                <div class="is-invalid">
+                    <%= errors.category_id.msg %>
+                </div>
+                <% } %>
             <br>
             <div>
                 <p>¿Producto recomendado?</p>
@@ -51,6 +72,11 @@
                 <label for="image"><b>Subir imagen del producto</b></label>
                 <input type="file" name="image">
             </div>
+            <% if (locals.errors && errors.image) { %>
+                <div class="is-invalid">
+                    <%= errors.image.msg %>
+                </div>
+                <% } %>
             <br>
             <div>
                 <button type="submit" class="boton">Crear producto</button>

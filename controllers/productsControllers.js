@@ -1,14 +1,15 @@
 // Requiero los modelos
 let db = require('../database/models');
-
 const { Op } = require('sequelize');
+const path = require('path')
+const { validationResult } = require('express-validator');
 
 let productsControllers = {
 
     list: (req, res) => {
         db.Products.findAll({
             include: ["categories"]
-    })
+        })
             .then(function (product) {
                 res.render('products/productsList', { product })
             });
@@ -46,7 +47,16 @@ let productsControllers = {
                 res.render('products/productsCreate', { categoria })
             });
     },
-    create: (req, res) => {
+    create: async (req, res) => {
+        // guardo las categorias para pasarlas a la vista junto con los errores
+        const categoria = await db.Categories.findAll()
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('products/productsCreate', {
+                errors: resultValidation.mapped(),
+                oldData: req.body, categoria
+            });
+        }
         let nuevoProducto = req.body;
         if (req.file) {
             if (req.file.filename) {

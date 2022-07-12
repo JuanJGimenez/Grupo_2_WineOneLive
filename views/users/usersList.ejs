@@ -14,6 +14,12 @@
             <section id="productos" class="productos">
                 <article class="articulos">
                     <div>
+                        <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
+                            <div class="icono-editar-producto"><a href="/users/edit/<%=user[i].user_id%>"><i class="fas fa-edit"></i></a>
+                            </div>
+                            <%}%>
+                    </div>
+                    <div>
                         <p class="text-user">Usuario ID - <%= user[i].user_id %>
                         </p>
                     </div>
