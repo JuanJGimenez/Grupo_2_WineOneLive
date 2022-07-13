@@ -7,24 +7,30 @@
             <ul>
                 <li id="cierra"><a href="#">Cerrar</a></li>
                 <li><a href="/">Inicio</a></li>
+                <% if (!locals.userLogged) { %>
+                    <li><a href="/users/register">Registrarme</a></li>
+                <%}%>
                 <li><a href="/products/list">Listado de productos</a></li>
+                <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
+                    <li><a href="/products/create">Agregar productos</a></li>
+                    <li><a href="/products/list">Editar productos</a></li>
+                    <li><a href="/users/list">Listado de usuarios</a></li>
+                    <%}%>
                 <li><a href="/">Contacto</a></li>
                 <li><a href="/">Sobre Nosotros</a></li>
+                <% if (locals.userLogged) { %>
+                    <li><a href="/users/logout">Cerrar sesión</a></li>
+                    <%}%>
                 <li>
-                    <form action="/products/search" method="POST" class="search-form"><i
-                            class="fa-solid fa-magnifying-glass iconos"></i>
+                    <form action="/products/search" method="POST" class="search-form">
+                        <i class="fa-solid fa-magnifying-glass iconos"></i>
                         <label for="search"></label>
                         <input class="busqueda" type="text" name="search" id="search" placeholder="Buscar...">
                         <button type="submit" id="myBtn">Buscar</button>
                     </form>
                 </li>
-
             </ul>
         </div>
-
-        <a class="main-header-logo" href="/">
-            <img class="logo" src="/images/logo-header-blanco.svg" alt="WineOneLIFE">
-        </a>
 
         <a href="/products/cart"><i class="fa-solid fa-bag-shopping iconos"></i></a>
         <div>
@@ -36,7 +42,6 @@
                     <% } %>
         </div>
     </div>
-
     <div class="contenedor-pc">
         <a class="main-header-logo" href="/">
             <img class="logo" src="/images/logo-header-blanco.svg" alt="WineOneLIFE">
@@ -51,37 +56,31 @@
         </div>
         <% if (locals.isLogged) { %>
             <div class="topnav-right">
-
                 <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i>
-                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <div class="user-navBar">
-                        <a href="/users/detail/<%=locals.userLogged.user_id%>"><img class="img-userNavBar"
-                                src="/images/<%= locals.userLogged.image %>"></a>
-                        <%= locals.userLogged.user_first_name %>
-                            <%= locals.userLogged.user_last_name %>
-                                <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
-                    </div>
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <div class="user-navBar">
+                    <a href="/users/detail/<%=locals.userLogged.user_id%>"><img class="img-userNavBar"
+                        src="/images/<%= locals.userLogged.image %>"></a>
+                    <%= locals.userLogged.user_first_name %>
+                    <%= locals.userLogged.user_last_name %>
+                    <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
             </div>
             <% } else { %>
                 <div class="topnav-right">
-
                     <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i></a>
                     <div>
-                        <a href="/users/login">
-                            <p class="texto-navBar">Ingresar</p>
-                        </a>-<a href="/users/register">
-                            <p class="texto-navBar">Registrarme</p>
+                        <a href="/users/login"><p class="texto-navBar">Ingresar</p>
+                        </a><a href="/users/register"><p class="texto-navBar"> - Registrarme</p>
                         </a>
                     </div>
-                    <form action="/products/search" method="POST" class="search-form"><i
-                            class="fa-solid fa-magnifying-glass lupa"></i>
+                    <form action="/products/search" method="POST" class="search-form">
+                        <i class="fa-solid fa-magnifying-glass lupa"></i>
                         <label for="search"></label>
                         <input class="busqueda" type="text" name="search" id="search" placeholder="Buscar...">
                         <button type="submit" id="myBtn"></button>
                     </form>
-
                 </div>
                 <% } %>
     </div>
-
 </header>

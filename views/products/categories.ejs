@@ -3,9 +3,9 @@
 <%- include("../partials/head.ejs") %>
     <body>
         <%- include("../partials/header.ejs") %>
-            <main class="main-sections">
-                <h2><%= product[0].categories.category_name %></h2>
-                
+        <h2><img class="baner-cat" src="/images/<%=product[0].categories.category_name%>.png"></h2>
+        <div class="back-color">
+            <main class="padre-lista">
                 <% for( let i=0; i < product.length; i++ ) { %>
                     <br>
                     <section id="productos" class="productos">
@@ -27,6 +27,7 @@
                     </section>
                     <%}%>
                     <br>
+        </div>
             </main>
             <%- include("../partials/footer.ejs") %>
     </body>

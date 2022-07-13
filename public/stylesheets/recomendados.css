@@ -1,3 +1,7 @@
+.back-color {
+  background-color: #ffffff !important;
+}
+
 .padre {
   margin: 0 auto;
   width: 55%;
@@ -6,7 +10,7 @@
 }
 
 .texto-producto {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .articulos {
@@ -14,26 +18,27 @@
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   padding: 10px;
   text-align: center;
-  width: 70%;
   color: white;
-  margin: auto;
-  background: linear-gradient(1deg, black, transparent);
+  background: linear-gradient(1deg, #00000050, transparent);
   background-color: slategrey;
+}
 
+.fa-cart-arrow-down {
+  color:limegreen;
 }
 
 .img-producto {
-  max-height: 20rem;
+  max-height: 15rem;
   filter: drop-shadow(2px 4px 20px black);
 }
 
 .padre-lista {
-  margin: 0 auto;
-  width: 35%;
-  text-align: center;
-  grid-template-columns: 50% 50%;
-  justify-content: space-between;
-  grid-template-rows: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: auto;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 .img-user {

@@ -14,8 +14,11 @@ html {
 }
 
 main {
-  background-color: #000000;
   display: block;
+}
+
+.baner-cat {
+  width: 100%;
 }
 
 .badge {
@@ -199,7 +202,7 @@ a {
 h2 {
   text-align: center;
   color: black;
-  font-size: 50px;
+  font-size: 30px;
   padding: 20px;
 }
 
@@ -506,6 +509,7 @@ legend {
 }
 .tablet-pc{
   display: none;
+  background-color: black;
 }
 
 @media (min-width: 479px) {

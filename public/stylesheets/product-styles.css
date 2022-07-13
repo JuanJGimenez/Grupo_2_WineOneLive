@@ -26,9 +26,7 @@ body {
 }
 
 .botella-vino {
-  
-  max-height: 350px;
-  max-width: 350px;
+  width: 40%;  
 }
 
 .left-header {
@@ -299,9 +297,7 @@ h2 {
     justify-content: center;
   }
   .botella-vino {
-  
-    max-height: 700px;
-    max-width: 700px;
+    width: 40%;
   }
 
   .imagen {

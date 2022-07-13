@@ -14,8 +14,9 @@
             <section id="productos" class="productos">
                 <article class="articulos">
                     <div>
-                        <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
-                            <div class="icono-editar-producto"><a href="/users/edit/<%=user[i].user_id%>"><i class="fas fa-edit"></i></a>
+                        <% if (locals.userLogged && locals.userLogged.admin==1) { %>
+                            <div class="icono-editar-producto"><a href="/users/edit/<%=user[i].user_id%>"><i
+                                        class="fas fa-edit"></i></a>
                             </div>
                             <%}%>
                     </div>
@@ -27,10 +28,13 @@
                     </div>
                     <div>
                         <div class="text-user">
-                         <div>Nombre: <%= user[i].user_first_name %></div>
-                         <div>Apelido: <%= user[i].user_last_name %></div>
-                         <div>Contraseña: </div>
-                         <div>Email: <%= user[i].user_email %></div>
+                            <div>Nombre: <%= user[i].user_first_name %>
+                            </div>
+                            <div>Apelido: <%= user[i].user_last_name %>
+                            </div>
+                            <div>Contraseña: </div>
+                            <div>Email: <%= user[i].user_email %>
+                            </div>
                         </div>
                     </div>
                 </article>

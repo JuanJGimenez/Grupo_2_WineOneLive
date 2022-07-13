@@ -1,9 +1,10 @@
 <div class="padre">
-
   <% for( let i=0; i < recommended.length; i++ ) { %>
     <article class="articulos one">
       <div>
-        <p class="texto-producto"><%= recommended[i].categories.category_name %></p>
+        <p class="texto-producto">
+          <%= recommended[i].categories.category_name %>
+        </p>
       </div>
       <div><a href="/products/product-detail/<%=recommended[i].product_id%>"><img class="img-producto"
             src="/images/<%= recommended[i].image %>" alt="Imagen botella producto"></a></div>
@@ -13,10 +14,9 @@
         </b>
       </div>
       <div>
-        <p class="texto-producto">
-          Precio: $<%= recommended[i].price %>
+        <p class="texto-producto">Precio: $<%= recommended[i].price %>
         </p>
-      </div>
+      </div><br>
       <div class="carro"><i class="fas fa-cart-arrow-down"></i></div>
     </article>
     <%}%>
