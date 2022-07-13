@@ -207,6 +207,9 @@ h2 {
   max-width: 10%;
 }
 
+.is-invalid {
+  color: red;
+}
 
 .text-user {
   font-size: 20px;

@@ -45,7 +45,7 @@ router.post('/create', fileUpload.single('image'), adminMiddleware, validatorMid
 // Procesar eliminacion de productos
 router.post('/delete/:id', adminMiddleware, productsControllers.delete);
 // Procesar actualizacion de productos
-router.post('/update/:id', fileUpload.single('image'), adminMiddleware, productsControllers.update);
+router.post('/update/:id', fileUpload.single('image'), adminMiddleware, validatorMiddleware.productEdit, productsControllers.update);
 // Busqueda de producto
 router.post('/search/', productsControllers.search);
 

@@ -70,7 +70,15 @@ let productsControllers = {
         db.Products.findByPk(req.params.id)
             .then(product => { res.render('products/product-edit', { product }) });
     },
-    update: (req, res) => {
+    update: async (req, res) => {
+        product = await db.Products.findByPk(req.params.id);
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('products/product-edit', {
+                errors: resultValidation.mapped(),
+                oldData: req.body, product });
+        }
+
         let updateProduct = req.body;
         if (req.file) {
             if (req.file.filename) {

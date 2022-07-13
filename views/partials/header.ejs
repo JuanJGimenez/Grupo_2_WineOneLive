@@ -1,14 +1,10 @@
 <header class="main-header">
 
-
     <div class="topnav-right mobile">
-
         <i class="fa-solid fa-bars iconos burger"></i>
-
         <div id="menu">
             <i class="fa-solid fa-xmark iconos cierra"></i>
             <ul>
-
                 <li id="cierra"><a href="#">Cerrar</a></li>
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/products/list">Listado de productos</a></li>
@@ -26,11 +22,8 @@
             </ul>
         </div>
 
-
-
         <a class="main-header-logo" href="/">
             <img class="logo" src="/images/logo-header-blanco.svg" alt="WineOneLIFE">
-
         </a>
 
         <a href="/products/cart"><i class="fa-solid fa-bag-shopping iconos"></i></a>
@@ -42,10 +35,7 @@
                     <a href="/users/login"><i class="fa-solid fa-arrow-right-to-bracket iconos"></i></i></a>
                     <% } %>
         </div>
-
-
     </div>
-
 
     <div class="contenedor-pc">
         <a class="main-header-logo" href="/">
@@ -61,7 +51,7 @@
         </div>
         <% if (locals.isLogged) { %>
             <div class="topnav-right">
-                
+
                 <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i>
                     <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                     <div class="user-navBar">
@@ -74,7 +64,7 @@
             </div>
             <% } else { %>
                 <div class="topnav-right">
-                   
+
                     <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i></a>
                     <div>
                         <a href="/users/login">
@@ -84,14 +74,14 @@
                         </a>
                     </div>
                     <form action="/products/search" method="POST" class="search-form"><i
-                        class="fa-solid fa-magnifying-glass lupa"></i>
-                    <label for="search"></label>
-                    <input class="busqueda" type="text" name="search" id="search" placeholder="Buscar...">
-                    <button type="submit" id="myBtn"></button>
-                </form>
+                            class="fa-solid fa-magnifying-glass lupa"></i>
+                        <label for="search"></label>
+                        <input class="busqueda" type="text" name="search" id="search" placeholder="Buscar...">
+                        <button type="submit" id="myBtn"></button>
+                    </form>
 
                 </div>
-                <% } %> -->
+                <% } %>
     </div>
 
 </header>

@@ -4,94 +4,119 @@
 <head>
     <%- include("../partials/head.ejs") %>
 </head>
-
 <body>
-
     <%- include("../partials/header.ejs") %>
-
-    <main class="main-sections">
-        <section class="section-article">
-            <div class="section-detail">
-                <article class="article-detail">
-                    <img class="imagen-editar" src="/images/<%=product.image %>" alt="Imagen Producto">
-                    <div class="descripcion">
-                        <h1><%=product.product_name%></h1>
-                        <p class="texto-edit"><%=product.product_description%></p>
-                    </div>
-                    <hr class="article-separator">
-                    <div class="info">
-                        <p class="texto-edit">Precio:</p>
-                        <p class="texto-edit">$ <%=product.price%></p>
-                    </div>
-                    <% if (product.recommended == 1) { %>
-                        <div>
-                            <p class="texto-edit">El producto SI es recomendado.</p>
+        <main class="main-sections">
+            <section class="section-article">
+                <div class="section-detail">
+                    <article class="article-detail">
+                        <img class="imagen-editar" src="/images/<%=product.image %>" alt="Imagen Producto">
+                        <div class="descripcion">
+                            <h1>
+                                <%=product.product_name%>
+                            </h1>
+                            <p class="texto-edit">
+                                <%=product.product_description%>
+                            </p>
                         </div>
-                        <% } else { %>
+                        <hr class="article-separator">
+                        <div class="info">
+                            <p class="texto-edit">Precio:</p>
+                            <p class="texto-edit">$ <%=product.price%>
+                            </p>
+                        </div>
+                        <% if (product.recommended==1) { %>
                             <div>
-                                <p class="texto-edit">El producto NO es recomendado.</p>
+                                <p class="texto-edit">El producto SI es recomendado.</p>
                             </div>
-                            <% } %>
-                </article>
-            </div>
-            <div class="cont-form">
-                <form class="formulario" method="POST" action="/products/update/<%=product.product_id%>"
-                    enctype="multipart/form-data">
-                    <fieldset>
-                        <legend class="texto-edit">Editar producto - <i class="far fa-edit"></i> </legend>
-                        <div class="campo-form">
-                            <label class="texto-edit" for="product_id">ID producto:</label>
-                            <input class="texto-edit" type="number" name="product_id" id="product_id" value="<%=product.product_id%>" readonly>
-                        </div>
-                        <br>
-                        <div class="campo-form">
-                            <label class="texto-edit" for="product_name">Nombre del producto:</label>
-                            <input class="texto-edit" type="text" name="product_name" id="product_name" value="<%=product.product_name%>">
-                        </div>
-                        <br>
-                        <div class="campo-form">
-                            <p class="texto-edit"><%=product.category_id%></p>
-                            <label class="texto-edit" for="category_id">Categoria:</label>
-                            <select class="texto-edit" name="category_id" id="category_id">
-                                <option value="1">Vinos</option>
-                                <option value="2">Cervezas</option>
-                                <option value="3">Whisky</option>
-                                <option value="4">Espumantes</option>
-                            </select>
-                        </div>
-                        <br>
-                        <div class="campo-form">
-                            <label class="texto-edit" for="price">Precio:</label>
-                            <input class="texto-edit" type="number" name="price" id="price" value="<%=product.price%>">
-                        </div>
-                        <br>
-                        <div class="campo-form">
-                            <label class="texto-edit" for="product_description">Descripcion</label><br>
-                            <textarea class="texto-edit" name="product_description" rows="5" cols="50"
-                                placeholder="desc"><%=product.product_description%></textarea>
-                        </div>
-                        <br>
-                        <div class="campo-form">
-                            <label class="texto-edit" for="image">Imagen de producto:</label>
-                            <input class="texto-edit" type="file" name="image" id="image" accept="image/*">
-                        </div>
-                        <br>
-                        <p class="texto-edit">Producto recomendado:</p>
-                        <label class="texto-edit" for="recommended">Si</label>
-                        <input class="texto-edit" type="radio" name=recommended id="recommended" value=1>
-                        <label class="texto-edit" for="recommended">No</label>
-                        <input class="texto-edit" type="radio" name="recommended" id="recommended" value=0>
-                        <br>
-                        <div class="botones-form">
-                            <button class="boton-save" type="submit">Guardar</button>
-                        </div>
-                    </fieldset>
-                </form>
-                <form class="formulario" method="POST" action="/products/delete/<%=product.product_id%>?_method=DELETE"
-                    enctype="multipart/form-data">
-                    <button class="boton-delete" type="submit">Borrar   <i class="fas fa-trash-alt"></i></button>
-                </form>
-            </div>
-        </section>
-    </main>
+                            <% } else { %>
+                                <div>
+                                    <p class="texto-edit">El producto NO es recomendado.</p>
+                                </div>
+                                <% } %>
+                    </article>
+                </div>
+                <div class="cont-form">
+                    <form class="formulario" method="POST" action="/products/update/<%=product.product_id%>"
+                        enctype="multipart/form-data">
+                        <fieldset>
+                            <legend class="texto-edit">Editar producto - <i class="far fa-edit"></i> </legend>
+                            <div class="campo-form">
+                                <label class="texto-edit" for="product_id">ID producto:</label>
+                                <input class="texto-edit" type="number" name="product_id" id="product_id"
+                                    value="<%=product.product_id%>" readonly>
+                            </div>
+                            <br>
+                            <div class="campo-form">
+                                <label class="texto-edit" for="product_name">Nombre del producto:</label>
+                                <input class="texto-edit" type="text" name="product_name" id="product_name"
+                                    value="<%=product.product_name%>">
+                            </div>
+                            <% if (locals.errors && errors.product_name) { %>
+                                <div class="is-invalid">
+                                    <%= errors.product_name.msg %>
+                                </div>
+                                <% } %>
+                            <br>
+                            <div class="campo-form">
+                                <p class="texto-edit"><%=product.category_id%></p>
+                                <label class="texto-edit" for="category_id">Categoria:</label>
+                                <select class="texto-edit" name="category_id" id="category_id">
+                                    <option value="1">Vinos</option>
+                                    <option value="2">Cervezas</option>
+                                    <option value="3">Whisky</option>
+                                    <option value="4">Espumantes</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="campo-form">
+                                <label class="texto-edit" for="price">Precio:</label>
+                                <input class="texto-edit" type="number" name="price" id="price" value="<%=product.price%>">
+                            </div>
+                            <% if (locals.errors && errors.price) { %>
+                                <div class="is-invalid">
+                                    <%= errors.price.msg %>
+                                </div>
+                                <% } %>
+                            <br>
+                            <div class="campo-form">
+                                <label class="texto-edit" for="product_description">Descripcion</label><br>
+                                <textarea class="texto-edit" name="product_description" rows="5" cols="50"
+                                    placeholder="desc"><%=product.product_description%>
+                                </textarea>
+                            </div>
+                            <% if (locals.errors && errors.product_description) { %>
+                                <div class="is-invalid">
+                                    <%= errors.product_description.msg %>
+                                </div>
+                                <% } %>
+                            <br>
+                            <div class="campo-form">
+                                <label class="texto-edit" for="image">Imagen de producto:</label>
+                                <input class="texto-edit" type="file" name="image" id="image" accept="image/*">
+                            </div>
+                            <% if (locals.errors && errors.image) { %>
+                                <div class="is-invalid">
+                                    <%= errors.image.msg %>
+                                </div>
+                                <% } %>
+                            <br>
+                            <p class="texto-edit">Producto recomendado:</p>
+                            <label class="texto-edit" for="recommended">Si</label>
+                            <input class="texto-edit" type="radio" name=recommended id="recommended" value=1>
+                            <label class="texto-edit" for="recommended">No</label>
+                            <input class="texto-edit" type="radio" name="recommended" id="recommended" value=0>
+                            <br>
+                            <div class="botones-form">
+                                <button class="boton-save" type="submit">Guardar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <form class="formulario" method="POST"
+                        action="/products/delete/<%=product.product_id%>?_method=DELETE" enctype="multipart/form-data">
+                        <button class="boton-delete" type="submit">Borrar <i class="fas fa-trash-alt"></i></button>
+                    </form>
+                </div>
+            </section>
+        </main>
 </body>

@@ -60,5 +60,25 @@ module.exports = {
 
             return true;
         })
+    ],
+    productEdit: [
+        body('product_name').notEmpty().withMessage('Tienes que escribir un nombre para el producto'),
+        body('product_description').notEmpty().withMessage('Tienes que escribir una descripcion'),
+        body('price').notEmpty().withMessage('Tienes que escribir un precio').bail().isNumeric().withMessage('El precio debe ser un número'),
+        body('category_id').notEmpty().withMessage('Tienes que seleccionar una categoria'),
+        body('image').custom((value, { req }) => {
+            let file = req.file;
+            let acceptedExtensions = ['.jpg', '.png', '.gif'];
+
+            if (file) {
+      
+                let fileExtension = path.extname(file.originalname);
+                if (!acceptedExtensions.includes(fileExtension)) {
+                    throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+                }
+            }
+
+            return true;
+        })
     ]
 }

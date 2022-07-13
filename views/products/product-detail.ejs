@@ -5,79 +5,60 @@
     <%- include("../partials/head.ejs") %>
         <link rel="stylesheet" href="/stylesheets/product-styles.css">
 </head>
-
 <body>
-
     <%- include("../partials/header.ejs") %>
-
-        <main>
-            <section class="detalle">
-
-                <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
-                    <div class="icono-editar-producto"><a href="/products/edit/<%=product.product_id%>"><i class="fas fa-edit"></i></a>
-                    </div>
-                    <%}%>
-
-                <article class="imagen">
-
-                    <img class="botella-vino" src="/images/<%=product.image%>">
-
-                </article>
-
-                <article class="descripcion">
-
-                    <div class="nombre-producto">
-                        <%=product.product_name%>
-                    </div>
-
-                    <div class="descripcion-producto">
-                        <%=product.product_description%>
-                    </div>
-
-                    <div class="precio-producto">
-                        $ <%=product.price%>
-                    </div>
-
-                    <div class="cantidad-producto">
-
-                        <label for="quantity" class="cantidad">Cantidad</label><br> <br>
-                        <div class="caja-cantidades">
-                            <div class="boton-resta"><i class="fa-solid fa-minus resta"></i></div>
-                            <input class="valor-cantidad" type="number" name="quantity" value="1" />
-                            <div class="boton-suma"><i class="fa-solid fa-plus suma"></i></div>
-
+    <main>
+        <section class="detalle">
+            <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
+                <div class="icono-editar-producto">
+                    <a href="/products/edit/<%=product.product_id%>"><i class="fas fa-edit"></i></a>
+                </div>
+                <%}%>
+            <article class="imagen">
+                <img class="botella-vino" src="/images/<%=product.image%>">
+            </article>
+            <article class="descripcion">
+                <div class="nombre-producto">
+                    <%=product.product_name%>
+                </div>
+                <div class="descripcion-producto">
+                    <%=product.product_description%>
+                </div>
+                <div class="precio-producto">
+                    $ <%=product.price%>
+                </div>
+                <div class="cantidad-producto">
+                    <label for="quantity" class="cantidad">Cantidad</label><br> <br>
+                    <div class="caja-cantidades">
+                        <div class="boton-resta">
+                            <i class="fa-solid fa-minus resta"></i>
+                        </div>
+                        <input class="valor-cantidad" type="number" name="quantity" value="1" />
+                        <div class="boton-suma">
+                            <i class="fa-solid fa-plus suma"></i>
                         </div>
                     </div>
-
-                    <div class="iconoyagrega">
-
-                        <i class="fa-solid fa-cart-plus carrito-mas"></i>
-
-                        <div class="agregar-producto">
-
-                            añadir al carro
-                        </div>
-
+                </div>
+                <div class="iconoyagrega">
+                    <i class="fa-solid fa-cart-plus carrito-mas"></i>
+                    <div class="agregar-producto">
+                        añadir al carro
                     </div>
-
-                </article>
+                </div>
+            </article>
             </section>
             <br>
             <br>
-
             <hr>
             <div class="puede-interesar">
                 <h2>También puede interesarte</h2>
                 <br>
-
                 <%- include("../products/recommended-products.ejs") %>
-  
             </div>
             <br>
-                <br>
-                <hr>
+            <br>
+            <hr>
         </main>
         <%- include("../partials/footer.ejs") %>
 </body>
-
 </html>
