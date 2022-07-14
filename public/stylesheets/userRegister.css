@@ -26,21 +26,20 @@ html {
     flex-direction: column;
 }
 
-.text-danger {
-    color: red;
-}
 
 /* Add styles to the form container */
-.formulario {
+.container {
 
     position: relative;
     right: 0;
     margin: auto;
-    max-width: 300px;
+    max-width: 555px;
     padding: 16px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(75px);
     border-radius: 15px;
     color: #f6f6f6;
+    font-size: 20px;
+    top: -62px;
 }
 
 .login-sign {
@@ -80,8 +79,8 @@ input[type=email] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
-    border: none;
-
+    
+    
 }
 
 input[type=text]:focus,
@@ -125,34 +124,100 @@ input[type=email]:focus {
     opacity: 1;
 }
 
+div .posicion{
+    position: relative;
+}
+
 .form-error {
     color: red;
 }
 
 .is-valid {
-    color: white;
-    background-color: #198754;
-}
+ 
+     color: #198754; 
+     border: 3px solid #198754;
+  }
+   
+  .is-invalid {
+ 
+color: red;
+border: 3px solid rgb(255, 0, 0, 0.7);
 
-.is-invalid {
-    background-color: #fa4958ab;
-    /* color: #842029; */
-}
-
-.alert-warning {
+   
+  } 
+  
+  .alert-warning{
     list-style: none;
     color: #842029;
     background-color: black;
     text-align: center;
     border-radius: 10px;
-    width: 25%;
+    width: 555px;
     margin: auto;
+    z-index: 22;
+    position: relative;
+    top: -61px;
+    font-size: 23px;
+   
 
-
+  }
+.fa-circle-xmark{
+    position: relative;
+    top: -56px;
+    left: 475px;
+    color: red;
 }
+
+.fa-circle-check {
+
+    position: relative;
+    top: -56px;
+    left: 475px;
+    color: green; 
+}
+
 
 ol {
     color: white;
+    
 
+}
+
+.error-nombre { 
+    display: none;
+    color: red;
+    font-weight: bold;
+
+
+}
+.error-apellido { 
+    display: none;
+    color: red;
+    font-weight: bold;
+
+}
+
+.error-mail { 
+    display: none;
+    color: red;
+    font-weight: bold;
+
+}
+
+.error-contraseña { 
+    display: none;
+    color: red;
+    font-weight: bold;
+
+}
+
+.error-contraseña2 { 
+    display: none;
+    color: red;
+    font-weight: bold;
+
+}
+.text-danger{
+    color:red
 
 }
