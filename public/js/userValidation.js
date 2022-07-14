@@ -75,6 +75,7 @@ window.onload = function () {
 
                     document.querySelector(".input-nombre .fa-solid").classList.remove("fa-circle-check")
                     errorNombre.style.display = "block"
+                    campos["nombre"]=false
 
                 }
                 break;
@@ -100,6 +101,7 @@ window.onload = function () {
                     document.querySelector(".input-apellido .fa-solid").classList.add("fa-circle-xmark")
                     document.querySelector(".input-apellido .fa-solid").classList.remove("fa-circle-check")
                     errorApellido.style.display = "block"
+                    campos["apellido"]=false
 
                 }
 
@@ -125,6 +127,7 @@ window.onload = function () {
                     document.querySelector(".input-email .fa-solid").classList.add("fa-circle-xmark")
                     document.querySelector(".input-email .fa-solid").classList.remove("fa-circle-check")
                     errorEmail.style.display = "block"
+                    campos["correo"]=false
 
                 }
 
@@ -180,6 +183,7 @@ window.onload = function () {
             document.querySelector(".input-contraseña2 .fa-solid").classList.add("fa-circle-xmark")
             document.querySelector(".input-contraseña2 .fa-solid").classList.remove("fa-circle-check")
             errorContraseña2.style.display = "block"
+            campos["password"]=false
 
 
         }

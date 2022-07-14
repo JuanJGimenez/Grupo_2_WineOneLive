@@ -3,6 +3,8 @@
 
 <head>
     <%- include("../partials/head.ejs") %>
+    <link rel="stylesheet" href="/stylesheets/edit-style-validator.css">
+    <script src="/js/editProduct.js"></script>
 </head>
 <body>
     <%- include("../partials/header.ejs") %>
@@ -47,10 +49,14 @@
                                     value="<%=product.product_id%>" readonly>
                             </div>
                             <br>
-                            <div class="campo-form">
+                            <div class="campo-form input-nombre">
                                 <label class="texto-edit" for="product_name">Nombre del producto:</label>
                                 <input class="texto-edit" type="text" name="product_name" id="product_name"
                                     value="<%=product.product_name%>">
+                                    <i class="fa-solid  "></i>
+                                 <br>
+                                  <br>
+                                <p class="error-nombre">El nombre sólo puede contener letras.</p>
                             </div>
                             <% if (locals.errors && errors.product_name) { %>
                                 <div class="is-invalid">
@@ -69,9 +75,13 @@
                                 </select>
                             </div>
                             <br>
-                            <div class="campo-form">
+                            <div class="campo-form input-precio">
                                 <label class="texto-edit" for="price">Precio:</label>
                                 <input class="texto-edit" type="number" name="price" id="price" value="<%=product.price%>">
+                                <i class="fa-solid  "></i>
+                                <br>
+                                 <br>
+                                 <p class="error-precio">El precio sólo puede contener números.</p>
                             </div>
                             <% if (locals.errors && errors.price) { %>
                                 <div class="is-invalid">
@@ -81,7 +91,7 @@
                             <br>
                             <div class="campo-form">
                                 <label class="texto-edit" for="product_description">Descripcion</label><br>
-                                <textarea class="texto-edit" name="product_description" rows="5" cols="50"
+                                <textarea class="texto-edit" name="product_description" id="product_description" rows="5" cols="50"
                                     placeholder="desc"><%=product.product_description%>
                                 </textarea>
                             </div>
@@ -105,7 +115,7 @@
                             <label class="texto-edit" for="recommended">Si</label>
                             <input class="texto-edit" type="radio" name=recommended id="recommended" value=1>
                             <label class="texto-edit" for="recommended">No</label>
-                            <input class="texto-edit" type="radio" name="recommended" id="recommended" value=0>
+                            <input class="texto-edit" type="radio" name="recommended" id="recommended" value=0 checked>
                             <br>
                             <div class="botones-form">
                                 <button class="boton-save" type="submit">Guardar</button>

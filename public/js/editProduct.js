@@ -4,7 +4,7 @@ window.onload = function(){
     let inputName = document.getElementById('product_name');
     let inputPrice = document.getElementById('price');
     let inputDescription = document.getElementById('product_description');
-    let inputsTotales = document.querySelectorAll('.form input');
+    let inputsTotales = document.querySelectorAll('.formulario input');
 
     //inputs errores
     let errorNombre = document.querySelector(".error-nombre")
@@ -17,7 +17,7 @@ window.onload = function(){
     
 
     // form capturado
-    let form = document.querySelector('.form');
+    let form = document.querySelector('.formulario');
 
     let ulErrores = document.querySelector('.errores');
 
@@ -30,13 +30,12 @@ window.onload = function(){
         precio: /^.{1,12}$/, // 4 a 12 digitos.
         correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
         telefono: /^\d{1,14}$/ // 7 a 14 numeros.
-        ///^([0-9])*$/
     }
 
     const campos = {
 
         nombre: false,
-        precio:false,
+        precio:false
        
     }
 
@@ -89,6 +88,7 @@ window.onload = function(){
                     document.querySelector(".input-precio .fa-solid").classList.add("fa-circle-check")
                     errorPrecio.style.display = "none"
                     campos["precio"]=true
+                    console.log(campos)
                     
  
               
@@ -101,6 +101,7 @@ window.onload = function(){
                     document.querySelector(".input-precio .fa-solid").classList.remove("fa-circle-check")
                     errorPrecio.style.display = "block"
                     campos["precio"]=false
+                    console.log(campos)
                     
                 }
                 
@@ -145,7 +146,7 @@ window.onload = function(){
 
     
 
-      let errores = [];
+       let errores = [];
 
         if(inputName.value === ""){
             inputName.classList.add('is-invalid');
@@ -166,24 +167,17 @@ window.onload = function(){
             inputPrice.classList.add('is-valid');
         }        
         
-        if(inputDescription.value === ""){
+        /* if(inputDescription.value === ""){
             inputDescription.classList.add('is-invalid');
             errores.push("Debes introducir una descripción");
         } else {
             inputDescription.classList.remove('is-invalid');
             inputDescription.classList.add('is-valid');
-        }        
+         } */       
         
-        ulErrores.innerHTML = '';
-        if(errores.length > 0){
-            ulErrores.classList.add('alert-warning');
-            for(let i = 0; i < errores.length; i++){
-                ulErrores.innerHTML += '<ol>' + errores[i]+ '</ol>'+" "
-            }
-        } 
+        
         if(errores.length <= 0 && campos.nombre && campos.precio){
             form.submit()
-        }
-        
+        }  
     })
 }
