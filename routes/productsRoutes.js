@@ -32,9 +32,9 @@ router.get('/list', productsControllers.list);
 // Detalle de productos
 router.get('/product-detail/:id', productsControllers.detail);
 // Registro de productos
-router.get('/create', adminMiddleware, productsControllers.add);
+router.get('/create', /* adminMiddlewere, */ productsControllers.add);
 // Edicion de productos
-router.get('/edit/:id', adminMiddleware, productsControllers.edit);
+router.get('/edit/:id', /* adminMiddleware, */ productsControllers.edit);
 
 
 /* POST products listing. */

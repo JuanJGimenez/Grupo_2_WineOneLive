@@ -13,9 +13,13 @@
     <div>
         <ul class="errores"></ul>
         <form action="/products/create" method="POST" enctype="multipart/form-data" class="contenedor-formulario form">
-            <div>
+            <div class="input-nombre posicion">
                 <label for="product_name"><b>Nombre:</b></label>
                 <input type="text" name="product_name" id="product_name" value="<%= locals.oldData ? oldData.product_name : null %>" placeholder="Nombre del producto">
+                <i class="fa-solid  "></i>
+                <br>
+                <br>
+                <p class="error-nombre">El nombre sólo puede contener letras.</p>
             </div>
                     <% if (locals.errors && errors.product_name) { %>
                         <div class="is-invalid">
@@ -35,9 +39,11 @@
                 </div>
                 <% } %>
             <br>
-            <div>
+            <div class="input-precio posicion">
                 <label for="price"><b>Precio</b></label>
-                <input id="price" type="number" placeholder="precio" name="price" value="<%= locals.oldData ? oldData.price : null %>">
+                <input id="price" type="number" step=".01" placeholder="precio" name="price" value="<%= locals.oldData ? oldData.price : null %>">
+                <i class="fa-solid  "></i>
+                <p class="error-precio">El precio sólo puede contener números.</p>
             </div>
             <% if (locals.errors && errors.price) { %>
                 <div class="is-invalid">

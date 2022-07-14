@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 40%;
+    max-width: 490px;
     margin: auto;
     justify-content: space-between;
     font-size: 20px;
@@ -44,13 +44,13 @@ body {
 }
 
 .is-valid {
-    color: white;
-    background-color: #198754;
+    color: #198754; 
+     border: 3px solid #198754;
   }
   
   .is-invalid {
-    background-color: #fa4958ab;
-    /* color: #842029; */
+    color: red;
+    border: 3px solid rgb(255, 0, 0, 0.7);
   }
   
   .alert-warning{
@@ -59,12 +59,67 @@ body {
     background-color: black;
     text-align: center;
     border-radius: 10px;
-    width: 25%;
-   margin: auto;
+    max-width: 495px;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    
     
   }
 ol {
     color: white;
     
+
+}
+
+.fa-circle-xmark{
+    position: relative;
+    top: 0px;
+    left: -36px;
+    color: red;
+    font-size: 17px;
+}
+
+.fa-circle-check {
+
+    position: relative;
+    top: 0px;
+    left: -36px;
+    color: green; 
+    font-size: 17px;
+}
+
+.error-nombre { 
+    display: none;
+    color: red;
+    font-weight: bold;
+
+
+}
+.error-precio { 
+    display: none;
+    color: red;
+    font-weight: bold;
+
+}
+
+.error-mail { 
+    display: none;
+    color: red;
+    font-weight: bold;
+
+}
+
+.error-contraseña { 
+    display: none;
+    color: red;
+    font-weight: bold;
+
+}
+
+.error-contraseña2 { 
+    display: none;
+    color: red;
+    font-weight: bold;
 
 }
