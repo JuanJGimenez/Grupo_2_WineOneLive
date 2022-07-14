@@ -65,9 +65,9 @@
                                 <% } %>
                             <br>
                             <div class="campo-form">
-                                <p class="texto-edit"><%=product.category_id%></p>
                                 <label class="texto-edit" for="category_id">Categoria:</label>
                                 <select class="texto-edit" name="category_id" id="category_id">
+                                    <option value="<%=product.category_id%>"><%=product.categories.category_name%></option>
                                     <option value="1">Vinos</option>
                                     <option value="2">Cervezas</option>
                                     <option value="3">Whisky</option>

@@ -67,7 +67,7 @@ let productsControllers = {
             .then(res.redirect('./list'));
     },
     edit: (req, res) => {
-        db.Products.findByPk(req.params.id)
+        db.Products.findByPk(req.params.id, { include: 'categories' })
             .then(product => { res.render('products/product-edit', { product }) });
     },
     update: async (req, res) => {
