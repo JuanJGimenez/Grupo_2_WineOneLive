@@ -30,7 +30,6 @@ module.exports = {
                     throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
                 }
             }
-
             return true;
         })
     ],
@@ -57,7 +56,6 @@ module.exports = {
                     throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
                 }
             }
-
             return true;
         })
     ],
@@ -71,13 +69,11 @@ module.exports = {
             let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
             if (file) {
-      
                 let fileExtension = path.extname(file.originalname);
                 if (!acceptedExtensions.includes(fileExtension)) {
                     throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
                 }
             }
-
             return true;
         })
     ]

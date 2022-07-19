@@ -41,7 +41,6 @@ let usersControllers = {
                         // Por seguridad seteamos null el password en la session del userLogged
                         user.user_password = null;
                         req.session.userLogged = user;
-                        console.log(req.session)
                         // Set cookie user
                         if (req.body.remember_user) {
                             res.cookie('user_email', req.body.user_email, { maxAge: 600000 });
@@ -70,6 +69,7 @@ let usersControllers = {
                 user_email: req.body.user_email
             }
         })
+
         if (usuario) {
             return res.render('users/userRegister', {
                 errors:
@@ -93,9 +93,6 @@ let usersControllers = {
             user_password: bcrypt.hashSync(req.body.user_password, 10),
             image: req.file ? req.file.filename : 'userImgDefault.png'
         }
-        console.log(nuevoUsuario)
-
-
         db.Users.create(nuevoUsuario)
             .then(res.render('users/userLogin', { nuevoUsuario }));
     },

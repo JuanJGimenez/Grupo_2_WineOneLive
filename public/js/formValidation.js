@@ -76,7 +76,7 @@ window.onload = function () {
                     campos["precio"] = false;
                 }
                 break;
-                
+
             case "product_description":
 
                 if (expresiones.correo.test(e.target.value)) {

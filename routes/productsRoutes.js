@@ -41,7 +41,7 @@ router.get('/edit/:id', /* adminMiddleware, */ productsControllers.edit);
 // Renderizar por categorias
 router.post('/categories', productsControllers.categories);
 // Procesar el registro de productos
-router.post('/create', fileUpload.single('image'), adminMiddleware, validatorMiddleware.productCreate,  productsControllers.create);
+router.post('/create', fileUpload.single('image'), adminMiddleware, validatorMiddleware.productCreate, productsControllers.create);
 // Procesar eliminacion de productos
 router.post('/delete/:id', adminMiddleware, productsControllers.delete);
 // Procesar actualizacion de productos

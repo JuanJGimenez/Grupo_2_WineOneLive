@@ -76,7 +76,8 @@ let productsControllers = {
         if (resultValidation.errors.length > 0) {
             return res.render('products/product-edit', {
                 errors: resultValidation.mapped(),
-                oldData: req.body, product });
+                oldData: req.body, product
+            });
         }
 
         let updateProduct = req.body;
