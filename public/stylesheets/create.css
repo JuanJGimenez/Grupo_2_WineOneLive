@@ -21,10 +21,10 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    max-width: 490px;
+    max-width: 655px;
     margin: auto;
     justify-content: space-between;
-    font-size: 20px;
+    font-size: 25px;
     padding: 10px;
     margin-top: 50px;
 }
@@ -59,7 +59,7 @@ body {
     background-color: black;
     text-align: center;
     border-radius: 10px;
-    max-width: 495px;
+    max-width: 655px;
     margin: auto;
     position: relative;
     top: 50px;
@@ -93,6 +93,7 @@ ol {
     display: none;
     color: red;
     font-weight: bold;
+    
 
 
 }

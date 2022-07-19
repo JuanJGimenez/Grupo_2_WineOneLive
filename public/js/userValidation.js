@@ -37,10 +37,10 @@ window.onload = function () {
     const campos = {
 
         nombre: false,
-        apellido:false,
+        apellido: false,
         password: false,
         correo: false
-        
+
     }
 
 
@@ -64,7 +64,7 @@ window.onload = function () {
                     inputName.classList.add('is-valid');
                     document.querySelector(".input-nombre .fa-solid").classList.add("fa-circle-check")
                     errorNombre.style.display = "none"
-                    campos["nombre"]=true
+                    campos["nombre"] = true
                     console.log(campos)
 
 
@@ -75,7 +75,7 @@ window.onload = function () {
 
                     document.querySelector(".input-nombre .fa-solid").classList.remove("fa-circle-check")
                     errorNombre.style.display = "block"
-                    campos["nombre"]=false
+                    campos["nombre"] = false
 
                 }
                 break;
@@ -88,7 +88,7 @@ window.onload = function () {
                     document.querySelector(".input-apellido .fa-solid").classList.remove("fa-circle-xmark")
                     document.querySelector(".input-apellido .fa-solid").classList.add("fa-circle-check")
                     errorApellido.style.display = "none"
-                    campos["apellido"]=true
+                    campos["apellido"] = true
 
 
 
@@ -101,7 +101,7 @@ window.onload = function () {
                     document.querySelector(".input-apellido .fa-solid").classList.add("fa-circle-xmark")
                     document.querySelector(".input-apellido .fa-solid").classList.remove("fa-circle-check")
                     errorApellido.style.display = "block"
-                    campos["apellido"]=false
+                    campos["apellido"] = false
 
                 }
 
@@ -115,7 +115,7 @@ window.onload = function () {
                     document.querySelector(".input-email .fa-solid").classList.remove("fa-circle-xmark")
                     document.querySelector(".input-email .fa-solid").classList.add("fa-circle-check")
                     errorEmail.style.display = "none"
-                    campos["correo"]=true
+                    campos["correo"] = true
 
 
 
@@ -127,7 +127,7 @@ window.onload = function () {
                     document.querySelector(".input-email .fa-solid").classList.add("fa-circle-xmark")
                     document.querySelector(".input-email .fa-solid").classList.remove("fa-circle-check")
                     errorEmail.style.display = "block"
-                    campos["correo"]=false
+                    campos["correo"] = false
 
                 }
 
@@ -183,7 +183,7 @@ window.onload = function () {
             document.querySelector(".input-contraseña2 .fa-solid").classList.add("fa-circle-xmark")
             document.querySelector(".input-contraseña2 .fa-solid").classList.remove("fa-circle-check")
             errorContraseña2.style.display = "block"
-            campos["password"]=false
+            campos["password"] = false
 
 
         }
@@ -194,7 +194,7 @@ window.onload = function () {
             document.querySelector(".input-contraseña2 .fa-solid").classList.remove("fa-circle-xmark")
             document.querySelector(".input-contraseña2 .fa-solid").classList.add("fa-circle-check")
             errorContraseña2.style.display = "none"
-            campos["password"]=true
+            campos["password"] = true
             console.log(campos)
 
         }
@@ -219,7 +219,7 @@ window.onload = function () {
         if (inputName.value === "") {
             inputName.classList.add('is-invalid');
             errores.push("Debes introducir un nombre");
-        } 
+        }
 
         if (inputSurname.value === "") {
             inputSurname.classList.add('is-invalid');
@@ -233,14 +233,14 @@ window.onload = function () {
         }
 
 
-        
+
 
         if (inputPassword.value === "") {
             inputPassword.classList.add('is-invalid');
             errores.push("Debes introducir una contraseña");
-        } 
+        }
 
-        
+
         ulErrores.innerHTML = '';
         if (errores.length > 0) {
             ulErrores.classList.add('alert-warning');
@@ -248,9 +248,9 @@ window.onload = function () {
                 ulErrores.innerHTML += '<ol>' + errores[i] + '</ol>' + " "
             }
         }
-        if(errores.length <= 0 && campos.nombre && campos.correo && campos.password && campos.apellido){
+        if (errores.length <= 0 && campos.nombre && campos.correo && campos.password && campos.apellido) {
             form.submit()
         }
-       
+
     })
 }

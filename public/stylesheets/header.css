@@ -153,6 +153,12 @@
     display: none;
   }
 
+  .contenedor-pc{
+
+    display: none;
+
+  }
+
   @media (min-width: 479px) {
 
     .contenedor-pc{
