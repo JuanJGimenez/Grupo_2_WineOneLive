@@ -12,6 +12,7 @@
                 <%}%>
                 <li><a href="/products/list">Listado de productos</a></li>
                 <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
+                    <li><a href="http://localhost:3001">DashBoard</a></li>
                     <li><a href="/products/create">Agregar productos</a></li>
                     <li><a href="/products/list">Editar productos</a></li>
                     <li><a href="/users/list">Listado de usuarios</a></li>
