@@ -13,18 +13,20 @@ const Users = () => {
         const data = await fetch('http://localhost:3000/api/users')
         const users = await data.json()
         setUsers(users)
-   
     }
 
     return (
         <div>
             <h1>hola</h1>
             <ul>
+                
                 {
-                    usuarios.map(item => (
-                        <li key='item.user_id'> {item.user_email} </li>
-                    ))
-                    }
+                    usuarios.users.map(item => 
+                        <li > {item.detail}</li>
+
+                    )
+                }
+                    
                     
             </ul>
            
