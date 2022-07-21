@@ -6,7 +6,7 @@ import LastMovieInDb from './LastMovieInDb';
 import ContentRowMovies from './ContentRowMovies';
 import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
-import Users from './Users';
+import Users from './Chart';
 import { Link, Routes, Route } from 'react-router-dom';
 
 function SideBar() {
@@ -28,8 +28,8 @@ function SideBar() {
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
                     <a className="nav-link" href='http://localhost:3000'>
-                        <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></a>
+                        <i className="fas fa-wine-bottle" />
+                        <span>Dashboard - Almacén de Vinos</span></a>
                 </li>
 
                 {/*<!-- Divider -->*/}

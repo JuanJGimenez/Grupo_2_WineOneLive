@@ -1,26 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ChartRow from './ChartRow';
 
-let tableRowsData = [
-    {
-        Title: 'Billy Elliot ',
-        Length: '123',
-        Rating: '5',
-        Categories: ['Drama','Comedia'],
-        Awards: 2
-    },
-    {
-        Title: 'Alicia en el país de las maravillas',
-        Length: '142',
-        Rating: '4.8',
-        Categories: ['Drama','Acción','Comedia'],
-        Awards: 3
-    },
-    
-]
+const Users = () => {
 
+    const [usuarios, setUsers] = useState([])
 
-function Chart (){
+    useEffect(() => {
+        obtenerDatos()
+    }, [])
+
+    const obtenerDatos = async () => {
+        const data = await fetch('http://localhost:3000/api/users')
+        const users = await data.json()
+        setUsers(users.users)
+    }
+
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -29,27 +23,18 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Mail</th>
+                                <th>Detalle</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
-                            </tr>
-                        </tfoot>
+
                         <tbody>
                             {
-                            tableRowsData.map( ( row , i) => {
-                                return <ChartRow { ...row} key={i}/>
-                            })
+                                usuarios.map((row, i) => {
+                                    return <ChartRow {...row} key={i} />
+                                })
                             }
 
                         </tbody>
@@ -61,4 +46,4 @@ function Chart (){
     )
 }
 
-export default Chart;
+export default Users;
