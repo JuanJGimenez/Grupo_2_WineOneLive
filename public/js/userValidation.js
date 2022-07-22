@@ -31,10 +31,6 @@ window.onload = function () {
         apellido: false,
         password: false,
         correo: false
-<<<<<<< HEAD
-
-=======
->>>>>>> c04732f2d2f28f928af9dfc16a0151ba86be0778
     }
 
     let validarFormulario = (e) => {
@@ -47,23 +43,6 @@ window.onload = function () {
                     inputName.classList.remove('is-invalid');
                     document.querySelector(".input-nombre .fa-solid").classList.remove("fa-circle-xmark");
                     inputName.classList.add('is-valid');
-<<<<<<< HEAD
-                    document.querySelector(".input-nombre .fa-solid").classList.add("fa-circle-check")
-                    errorNombre.style.display = "none"
-                    campos["nombre"] = true
-                    console.log(campos)
-
-
-                }
-                else {
-                    inputName.classList.add('is-invalid');
-                    document.querySelector(".input-nombre .fa-solid").classList.add("fa-circle-xmark")
-
-                    document.querySelector(".input-nombre .fa-solid").classList.remove("fa-circle-check")
-                    errorNombre.style.display = "block"
-                    campos["nombre"] = false
-
-=======
                     document.querySelector(".input-nombre .fa-solid").classList.add("fa-circle-check");
                     errorNombre.style.display = "none";
                     campos["nombre"] = true;
@@ -73,7 +52,6 @@ window.onload = function () {
                     document.querySelector(".input-nombre .fa-solid").classList.remove("fa-circle-check");
                     errorNombre.style.display = "block";
                     campos["nombre"] = false;
->>>>>>> c04732f2d2f28f928af9dfc16a0151ba86be0778
                 }
                 break;
 
@@ -82,26 +60,6 @@ window.onload = function () {
                 if (expresiones.nombre.test(e.target.value)) {
                     inputSurname.classList.remove('is-invalid');
                     inputSurname.classList.add('is-valid');
-<<<<<<< HEAD
-                    document.querySelector(".input-apellido .fa-solid").classList.remove("fa-circle-xmark")
-                    document.querySelector(".input-apellido .fa-solid").classList.add("fa-circle-check")
-                    errorApellido.style.display = "none"
-                    campos["apellido"] = true
-
-
-
-
-
-                }
-                else {
-                    inputSurname.classList.add('is-invalid');
-                    inputSurname.classList.remove('is-valid');
-                    document.querySelector(".input-apellido .fa-solid").classList.add("fa-circle-xmark")
-                    document.querySelector(".input-apellido .fa-solid").classList.remove("fa-circle-check")
-                    errorApellido.style.display = "block"
-                    campos["apellido"] = false
-
-=======
                     document.querySelector(".input-apellido .fa-solid").classList.remove("fa-circle-xmark");
                     document.querySelector(".input-apellido .fa-solid").classList.add("fa-circle-check");
                     errorApellido.style.display = "none";
@@ -113,7 +71,6 @@ window.onload = function () {
                     document.querySelector(".input-apellido .fa-solid").classList.remove("fa-circle-check");
                     errorApellido.style.display = "block";
                     campos["apellido"] = false;
->>>>>>> c04732f2d2f28f928af9dfc16a0151ba86be0778
                 }
                 break;
 
@@ -122,25 +79,6 @@ window.onload = function () {
                 if (expresiones.correo.test(e.target.value)) {
                     inputEmail.classList.remove('is-invalid');
                     inputEmail.classList.add('is-valid');
-<<<<<<< HEAD
-                    document.querySelector(".input-email .fa-solid").classList.remove("fa-circle-xmark")
-                    document.querySelector(".input-email .fa-solid").classList.add("fa-circle-check")
-                    errorEmail.style.display = "none"
-                    campos["correo"] = true
-
-
-
-
-                }
-                else {
-                    inputEmail.classList.add('is-invalid');
-                    inputEmail.classList.remove('is-valid');
-                    document.querySelector(".input-email .fa-solid").classList.add("fa-circle-xmark")
-                    document.querySelector(".input-email .fa-solid").classList.remove("fa-circle-check")
-                    errorEmail.style.display = "block"
-                    campos["correo"] = false
-
-=======
                     document.querySelector(".input-email .fa-solid").classList.remove("fa-circle-xmark");
                     document.querySelector(".input-email .fa-solid").classList.add("fa-circle-check");
                     errorEmail.style.display = "none";
@@ -152,7 +90,6 @@ window.onload = function () {
                     document.querySelector(".input-email .fa-solid").classList.remove("fa-circle-check");
                     errorEmail.style.display = "block";
                     campos["correo"] = false;
->>>>>>> c04732f2d2f28f928af9dfc16a0151ba86be0778
                 }
                 break;
 
@@ -186,25 +123,6 @@ window.onload = function () {
 
             inputConfirmPassword.classList.add('is-invalid');
             inputConfirmPassword.classList.remove('is-valid');
-<<<<<<< HEAD
-            document.querySelector(".input-contraseña2 .fa-solid").classList.add("fa-circle-xmark")
-            document.querySelector(".input-contraseña2 .fa-solid").classList.remove("fa-circle-check")
-            errorContraseña2.style.display = "block"
-            campos["password"] = false
-
-
-        }
-
-        else {
-            inputConfirmPassword.classList.remove('is-invalid');
-            inputConfirmPassword.classList.add('is-valid');
-            document.querySelector(".input-contraseña2 .fa-solid").classList.remove("fa-circle-xmark")
-            document.querySelector(".input-contraseña2 .fa-solid").classList.add("fa-circle-check")
-            errorContraseña2.style.display = "none"
-            campos["password"] = true
-            console.log(campos)
-
-=======
             document.querySelector(".input-contraseña2 .fa-solid").classList.add("fa-circle-xmark");
             document.querySelector(".input-contraseña2 .fa-solid").classList.remove("fa-circle-check");
             errorContraseña2.style.display = "block";
@@ -216,7 +134,6 @@ window.onload = function () {
             document.querySelector(".input-contraseña2 .fa-solid").classList.add("fa-circle-check");
             errorContraseña2.style.display = "none";
             campos["password"] = true;
->>>>>>> c04732f2d2f28f928af9dfc16a0151ba86be0778
         }
     }
 
@@ -234,10 +151,6 @@ window.onload = function () {
             inputName.classList.add('is-invalid');
             errores.push("Debes introducir un nombre");
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> c04732f2d2f28f928af9dfc16a0151ba86be0778
         if (inputSurname.value === "") {
             inputSurname.classList.add('is-invalid');
             errores.push("Debes introducir un apellido");
@@ -246,22 +159,10 @@ window.onload = function () {
             inputEmail.classList.add('is-invalid');
             errores.push("Debes introducir un Email");
         }
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> c04732f2d2f28f928af9dfc16a0151ba86be0778
         if (inputPassword.value === "") {
             inputPassword.classList.add('is-invalid');
             errores.push("Debes introducir una contraseña");
         }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c04732f2d2f28f928af9dfc16a0151ba86be0778
         ulErrores.innerHTML = '';
         if (errores.length > 0) {
             ulErrores.classList.add('alert-warning');
@@ -270,14 +171,7 @@ window.onload = function () {
             }
         }
         if (errores.length <= 0 && campos.nombre && campos.correo && campos.password && campos.apellido) {
-<<<<<<< HEAD
-            form.submit()
-        }
-
-    })
-=======
             form.submit();
         }
     });
->>>>>>> c04732f2d2f28f928af9dfc16a0151ba86be0778
 }

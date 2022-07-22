@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+ background-color: #000000;
 }
 
 body,
@@ -15,6 +16,10 @@ html {
 
 main {
   display: block;
+}
+
+.rec-art{
+  background-image: url("/images/fondo-prueba.jpg");
 }
 
 .baner-cat {
@@ -136,9 +141,6 @@ input {
   border-radius: 10px;
 }
 
-form {
-  display: flex;
-}
 
 .nav-bar {
   display: none;
@@ -201,9 +203,10 @@ a {
 
 h2 {
   text-align: center;
-  color: black;
-  font-size: 30px;
+  color: silver;
+  font-size: 35px;
   padding: 20px;
+  font-weight: bold;
 }
 
 .user-img {

@@ -12,7 +12,8 @@ html {
 
 .bg-img {
     /* The image used */
-    background-image: url("/images/login-backgground.jpg");
+    /* background-image: url("/images/login-backgground.jpg"); */
+	background-image: url("/images/fondo-prueba.jpg");
 
     min-height: 100%;
 
@@ -25,16 +26,19 @@ html {
 }
 
 /* Add styles to the form container */
-.formulario {
+.formulario-user {
 
     position: relative;
     right: 0;
     margin: auto;
-    max-width: 300px;
+    max-width: 555px;
     padding: 16px;
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    color: #f6f6f6
+    color: #f6f6f6;
+	font-size: 25px;
+	background-color: rgb(16,16,16, 0.5);
+
 }
 
 .login-sign {
@@ -67,7 +71,7 @@ html {
 }
 
 /* Full-width input fields */
-input[type=text],
+
 input[type=password],
 input[type=email] {
     width: 100%;

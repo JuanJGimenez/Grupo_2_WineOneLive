@@ -13,7 +13,8 @@ html {
 
 .bg-img {
     /* The image used */
-    background-image: url("/images/login-backgground.jpg");
+     /* background-image: url("/images/login-backgground.jpg"); */
+	background-image: url("/images/fondo-prueba.jpg");
 
     min-height: 100%;
 
@@ -40,6 +41,7 @@ html {
     color: #f6f6f6;
     font-size: 20px;
     top: -62px;
+    background-color: rgb(16,16,16, 0.5);
 }
 
 .login-sign {

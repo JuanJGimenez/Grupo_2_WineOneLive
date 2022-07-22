@@ -2,18 +2,19 @@
 <html>
 
 <head>
-    <title>Wine One LIFE - Inicio</title>
-    <link rel="icon" type="image/png" href="/images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/0a256d9d04.js" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='/stylesheets/userLogin.css' />
+    <%- include("../partials/head.ejs") %>
+     <link rel='stylesheet' href='/stylesheets/userLogin.css' /> 
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    
     
 </head>
 
 <body>
+    <%- include("../partials/header.ejs") %> 
 
     <div class="bg-img">
-        <form action="/users/login" method="POST" class="formulario" id="formulario">
+        <form action="/users/login" method="POST" class="formulario-user" id="formulario">
             <% if (locals.nuevoUsuario) { %>
                 <div>
                     <p style="color:green">El registro fue creado con exito!</p>

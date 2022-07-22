@@ -20,7 +20,7 @@
   text-align: center;
   color: white;
   background: linear-gradient(1deg, #00000050, transparent);
-  background-color: slategrey;
+  background-color: rgb(112, 128, 144, 0.1)
 }
 
 .fa-cart-arrow-down {

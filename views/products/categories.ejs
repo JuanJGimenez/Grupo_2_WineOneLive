@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <%- include("../partials/head.ejs") %>
-    <body>
+    <body style="background-image: url('/images/fondo-prueba.jpg')">
         <%- include("../partials/header.ejs") %>
         <h2><img class="baner-cat" src="/images/<%=product[0].categories.category_name%>.png"></h2>
         <div class="back-color">
-            <main class="padre-lista">
+            <main style="background-image: url('/images/fondo-prueba.jpg')" class="padre-lista">
                 <% for( let i=0; i < product.length; i++ ) { %>
                     <br>
                     <section id="productos" class="productos">

@@ -5,9 +5,13 @@
   padding: 0px;
   box-sizing: border-box;
 }
+body{
+  background-image: url("/images/fondo-prueba.jpg");
+}
 
 main {
-  background-color: white;
+  /*background-color: white;*/
+  background-image: url("/images/fondo-prueba.jpg");
 }
 
 header {
@@ -93,7 +97,7 @@ button {
 
 form {
   display: flex;
-  width: 100%;
+ 
 }
 
 .nav-bar {
@@ -127,11 +131,6 @@ a {
   background-color: #91bdf0;
 }
 
-h2 {
-  text-align: center;
-  color: #2f2f2f;
-  font-size: 27px;
-}
 
 .productos {
   display: flex;
@@ -200,6 +199,7 @@ h2 {
 .precio-producto {
   font-size: 30px;
   padding: 25px 0px 0px 0px;
+  color: white;
 }
 
 .cantidad {
@@ -387,7 +387,7 @@ h2 {
   }
 
   .descripcion {
-    height: 65vh;
+    height: 81vh;
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -396,7 +396,7 @@ h2 {
 
   .descripcion div {
     margin: auto;
-    font-size: 35px;
+    font-size: 32px;
   }
 
   .nombre-producto {
