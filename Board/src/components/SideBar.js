@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/logo.png';
 import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
 import LastMovieInDb from './LastMovieInDb';
@@ -18,7 +18,7 @@ function SideBar() {
                 {/*<!-- Sidebar - Brand -->*/}
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to='/'>
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House" />
+                        <img className="img-fluid rounded-circle mx-auto" src={image} alt="Almacén de Vinos" />
                     </div>
                 </Link>
 
