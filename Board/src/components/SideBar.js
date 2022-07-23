@@ -7,6 +7,7 @@ import ContentRowMovies from './ContentRowMovies';
 import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
 import Users from './Chart';
+import ProductsList from './ProductsList';
 import { Link, Routes, Route } from 'react-router-dom';
 
 function SideBar() {
@@ -74,6 +75,13 @@ function SideBar() {
                         <span>Users</span></Link>
                 </li>
 
+                 {/*<!-- Nav Item - SearchMovies -->*/}
+                 <li className="nav-item nav-link">
+                    <Link className="nav-link" to="products">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Productos</span></Link>
+                </li>
+
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block" />
             </ul>
@@ -88,6 +96,7 @@ function SideBar() {
                 <Route path="/ContentRowMovies" element={<ContentRowMovies />} />
                 <Route path='/SearchMovies' element={<SearchMovies />} />
                 <Route path='/users' element={<Users />} />
+                <Route path='/products' element={<ProductsList />} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
             {/*<!-- End Microdesafio 2 -->*/}
