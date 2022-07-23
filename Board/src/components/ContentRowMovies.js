@@ -31,8 +31,8 @@ const obtenerDatosUsuarios = async () => {
     return (
        
         <div className="row">
-                <SmallCard {...productos}/>
-                <SmallCardUsers {...usuarios}/>
+           <SmallCard {...productos}/>
+            <SmallCardUsers {...usuarios}/>
         </div>
     )
 }

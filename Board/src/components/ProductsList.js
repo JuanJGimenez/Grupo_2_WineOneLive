@@ -13,10 +13,12 @@ const ProductsList = () => {
         const data = await fetch('http://localhost:3000/api/products')
         const products = await data.json()
         setProducts(products.products)
-        console.log(productos)
     }
 
     return (
+
+        
+   
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
@@ -24,7 +26,7 @@ const ProductsList = () => {
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Imagen</th>
+                                <th></th>
                                 <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Precio</th>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, Routes, Route } from 'react-router-dom';
 
 function LastMovieInDb() {
 
@@ -18,7 +19,7 @@ function LastMovieInDb() {
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h5 className="m-0 font-weight-bold text-gray-800">Último producto agregado</h5>
+                    <h5 className="text-center m-0 font-weight-bold text-gray-800">Último producto agregado</h5>
                 </div>
                 <div className="card-body">
                     <div className="text-center">
@@ -26,7 +27,8 @@ function LastMovieInDb() {
                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: 8 + 'rem' }} src={productos.image} alt="imagen producto" />
                     </div>
                     <div className='text-center'>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
+                    <Link className="btn btn-danger" target="_blank" rel="nofollow" to = {`/products/${productos.product_id}`} > View movie detail </Link>
+
                     </div>
                 </div>
             </div>

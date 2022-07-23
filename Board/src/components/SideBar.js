@@ -8,13 +8,15 @@ import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
 import Users from './Chart';
 import ProductsList from './ProductsList';
+import ProductDetail from './ProductDetail';
 import { Link, Routes, Route } from 'react-router-dom';
+import UsersDetail from './UsersDetail';
 
 function SideBar() {
     return (
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul className="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to='/'>
@@ -97,6 +99,8 @@ function SideBar() {
                 <Route path='/SearchMovies' element={<SearchMovies />} />
                 <Route path='/users' element={<Users />} />
                 <Route path='/products' element={<ProductsList />} />
+                <Route path='/products/:id' element={<ProductDetail />} />
+                <Route path='/users/:id' element={<UsersDetail />} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
             {/*<!-- End Microdesafio 2 -->*/}

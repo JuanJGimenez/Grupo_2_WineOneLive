@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function SmallCard(props){
     return(
@@ -8,7 +9,7 @@ function SmallCard(props){
                 <div className="card-body">
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
-                            <div className={`text-xs font-weight-bold text-uppercase mb-1`}> Total de productos en db</div>
+                            <div className={`text-xs font-weight-bold text-uppercase mb-1`}><Link to={"/products"}>Total productos en db</Link></div>
                             <div className="h5 mb-0 font-weight-bold text-gray-800">{props.count}</div>
                         </div>
                         <div className="col-auto">
