@@ -3,8 +3,9 @@
 
 <head>
 
-    <title>Wine One LIFE - Registro</title>
-    <link rel="icon" type="image/png" href="/images/logo.png">
+    
+    <%- include("../partials/head.ejs") %>
+   
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0a256d9d04.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='/stylesheets/userRegister.css' />
@@ -13,10 +14,11 @@
 </head>
 
 <body>
+    <%- include("../partials/header.ejs") %> 
 
     <div class="bg-img">
         <ul class="errores"></ul>
-        <form class="container form" id="formulario" method="POST" action="/users/register"
+        <form class="container-reg form" id="formulario" method="POST" action="/users/register"
             enctype="multipart/form-data">
             <div class="login-sign">
                 <div class="ingresa"><a href="/users/login">Ingresá</a></div>
@@ -36,7 +38,7 @@
                     <br>
                     <div class="input-nombre posicion">
                         <label for="user_first_name"><b>Nombre:</b></label>
-                        <input type="text" name="user_first_name" id="user_first_name"
+                        <input type="text" class="input-text" name="user_first_name" id="user_first_name"
                             value="<%= locals.oldData ? oldData.user_first_name : null %>" placeholder="Nombre">
                         <i class="fa-solid  "></i>
                         <p class="error-nombre">El nombre sólo puede contener letras.</p>
@@ -51,7 +53,7 @@
 
                             <div class="input-apellido posicion">
                                 <label for="user_last_name"><b>Apellido:</b></label>
-                                <input type="text" name="user_last_name" id="user_last_name"
+                                <input class="input-text" type="text" name="user_last_name" id="user_last_name"
                                     value="<%= locals.oldData ? oldData.user_last_name : null %>"
                                     placeholder="Apellido" />
                                 <i class="fa-solid  "></i>
@@ -126,6 +128,10 @@
 
         </form>
     </div>
+    <footer>
+        <%- include("../partials/footer.ejs") %>
+    </footer>
+
 </body>
 
 </html>

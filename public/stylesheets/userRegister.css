@@ -29,7 +29,7 @@ html {
 
 
 /* Add styles to the form container */
-.container {
+.container-reg {
 
     position: relative;
     right: 0;
@@ -75,7 +75,7 @@ html {
 }
 
 /* Full-width input fields */
-input[type=text],
+.input-text,
 input[type=password],
 input[type=email] {
     width: 100%;

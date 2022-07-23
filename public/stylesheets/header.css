@@ -64,7 +64,7 @@
     font-size: 25px;
   }
   
-  .fa-solid {
+  .fa-bag-shopping {
     font-size: 50px;
     
   }
@@ -90,7 +90,7 @@
   }
   
   .img-userNavBar {
-    max-width: 40%;
+    max-width: 155px;
     border-radius: 50px;
   }
   
@@ -157,6 +157,10 @@
 
     display: none;
 
+  }
+
+  .lupa-user{
+    font-size: 50px;
   }
 
   @media (min-width: 479px) {

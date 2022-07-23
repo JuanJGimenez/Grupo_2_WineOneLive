@@ -57,8 +57,8 @@
         </div>
         <% if (locals.isLogged) { %>
             <div class="topnav-right">
-                <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i>
-                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i></a>
+                <i class="fa-solid fa-magnifying-glass lupa-user"></i>
                 <div class="user-navBar">
                     <a href="/users/detail/<%=locals.userLogged.user_id%>"><img class="img-userNavBar"
                         src="/images/<%= locals.userLogged.image %>"></a>
