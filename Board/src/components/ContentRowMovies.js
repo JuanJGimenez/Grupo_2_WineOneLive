@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SmallCard from './SmallCard';
+import SmallCardCat from './SmallCardCat';
 import SmallCardUsers from './SmallCardUsers'
 
 
@@ -31,8 +32,9 @@ const obtenerDatosUsuarios = async () => {
     return (
        
         <div className="row">
-           <SmallCard {...productos}/>
-            <SmallCardUsers {...usuarios}/>
+           <SmallCard {...productos} />
+            <SmallCardUsers {...usuarios} />
+            <SmallCardCat {...productos} />
         </div>
     )
 }

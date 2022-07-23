@@ -9,10 +9,6 @@ function SearchMovies(){
 	// Credenciales de API
 	const apiKey = '82c9b16a'; // Intenta poner cualquier cosa antes para probar
 
-	
-
-
-
 	return(
 		<div className="container-fluid">
 			{

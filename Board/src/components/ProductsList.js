@@ -17,8 +17,6 @@ const ProductsList = () => {
 
     return (
 
-        
-   
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
             <div className="card-body">
@@ -36,7 +34,7 @@ const ProductsList = () => {
                         </thead>
 
                         <tbody>
-                            { 
+                            {
                                 productos.map((row, i) => {
                                     return <ProductsChartRows {...row} key={i} />
                                 })
