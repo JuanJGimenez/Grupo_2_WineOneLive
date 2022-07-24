@@ -29,7 +29,7 @@ function ProductDetail() {
                     <div className='text-center'>
                         <img className='img-thumbnail img-fluid px-3 px-sm-4 mt-3 mb-4' style={{ width: 8 + 'rem' }} src={productos.image} alt='imagen producto' />
                     </div>
-                    <div className='text-center'>Precio:  {productos.price}</div>
+                    <div className='text-center'>Precio: $  {productos.price}</div>
                     <div>Descripción: {productos.product_description}</div>
                     <div className='text-center'>_____________________________________</div>
                     <div className='text-center'>

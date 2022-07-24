@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function SearchMovies() {
@@ -37,13 +38,13 @@ function SearchMovies() {
 
 	return (
 		<div className='container-fluid position-relative gap-10'>
-			<div className='form-group'>
-				Buscar:
-			</div>
+			  <div className='card-header py-3'>
+                    <h5 className='text-center m-0 font-weight-bold text-gray-800'>Buscar productos:</h5>
+                </div>
 			<div>
 				<input className='form-control' value={busqueda} placeholder='Búsqueda por Nombre' onChange={handleChange} />
 			</div>
-			<div>-------------</div>
+			<div className='text-center'><i class="fas fa-glass-cheers"></i></div>
 			<div>
 				<table className='table table-sm table-bordered'>
 					<thead>
@@ -61,6 +62,7 @@ function SearchMovies() {
 								<td>{producto.product_name}</td>
 								<td>{producto.price}</td>
 								<td>{producto.quantity_stock}</td>
+								<td><Link to={`/products/${producto.product_id}`}>Detalle</Link></td>
 							</tr>
 						))}
 					</tbody>
