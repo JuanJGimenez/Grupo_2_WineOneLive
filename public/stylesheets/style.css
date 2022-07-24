@@ -26,6 +26,12 @@ main {
   width: 100%;
 }
 
+.rec-text {
+  font-family: 'Caveat', cursive;
+  color: white;
+  font-size: 55px;
+}
+
 .badge {
   position: absolute;
   top: 8px;

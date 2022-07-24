@@ -10,6 +10,10 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <br>
+    <br>
+    <div class="crear-producto">Crear un producto nuevo</div>
+    <br>
+   
     <div>
         <ul class="errores"></ul>
         <form action="/products/create" method="POST" enctype="multipart/form-data" class="contenedor-formulario form">
@@ -75,6 +79,7 @@
                 <label for="recommended">no</label>
                 <input type="radio" name="recommended" value=0 checked>
             </div>
+            <br>
             <div>
                 <label for="image"><b>Subir imagen del producto</b></label>
                 <input type="file" name="image">
@@ -85,8 +90,8 @@
                 </div>
                 <% } %>
             <br>
-            <div>
-                <button type="submit" class="boton">Crear producto</button>
+            <div class="boton">
+                <button type="submit" class="btn">Crear producto</button>
             </div>
         </form>
     </div>
