@@ -1,6 +1,6 @@
-import React, { useState, useEffect, Link } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
-import DeleteProduct from './DeleteProduct'
+
 
 
 function ProductDetail() {
@@ -35,7 +35,7 @@ function ProductDetail() {
                     <div>Descripción: {productos.product_description}</div>
                     <div className='text-center'>_____________________________________</div>
                     <div className='text-center'>
-                        <Link to={<DeleteProduct/>} className="btn btn-danger" target="_blank" rel="nofollow">Eliminar</Link>
+                    <a className="btn btn-danger" rel="nofollow" href={`/products/delete/${productos.product_id}`}>Eliminar</a>
                     </div>
                 </div>
             </div>

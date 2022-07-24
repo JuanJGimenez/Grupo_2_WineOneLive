@@ -3,11 +3,15 @@ import SideBar from './SideBar';
 
 
 function App() {
+
   return (
     <React.Fragment>
-      	<div id="wrapper">
-          <SideBar />
-        </div>
+      <div>
+          <div id="wrapper">
+            <SideBar />
+          </div>
+      </div>
+
     </React.Fragment>
   );
 }

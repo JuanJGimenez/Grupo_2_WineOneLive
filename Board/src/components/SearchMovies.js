@@ -1,68 +1,69 @@
+import { useEffect, useState } from 'react';
 
 
-function SearchMovies(){
+function SearchMovies() {
 
-	let movies = [];
+	const [productos, setUsuarios] = useState([]);
+	const [tablaUsuarios, setTablaUsuarios] = useState([]);
+	const [busqueda, setBusqueda] = useState("");
 
-	const keyword = 'PELÍCULA DEMO';
+	const peticionGet = async () => {
+		const data = await fetch('http://localhost:3000/api/products')
+		const products = await data.json()
+		setUsuarios(products.products)
+		setTablaUsuarios(products.products)
+		console.log(productos)
+		console.log(tablaUsuarios)
+	}
 
-	// Credenciales de API
-	const apiKey = '82c9b16a'; // Intenta poner cualquier cosa antes para probar
+	const handleChange = e => {
+		setBusqueda(e.target.value);
+		filtrar(e.target.value);
+	}
 
-	return(
-		<div className="container-fluid">
-			{
-				apiKey !== '' ?
-				<>
-					<div className="row my-4">
-						<div className="col-12 col-md-6">
-							{/* Buscador */}
-							<form method="GET">
-								<div className="form-group">
-									<label htmlFor="">Buscar por título:</label>
-									<input type="text" className="form-control" />
-								</div>
-								<button className="btn btn-info">Buscar</button>
-							</form>
-						</div>
-					</div>
-					<div className="row">
-						<div className="col-12">
-							<h2>Películas para la palabra: {keyword}</h2>
-						</div>
-						{/* Listado de películas */}
-						{
-							movies.length > 0 && movies.map((movie, i) => {
-								return (
-									<div className="col-sm-6 col-md-3 my-4" key={i}>
-										<div className="card shadow mb-4">
-											<div className="card-header py-3">
-												<h5 className="m-0 font-weight-bold text-gray-800">{movie.Title}</h5>
-											</div>
-											<div className="card-body">
-												<div className="text-center">
-													<img 
-														className="img-fluid px-3 px-sm-4 mt-3 mb-4" 
-														src={movie.Poster}
-														alt={movie.Title} 
-														style={{ width: '90%', height: '400px', objectFit: 'cover' }} 
-													/>
-												</div>
-												<p>{movie.Year}</p>
-											</div>
-										</div>
-									</div>
-								)
-							})
-						}
-					</div>
-					{ movies.length === 0 && <div className="alert alert-warning text-center">No se encontraron películas</div>}
-				</>
-				:
-				<div className="alert alert-danger text-center my-4 fs-2">Eyyyy... ¿PUSISTE TU APIKEY?</div>
+	const filtrar = (terminoBusqueda) => {
+		var resultadosBusqueda = tablaUsuarios.filter((elemento) => {
+			if (elemento.product_name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+			) {
+				return elemento;
 			}
+		});
+		setUsuarios(resultadosBusqueda);
+	}
+
+	useEffect(() => {
+		peticionGet();
+	}, [])
+
+	return (
+		<div className='container-fluid position-relative gap-10'>
+			<div>
+				<input className='form-control' value={busqueda} placeholder="Búsqueda por Nombre" onChange={handleChange} />
+			</div>
+			<div>
+				<table className="table table-sm table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nombre</th>
+							<th>Precio</th>
+							<th>Stock</th>
+						</tr>
+					</thead>
+					<tbody>
+						{productos.map((producto) => (
+							<tr key={producto.product_id}>
+								<td>{producto.product_id}</td>
+								<td>{producto.product_name}</td>
+								<td>{producto.price}</td>
+								<td>{producto.quantity_stock}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
 		</div>
-	)
+	);
 }
 
 export default SearchMovies;

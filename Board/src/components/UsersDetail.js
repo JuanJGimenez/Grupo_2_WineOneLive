@@ -45,7 +45,7 @@ function UsersDetail() {
                     <div className='text-center'>Email: {usuario.user_email}</div>
                     <div className='text-center'>_____________________________________</div>
                     <div className='text-center'>
-                        <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Eliminar</a>
+                    <a className="btn btn-danger" rel="nofollow" href={`/users/delete/${usuario.user_id}`}>Eliminar</a>
                     </div>
                 </div>
             </div>

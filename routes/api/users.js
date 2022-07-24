@@ -11,7 +11,7 @@ router.get('/:id', usersAPIController.detail);
 //router.post('/create', clientesAPIController.create);
 //Modificar un cliente
 //router.put('/update/:id', clientesAPIController.update);
-//Eliminar un cliente
-//router.delete('/delete/:id', clientesAPIController.destroy);
+//Eliminar un usuario
+router.delete('/delete/:id', usersAPIController.destroy);
 
 module.exports = router;
