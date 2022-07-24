@@ -91,7 +91,7 @@
                             <br>
                             <div class="campo-form">
                                 <label class="texto-edit" for="product_description">Descripcion</label><br>
-                                <textarea class="texto-edit" name="product_description" id="product_description" rows="5" cols="50"
+                                <textarea class="texto-edit area-edicion" name="product_description" id="product_description" rows="5" cols="50"
                                     placeholder="desc"><%=product.product_description%>
                                 </textarea>
                             </div>
@@ -120,12 +120,16 @@
                             <div class="botones-form">
                                 <button class="boton-save" type="submit">Guardar</button>
                             </div>
+
+                           </form> 
+                           <br>
+                           <form class="formulario" method="POST"
+                           action="/products/delete/<%=product.product_id%>?_method=DELETE" enctype="multipart/form-data">
+                           <button class="boton-delete" type="submit">Borrar <i class="fas fa-trash-alt"></i></button>
+                       </form>
                         </fieldset>
-                    </form>
-                    <form class="formulario" method="POST"
-                        action="/products/delete/<%=product.product_id%>?_method=DELETE" enctype="multipart/form-data">
-                        <button class="boton-delete" type="submit">Borrar <i class="fas fa-trash-alt"></i></button>
-                    </form>
+                    
+                   
                 </div>
             </section>
         </main>

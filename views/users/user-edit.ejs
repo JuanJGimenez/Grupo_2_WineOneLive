@@ -63,13 +63,14 @@
                         </div>
             </form><br>
 
-
-            <form class="form-delete" method="POST" action="/users/edit/delete/<%=user.user_id%>?_method=DELETE"
+<div class="form-delete">
+            <form  method="POST" action="/users/edit/delete/<%=user.user_id%>?_method=DELETE"
                 enctype="multipart/form-data">
                 <button class="delete" type="submit">Borrar <i class="fas fa-trash-alt"></i></button>
-            </form>
+            </form></div>
 
         </div>
+        <br>
       
         </main>
         <footer>

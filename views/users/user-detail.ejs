@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/product-styles.css">
+    <link rel="stylesheet" href="/stylesheets/user-detail.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
     
@@ -16,19 +16,18 @@
 
 <body>
     <%- include("../partials/header.ejs") %>
+    
         <main>
-            <section class="detalle">
-                <article class="imagen">
-                    <% if (locals.userLogged && locals.userLogged.admin==1) { %>
-                        <div class="icono-editar-producto"><a href="/users/edit/<%=user.user_id%>"><i
-                                    class="fas fa-edit"></i></a>
-                        </div>
-                        <%}%>
-                            <img class="botella-vino" src="/images/<%=user.image%>">
+            <br>
+    <br>
+            <section class="contenedor-usuario">
+                <article class="imagen-usuario">
+                 
+                            <img class="avatar-usuario" src="/images/<%=user.image%>">
 
                 </article>
 
-                <article class="descripcion">
+                <article class="datos-usuario">
 
                     <div class="nombre-producto">
                         <p>Nombre: <%=user.user_first_name%>
@@ -45,11 +44,22 @@
                         </p>
 
                     </div>
+                    <br>
+                    <% if (locals.userLogged && locals.userLogged.admin==1) { %>
+                        <div class="icono-editar-usuario"><a href="/users/edit/<%=user.user_id%>"><i
+                                    class="fas fa-edit"></i>Editar</a>
+                        </div>
+                        <%}%>
 
                 </article>
             </section>
+
             <br>
+            <br>
+            <br>
+    
         </main>
+        
 
         <%- include("../partials/footer.ejs") %>
 

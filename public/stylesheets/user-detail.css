@@ -1,0 +1,66 @@
+/* paleta de colores #11111 - #2f2f2f - #f6f6f6 - #FFCB74 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body{
+   
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  main {
+    /*background-color: white;*/
+    background-image: url("/images/fondo-prueba.jpg");
+  }
+  
+
+  .contenedor-usuario{
+    display: grid;
+    grid-template-columns: 50% auto;
+  }
+
+  .imagen-usuario{
+
+    width: 60%;
+    margin: auto;
+
+  }
+
+  .avatar-usuario{
+    width: 110%;
+    margin: auto;
+  }
+
+  .datos-usuario{
+
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: auto;
+    font-size: 45px;
+    padding: 5%;
+
+  }
+  
+  .icono-editar-usuario{
+    font-size: 25px;
+  }
+
+  
+  
+  @media (min-width: 479px) {
+  
+  
+  }
+  
+  @media (min-width: 768px) {
+  
+    
+  }
+  
+  @media (min-width: 1024px) {
+  
+   
+  
+  }
