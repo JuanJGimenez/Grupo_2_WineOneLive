@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function UsersChartRow(props) {
     return (
@@ -6,7 +7,7 @@ function UsersChartRow(props) {
             <td>{props.user_id}</td>
             <td>{props.user_first_name}</td>
             <td>{props.user_email}</td>
-            <td><a href={`/users/${props.user_id}`}>Detalle</a></td>
+            <td><Link to={`/users/${props.user_id}`}>Detalle</Link></td>
         </tr>
     )
 }

@@ -5,7 +5,7 @@ function SearchMovies() {
 
 	const [productos, setUsuarios] = useState([]);
 	const [tablaUsuarios, setTablaUsuarios] = useState([]);
-	const [busqueda, setBusqueda] = useState("");
+	const [busqueda, setBusqueda] = useState('');
 
 	const peticionGet = async () => {
 		const data = await fetch('http://localhost:3000/api/products')
@@ -37,11 +37,15 @@ function SearchMovies() {
 
 	return (
 		<div className='container-fluid position-relative gap-10'>
-			<div>
-				<input className='form-control' value={busqueda} placeholder="Búsqueda por Nombre" onChange={handleChange} />
+			<div className='form-group'>
+				Buscar:
 			</div>
 			<div>
-				<table className="table table-sm table-bordered">
+				<input className='form-control' value={busqueda} placeholder='Búsqueda por Nombre' onChange={handleChange} />
+			</div>
+			<div>-------------</div>
+			<div>
+				<table className='table table-sm table-bordered'>
 					<thead>
 						<tr>
 							<th>ID</th>

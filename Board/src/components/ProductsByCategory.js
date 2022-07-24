@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 const ProductsByCategory = () => {
 
-    const {id} = useParams() 
+    const { id } = useParams()
     const [productos, setProducts] = useState([])
 
     useEffect(() => {
@@ -20,10 +20,10 @@ const ProductsByCategory = () => {
     return (
 
         /* <!-- DataTales Example --> */
-        <div className="card shadow mb-4">
-            <div className="card-body">
-                <div className="table-responsive">
-                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+        <div className='card shadow mb-4'>
+            <div className='card-body'>
+                <div className='table-responsive'>
+                    <table className='table table-bordered' id='dataTable' width='100%' cellSpacing='0'>
                         <thead>
                             <tr>
                                 <th></th>
