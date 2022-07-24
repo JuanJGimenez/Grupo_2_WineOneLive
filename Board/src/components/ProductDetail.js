@@ -16,7 +16,6 @@ function ProductDetail() {
         const data = await fetch(`http://localhost:3000/api/products/${id}`)
         const products = await data.json()
         setProducts(products)
-        console.log(productos)
     }
 
     return (

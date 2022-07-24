@@ -4,7 +4,7 @@ import SmallCardCat from './SmallCardCat';
 import SmallCardUsers from './SmallCardUsers'
 
 
-function ContentRowMovies() {
+function ContentRowProducts() {
 
     const [productos, setProducts] = useState([])
 
@@ -39,4 +39,4 @@ function ContentRowMovies() {
     )
 }
 
-export default ContentRowMovies;
+export default ContentRowProducts;

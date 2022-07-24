@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-function SearchMovies() {
+function SearchProducts() {
 
 	const [productos, setUsuarios] = useState([]);
 	const [tablaUsuarios, setTablaUsuarios] = useState([]);
@@ -72,4 +72,4 @@ function SearchMovies() {
 	);
 }
 
-export default SearchMovies;
+export default SearchProducts;

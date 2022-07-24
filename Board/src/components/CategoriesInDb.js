@@ -1,7 +1,7 @@
 import React, { Link } from 'react-router-dom';
 
 
-function GenresInDb() {
+function CategoriesInDb() {
   return (
     <div className='d-flex col-lg-6 mb-4 justify-content-center'>
       <div className='card shadow mb-4'>
@@ -39,4 +39,4 @@ function GenresInDb() {
   );
 }
 
-export default GenresInDb;
+export default CategoriesInDb;
