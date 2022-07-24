@@ -124,6 +124,7 @@ input[type=email]:focus {
 
 .btn:hover {
     opacity: 1;
+    box-shadow: 0px 0px 30px 5px lightcoral;
 }
 
 div .posicion{

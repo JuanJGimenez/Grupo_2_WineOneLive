@@ -59,11 +59,12 @@
             <div class="topnav-right">
                 <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i></a>
                 <i class="fa-solid fa-magnifying-glass lupa-user"></i>
+               <a href="/products/list" >Productos</a>
                 <div class="user-navBar">
                     <a href="/users/detail/<%=locals.userLogged.user_id%>"><img class="img-userNavBar"
                         src="/images/<%= locals.userLogged.image %>"></a>
-                    <%= locals.userLogged.user_first_name %>
-                    <%= locals.userLogged.user_last_name %>
+                        <a href="/users/detail/<%=locals.userLogged.user_id%>"><%= locals.userLogged.user_first_name %></a>
+                            
                     <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
             </div>
@@ -71,8 +72,9 @@
                 <div class="topnav-right">
                     <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i></a>
                     <div>
+                        <a href="/products/list" >Productos</a>
                         <a href="/users/login"><p class="texto-navBar">Ingresar</p>
-                        </a><a href="/users/register"><p class="texto-navBar"> - Registrarme</p>
+                        </a><a href="/users/register"><p class="texto-navBar">Registrarme</p>
                         </a>
                     </div>
                     <form action="/products/search" method="POST" class="search-form">

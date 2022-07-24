@@ -3,9 +3,16 @@
 <head>
 <%- include("../partials/head.ejs") %>
 </head>
-<body>
-
+<body style="background-image: url('/images/fondo-prueba.jpg')">
+ 
   <%- include("../partials/header.ejs") %>
+  <br>
+
+  <br>
+ 
+  <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
+    <a href="/products/create"><p class="link-crear">Crear producto nuevo</p></a>
+    <% } %>
 <div class="padre-lista">
   <% for( let i=0; i < product.length; i++ ) { %>
     <br>

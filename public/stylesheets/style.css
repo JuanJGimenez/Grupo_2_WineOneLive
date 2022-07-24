@@ -515,6 +515,20 @@ legend {
   background-color: black;
 }
 
+.link-crear{
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  left: 40vw;
+  font-weight: bold;
+  
+}
+.link-crear:hover{
+  color:  lightgoldenrodyellow;
+  text-decoration: underline;
+}
+
+
 @media (min-width: 479px) {
 
 

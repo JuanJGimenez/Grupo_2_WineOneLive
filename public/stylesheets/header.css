@@ -49,15 +49,17 @@
     text-decoration: none;
     font-size: 14px;
   }
+
+
   
   .topnav-right a {
     float: center;
     position: relative;
     color: #f2f2f2;
     text-align: center;
-    padding: 5px;
+    padding-right: 45px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 25px;
   }
   
   .texto-navBar {
@@ -162,6 +164,7 @@
   .lupa-user{
     font-size: 50px;
   }
+
 
   @media (min-width: 479px) {
 

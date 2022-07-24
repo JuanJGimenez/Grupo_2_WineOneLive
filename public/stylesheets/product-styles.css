@@ -47,9 +47,7 @@ body {
   text-align: center;
 }
 
-.fa-user {
-  color: #f6f6f6;
-}
+
 
 .texto-header {
   color: #f6f6f6;
@@ -260,6 +258,7 @@ a {
   width: 100%;
   text-align: center;
 }
+
 
 @media (min-width: 479px) {
 
