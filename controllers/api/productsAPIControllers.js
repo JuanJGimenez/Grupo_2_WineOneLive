@@ -2,6 +2,7 @@ const path = require('path');
 const db = require('../../database/models');
 const sequelize = db.sequelize;
 const { Op } = require('sequelize');
+const { categories } = require('../productsControllers');
 
 const productsAPIControllers = {
     list: async (req, res) => {

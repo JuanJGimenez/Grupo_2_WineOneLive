@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productsAPIControllers = require('../../controllers/api/productsAPIControllers');
+const authMiddleware = require('../../middleware/adminMiddleware');
 
 //Rutas
 //Listado productos

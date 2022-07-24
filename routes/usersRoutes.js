@@ -48,7 +48,7 @@ router.post('/login', validatorMiddleware.loginForm, usersControllers.processLog
 // Procesar edicion de usuarios
 router.post("/edit/:id", fileUpload.single('image'), usersControllers.userUpdate);
 // Procesar eliminacion de usuarios
-router.post("/edit/delete/:id", usersControllers.delete);
+router.post("/edit/delete/:id", authMiddleware,usersControllers.delete);
 // Logout - ruta que se activa al momento que el usuario desea salir de la página
 router.get('/logout', usersControllers.logout);
 
