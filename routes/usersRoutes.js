@@ -36,9 +36,9 @@ router.get('/register', guestMiddleware, usersControllers.registerView);
 // Listado de usuarios
 router.get('/list', adminMiddleware, usersControllers.list);
 // Detalle de usuarios
-router.get("/detail/:id", authMiddleware, usersControllers.userDetail);
+router.get('/detail/:id', authMiddleware, usersControllers.userDetail);
 // Edicion de usuarios
-router.get("/edit/:id", authMiddleware, usersControllers.userEdit);
+router.get('/edit/:id', authMiddleware, usersControllers.userEdit);
 
 /* POST users listing. */
 // Procesar el registro de usuarios
@@ -46,9 +46,9 @@ router.post('/register', fileUpload.single('image'), validatorMiddleware.registe
 // Procesar el login de usuarios
 router.post('/login', validatorMiddleware.loginForm, usersControllers.processLogin);
 // Procesar edicion de usuarios
-router.post("/edit/:id", fileUpload.single('image'), usersControllers.userUpdate);
+router.post('/edit/:id', fileUpload.single('image'), usersControllers.userUpdate);
 // Procesar eliminacion de usuarios
-router.post("/edit/delete/:id", authMiddleware,usersControllers.delete);
+router.post('/edit/delete/:id', authMiddleware, usersControllers.delete);
 // Logout - ruta que se activa al momento que el usuario desea salir de la página
 router.get('/logout', usersControllers.logout);
 

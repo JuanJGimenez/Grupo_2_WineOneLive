@@ -18,9 +18,11 @@ const Users = () => {
     return (
         /* <!-- DataTales Example --> */
         <div className='card shadow mb-4'>
-              <div className='card-header py-3'>
-                    <h5 className='text-center m-0 font-weight-bold text-gray-800'><i className='fas fa-users'></i> - Listado de usuarios:</h5>
-                </div>
+            <div className='card-header py-3'>
+                <h5 className='text-center m-0 font-weight-bold text-gray-800'>
+                    <i className='fas fa-users'></i> - Listado de usuarios:
+                </h5>
+            </div>
             <div className='card-body'>
                 <div className='table-responsive'>
                     <table className='table table-bordered' id='dataTable' width='100%' cellSpacing='0'>
@@ -32,7 +34,6 @@ const Users = () => {
                                 <th>Detalle</th>
                             </tr>
                         </thead>
-
                         <tbody>
                             {
                                 usuarios.map((row, i) => {

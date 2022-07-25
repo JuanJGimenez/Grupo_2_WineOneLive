@@ -38,9 +38,11 @@ function SearchProducts() {
 
 	return (
 		<div className='container-fluid position-relative gap-10'>
-			  <div className='card-header py-3'>
-                    <h5 className='text-center m-0 font-weight-bold text-gray-800'><i className="fab fa-searchengin"></i> - Buscar productos:</h5>
-                </div>
+			<div className='card-header py-3'>
+				<h5 className='text-center m-0 font-weight-bold text-gray-800'>
+					<i className="fab fa-searchengin"></i> - Buscar productos:
+				</h5>
+			</div>
 			<div>
 				<input className='form-control' value={busqueda} placeholder='Búsqueda por Nombre' onChange={handleChange} />
 			</div>
@@ -63,7 +65,10 @@ function SearchProducts() {
 								<td className='align-middle'>{producto.product_name}</td>
 								<td className='align-middle'>{producto.price}</td>
 								<td className='align-middle'>{producto.quantity_stock}</td>
-								<td className='align-middle text-center'><Link to={`/products/${producto.product_id}`}><button type="button" class="btn btn-info">Detalle</button></Link></td>
+								<td className='align-middle text-center'>
+									<Link to={`/products/${producto.product_id}`}><button type="button" class="btn btn-info">Detalle</button>
+									</Link>
+								</td>
 							</tr>
 						))}
 					</tbody>

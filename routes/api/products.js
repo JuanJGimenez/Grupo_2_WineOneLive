@@ -12,10 +12,11 @@ router.get('/:id', productsAPIControllers.detail);
 router.get('/category/:id', productsAPIControllers.category);
 //Buscar un produco
 router.get('/search/:id', productsAPIControllers.search);
-//router.post('/create', clientesAPIController.create);
-//Modificar un cliente
-//router.put('/update/:id', clientesAPIController.update);
-//Eliminar un cliente
+//Eliminar un producto
 router.delete('/delete/:id', productsAPIControllers.destroy);
+//Crear un producto
+//router.post('/create', productsAPIControllers.create);
+//Modificar un producto
+//router.put('/update/:id', productsAPIControllers.update);
 
 module.exports = router;
