@@ -558,6 +558,11 @@ legend {
   text-decoration: underline;
 }
 
+.banner-listado {
+  width: 95%;
+  display: block;
+ margin: 0px auto;
+}
 
 @media (min-width: 479px) {
 

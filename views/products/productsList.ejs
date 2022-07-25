@@ -6,9 +6,8 @@
 <body style="background-image: url('/images/fondo-prueba.jpg')">
  
   <%- include("../partials/header.ejs") %>
-  <br>
 
-  <br>
+  <img src="/images/listadonuevo.jpg" alt="listado" class="banner-listado">
  
   <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
     <a href="/products/create"><p class="link-crear">Crear producto nuevo</p></a>
