@@ -5,6 +5,7 @@ const { Op } = require('sequelize');
 const { categories } = require('../productsControllers');
 
 const productsAPIControllers = {
+    
     list: async (req, res) => {
         try {
             products = await db.Products.findAll({ attributes: ['product_id', 'product_name', 'product_description', 'image', 'price', 'quantity_stock'], include: ['categories'] });

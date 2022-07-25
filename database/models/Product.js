@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = "Products";
+    let alias = 'Products';
 
     let cols = {
 
@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tableName: "products",
+        tableName: 'products',
         timestamps: false
     };
 
@@ -41,8 +41,8 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.associate = (models) => {
         Product.belongsTo(models.Categories, {
-            as: "categories",
-            foreignKey: "category_id"
+            as: 'categories',
+            foreignKey: 'category_id'
         });
     }
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom';
 
 
 function UsersDetail() {
@@ -18,7 +18,6 @@ function UsersDetail() {
         const users = await data.json()
 
         setProducts(users)
-
     }
 
     function isAdmin() {
@@ -34,12 +33,15 @@ function UsersDetail() {
         <div className='col-lg-6 mb-4'>
             <div className='card shadow mb-4'>
                 <div className='card-header py-3'>
-                    <h5 className='m-0 font-weight-bold text-gray-800 text-center'>{usuario.user_last_name} {usuario.user_first_name}</h5>
+                    <h5 className='m-0 font-weight-bold text-gray-800 text-center'>
+                        {usuario.user_last_name} {usuario.user_first_name}
+                    </h5>
                 </div>
                 <div className='card-body'>
                     <div className='text-center'>
                         <div> {isAdmin()} </div>
-                        <img className='img-thumbnail img-fluid px-3 px-sm-4 mt-3 mb-4' style={{ width: 8 + 'rem' }} src={usuario.image} alt='imagen usuario' />
+                        <img className='img-thumbnail img-fluid px-3 px-sm-4 mt-3 mb-4'
+                            style={{ width: 8 + 'rem' }} src={usuario.image} alt='imagen usuario' />
                     </div>
                     <div className='text-center'>ID: {usuario.user_id}</div>
                     <div className='text-center'>Email: {usuario.user_email}</div>

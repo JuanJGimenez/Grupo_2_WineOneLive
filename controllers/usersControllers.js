@@ -130,7 +130,10 @@ let usersControllers = {
     },
     delete: (req, res) => {
         db.Users
-            .destroy({ where: { user_id: req.params.id }, force: true }) // force: true es para asegurar que se ejecute la acción
+            .destroy({ where: 
+                // force: true es para asegurar que se ejecute la acción
+                { user_id: req.params.id }, force: true 
+            }) 
             .then(res.redirect('/users/list'));
     },
     list: (req, res) => {

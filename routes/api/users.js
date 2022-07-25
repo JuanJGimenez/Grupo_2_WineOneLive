@@ -3,15 +3,15 @@ const router = express.Router();
 const usersAPIController = require('../../controllers/api/usersAPIController');
 
 //Rutas
-//Listado de clientes
+//Listado de usuario
 router.get('/', usersAPIController.list);
-//Detalle de un cliente
+//Detalle de un usuario
 router.get('/:id', usersAPIController.detail);
-//Agregar un cliente
-//router.post('/create', clientesAPIController.create);
-//Modificar un cliente
-//router.put('/update/:id', clientesAPIController.update);
 //Eliminar un usuario
 router.delete('/delete/:id', usersAPIController.destroy);
+//Agregar un usuario
+//router.post('/create', usersAPIController.create);
+//Modificar un usuario
+//router.put('/update/:id', usersAPIController.update);
 
 module.exports = router;

@@ -9,10 +9,9 @@ const userLoggedMiddleware = require('./middleware/userLoggedMiddleware.js');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/usersRoutes');
-const productsRouter = require("./routes/productsRoutes");
+const productsRouter = require('./routes/productsRoutes');
 const apiUsersRouter = require('./routes/api/users');
 const apiProductsRouter = require('./routes/api/products');
-
 
 const cors = require('cors');
 
@@ -34,9 +33,7 @@ app.use(session({
 }));
 
 app.use(cookies());
-
 app.use(userLoggedMiddleware);
-
 app.use(cors());
 
 // Configuración de recursos estáticos
@@ -44,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/products", productsRouter);
+app.use('/products', productsRouter);
 app.use('/api/users', apiUsersRouter);
 app.use('/api/products', apiProductsRouter);
 

@@ -21,7 +21,6 @@ function ContentWrapper() {
                 loading ?
                     <ClimbingBoxLoader color={'#5a5c69'} loading={loading} size={23} />
                     :
-
                     <div id='content-wrapper' className='d-flex flex-column'>
 
                         <div id='content'>
