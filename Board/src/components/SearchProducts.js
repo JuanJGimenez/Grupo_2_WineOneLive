@@ -39,7 +39,7 @@ function SearchProducts() {
 	return (
 		<div className='container-fluid position-relative gap-10'>
 			  <div className='card-header py-3'>
-                    <h5 className='text-center m-0 font-weight-bold text-gray-800'>Buscar productos:</h5>
+                    <h5 className='text-center m-0 font-weight-bold text-gray-800'><i className="fab fa-searchengin"></i> - Buscar productos:</h5>
                 </div>
 			<div>
 				<input className='form-control' value={busqueda} placeholder='Búsqueda por Nombre' onChange={handleChange} />

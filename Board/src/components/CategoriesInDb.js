@@ -6,9 +6,7 @@ function CategoriesInDb() {
     <div className='d-flex col-lg-6 mb-4 justify-content-center'>
       <div className='card shadow mb-4'>
         <div className='card-header py-3'>
-          <h5 className='text-center m-0 font-weight-bold text-gray-800'>
-            Categorias disponibles:
-          </h5>
+          <h5 className='text-center m-0 font-weight-bold text-gray-800'><i className='fas fa-clipboard-list'></i> - Categorias disponibles:</h5>
         </div>
         <div className='card-body'>
           <div className='row'>

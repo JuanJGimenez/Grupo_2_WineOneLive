@@ -20,7 +20,7 @@ const ProductsList = () => {
         /* <!-- DataTales Example --> */
         <div className='card shadow mb-4'>
              <div className='card-header py-3'>
-                    <h5 className='text-center m-0 font-weight-bold text-gray-800'>Listado de productos:</h5>
+                    <h5 className='text-center m-0 font-weight-bold text-gray-800'><i class="fas fa-wine-bottle"></i> - Listado de productos:</h5>
                 </div>
             <div className='card-body'>
                 <div className='table-responsive'>
