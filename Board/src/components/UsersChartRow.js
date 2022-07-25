@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 function UsersChartRow(props) {
     return (
         <tr>
-            <td>{props.user_id}</td>
-            <td>{props.user_first_name}</td>
-            <td>{props.user_email}</td>
-            <td><Link to={`/users/${props.user_id}`}>Detalle</Link></td>
+            <td className='align-middle'>{props.user_id}</td>
+            <td className='align-middle'>{props.user_first_name}</td>
+            <td className='align-middle'>{props.user_email}</td>
+            <td className='align-middle'><Link to={`/users/${props.user_id}`}><button type="button" class="btn btn-info">Detalle</button></Link></td>
         </tr>
     )
 }

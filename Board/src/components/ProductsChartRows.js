@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 function ProductsChartRows(props) {
     return (
         <tr>
-            <td><Link to={`/products/${props.product_id}`}>Detalle</Link></td>
-            <td>{props.product_id}</td>
-            <td>{props.product_name}</td>
-            <td>$ {props.price}</td>
-            <td>{props.quantity_stock}</td>
-            <td>{props.categories.category_name}</td>
-
+           
+            <td className='align-middle'>{props.product_id}</td>
+            <td className='align-middle'>{props.product_name}</td>
+            <td className='align-middle'>$ {props.price}</td>
+            <td className='align-middle'>{props.quantity_stock}</td>
+            <td className='align-middle'>{props.categories.category_name}</td>
+            <td><Link to={`/products/${props.product_id}`}><button type="button" class="btn btn-info">Detalle</button></Link></td>
         </tr>
     )
 }

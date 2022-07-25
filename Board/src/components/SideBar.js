@@ -1,10 +1,10 @@
 import React from 'react';
 import image from '../assets/images/logo-header.png';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
+import CategoriesInDb from './CategoriesInDb';
 import LastMovieInDb from './LastMovieInDb';
-import ContentRowMovies from './ContentRowMovies';
-import SearchMovies from './SearchMovies';
+import ContentRowProducts from './ContentRowProducts';
+import SearchProducts from './SearchProducts';
 import NotFound from './NotFound';
 import Users from './UsersList';
 import ProductsList from './ProductsList';
@@ -57,7 +57,7 @@ function SideBar() {
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className='nav-item'>
-                    <Link className='nav-link' to='GenresInDb'>
+                    <Link className='nav-link' to='CategoriesInDb'>
                         <i className='text-light fas fa-folder-plus'></i>
                         <span className='text-light'>Categorias</span>
                     </Link>
@@ -89,10 +89,10 @@ function SideBar() {
 
             <Routes>
                 <Route exact path='/' element={<ContentWrapper />} />
-                <Route path='/GenresInDb' element={<GenresInDb />} />
+                <Route path='/CategoriesInDb' element={<CategoriesInDb />} />
                 <Route path='/LastMovieInDb' element={<LastMovieInDb />} />
-                <Route path='/ContentRowMovies' element={<ContentRowMovies />} />
-                <Route path='/SearchMovies' element={<SearchMovies />} />
+                <Route path='/ContentRowProducts' element={<ContentRowProducts />} />
+                <Route path='/SearchMovies' element={<SearchProducts />} />
                 <Route path='/users' element={<Users />} />
                 <Route path='/users/:id' element={<UsersDetail />} />
                 <Route path='/users/delete/:id' element={<UsersDelete />} />

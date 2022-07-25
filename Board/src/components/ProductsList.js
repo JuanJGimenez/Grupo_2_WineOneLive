@@ -27,12 +27,13 @@ const ProductsList = () => {
                     <table className='table table-bordered' id='dataTable' width='100%' cellSpacing='0'>
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Precio</th>
                                 <th>Stock</th>
                                 <th>Categoria</th>
+                                <th>Detalle</th>
+                              
                             </tr>
                         </thead>
 

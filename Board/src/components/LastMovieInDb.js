@@ -27,7 +27,7 @@ function LastMovieInDb() {
                         <img className='img-fluid px-3 px-sm-4 mt-3 mb-4' style={{ width: 8 + 'rem' }} src={productos.image} alt='imagen producto' />
                     </div>
                     <div className='text-center'>
-                        <Link className='btn btn-danger' rel='nofollow' to={`/products/${productos.product_id}`} > Detalle </Link>
+                        <Link rel='nofollow' to={`/products/${productos.product_id}`} ><button type="button" class="btn btn-info">Detalle</button></Link>
 
                     </div>
                 </div>

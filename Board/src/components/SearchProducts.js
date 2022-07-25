@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-function SearchMovies() {
+function SearchProducts() {
 
 	const [productos, setUsuarios] = useState([]);
 	const [tablaUsuarios, setTablaUsuarios] = useState([]);
@@ -53,16 +53,17 @@ function SearchMovies() {
 							<th>Nombre</th>
 							<th>Precio</th>
 							<th>Stock</th>
+							<th>Detalle</th>
 						</tr>
 					</thead>
 					<tbody>
 						{productos.map((producto) => (
 							<tr key={producto.product_id}>
-								<td>{producto.product_id}</td>
-								<td>{producto.product_name}</td>
-								<td>{producto.price}</td>
-								<td>{producto.quantity_stock}</td>
-								<td><Link to={`/products/${producto.product_id}`}>Detalle</Link></td>
+								<td className='align-middle'>{producto.product_id}</td>
+								<td className='align-middle'>{producto.product_name}</td>
+								<td className='align-middle'>{producto.price}</td>
+								<td className='align-middle'>{producto.quantity_stock}</td>
+								<td className='align-middle text-center'><Link to={`/products/${producto.product_id}`}><button type="button" class="btn btn-info">Detalle</button></Link></td>
 							</tr>
 						))}
 					</tbody>
@@ -72,4 +73,4 @@ function SearchMovies() {
 	);
 }
 
-export default SearchMovies;
+export default SearchProducts;

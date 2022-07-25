@@ -1,6 +1,6 @@
 import React from 'react';
 import ContentRowCenter from './ContentRowCenter';
-import ContentRowMovies from './ContentRowMovies';
+import ContentRowProducts from './ContentRowProducts';
 
 
 function ContentRowTop() {
@@ -11,12 +11,9 @@ function ContentRowTop() {
 				<div className='d-sm-flex aligns-items-center justify-content-between mb-4'>
 					<h1 className='h3 mb-0 text-gray-800'>Dashboard - Almacén de Vinos</h1>
 				</div>
-
 				{/*<!-- Content Row Movies-->*/}
-				<ContentRowMovies />
+				<ContentRowProducts />
 				<ContentRowCenter />
-
-
 			</div>
 			{/*<!--End Content Row Top-->*/}
 
