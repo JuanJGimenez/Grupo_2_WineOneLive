@@ -60,6 +60,9 @@
                 <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i></a>
                 <i class="fa-solid fa-magnifying-glass lupa-user"></i>
                <a href="/products/list" >Productos</a>
+               <% if (locals.userLogged && locals.userLogged.admin == 1) { %>
+                <a href="http://localhost:3001" >DashBoard</a>
+                <%}%>
                 <div class="user-navBar">
                     <a href="/users/detail/<%=locals.userLogged.user_id%>"><img class="img-userNavBar"
                         src="/images/<%= locals.userLogged.image %>"></a>
@@ -72,8 +75,8 @@
                 <div class="topnav-right">
                     <a href="/products/cart"><i class="fa-solid fa-bag-shopping"></i></a>
                     <div>
-                        <a href="/products/list" >Productos</a>
-                        <a href="/users/login"><p class="texto-navBar">Ingresar</p>
+                        <a href="/products/list" >Productos &nbsp -</a>
+                        <a href="/users/login"><p class="texto-navBar">Ingresar &nbsp -</p>
                         </a><a href="/users/register"><p class="texto-navBar">Registrarme</p>
                         </a>
                     </div>
