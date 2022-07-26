@@ -5,10 +5,13 @@ const { Op } = require('sequelize');
 const { categories } = require('../productsControllers');
 
 const productsAPIControllers = {
-    
+
     list: async (req, res) => {
         try {
-            products = await db.Products.findAll({ attributes: ['product_id', 'product_name', 'product_description', 'image', 'price', 'quantity_stock'], include: ['categories'] });
+            products = await db.Products.findAll(
+                { attributes: ['product_id', 'product_name', 'product_description', 'image', 'price', 'quantity_stock'], 
+                  include: ['categories'] 
+                });
             categorias = await db.Categories.findAll();
             products.forEach(element => {
                 element.dataValues.detail = 'http://localhost:3000/api/products/' + element.product_id

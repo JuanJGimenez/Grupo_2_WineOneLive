@@ -39,6 +39,7 @@ app.use(cors());
 // Configuración de recursos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Rutas parametrisadas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
